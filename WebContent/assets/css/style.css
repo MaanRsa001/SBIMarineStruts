@@ -1,0 +1,380 @@
+body {
+   
+}
+
+
+
+.navbar-pad {
+    padding: 12px;
+}
+.panel-contant {
+	width: 100%;
+	background-color: #fff;
+	padding: 0  !important;
+	filter: drop-shadow(0 0 15px rgba(0,0,0,0.125));
+	border-radius: 10px;
+}
+/*.padding-container {
+    padding: 58px    !important;
+ }*/
+.quick-quote-motor , .quick-quote-details {
+	flex: 0 0 40%;
+    background: #4fa0eb url(https://www.fairfirst.lk/wp-content/themes/fairfirstv2/images/fairfirst/home/pinwheel.png) no-repeat right bottom / 16.375rem 19.6875rem;
+    border-radius: 0 1.125rem 1.125rem 0;
+    background-repeat: no-repeat;
+}
+.quick-quote-motor {
+	border-bottom-left-radius:17px;
+	border-top-left-radius:17px;
+}
+ .quick-quote-details {
+    background: none;
+    padding: 27px;
+ }
+.quick-quote-text {
+    background-color: #fff;
+    border-bottom-left-radius: 16px;
+    border-top-left-radius: 16px;
+}
+.quick-quote-details {
+    color: #fff;
+} 
+.full-width-container {
+    position: absolute;
+    top: 123px;
+    width: 100%;
+}
+button.car-logo:active {
+	background-color: #4fa0eb;
+}
+.get-btn {
+	color: #fff !important;
+    background-color: #4fa0eb    !important;
+    border-radius: 10px  !important;
+}
+.input-padding {
+	padding: 15px;
+}
+.btn-padding {
+	padding: 0px 13px 0px 13px;
+}
+.header {
+	font-weight: bold;
+	font-size: 22px;
+}
+.text-f1 {
+	font-size: 13px;
+}
+input.form-size {
+  border-radius: inherit !important;
+}
+.form-size {
+  border-radius: inherit !important;
+}
+.vehiclecheckbox-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+.carousel-inner {
+    width: unset !important;
+}
+
+.car-vehicle-display [type=radio]:checked, [type=radio]:not(:checked) {
+    left: -9999px;
+}
+.radio-custom {
+    right: 47px;
+}
+
+
+
+
+.quick-quote-form , .car-selection [type=radio]+label {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 7px!important;
+    box-shadow: 0 0 10px #c4c4c4;
+    border-radius: 10px;
+    transition: .3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: unset;
+    color: #000000;
+}
+.radio-custom [type=radio]:checked+label, .radio-custom [type=radio]:not(:checked)+label {
+    position: relative;
+    line-height: 37px;
+}
+.car-list {
+    list-style-type: none;
+    margin-right: 25px;
+    left: 66px;
+    position: relative;
+    float: left !important;
+}
+
+.car-ins {
+    height: 50px   !important;
+    width: 77px    !important;
+    margin-left: 0px !important;
+}
+/*.dropdown-menu {
+    position: relative !important;
+}*/
+.dropdown-Bg {
+	background-color: #efefef;
+}
+.dropdown-input {
+
+}
+.dropdown-toggle:hover {
+   background-color: #efefef !important;
+}
+.navbar-logo {
+    padding: 0 !important;
+    height:66px !important;
+}
+.navbar-container {
+  position: fixed  !important;
+  top: 0 !important;
+  width: 100%;
+  z-index: 1;
+}
+/*.navbar-under {
+    margin: 30px !important;
+    margin-right: 0px !important;
+}*/
+.navbar-float {
+    margin: 10px 0px auto;
+}
+/*.wheel-img {
+    width: 200px;
+    height: 200px;
+    background-image: url(https://www.fairfirst.lk/wp-content/themes/fairfirstv2/images/fairfirst/home/pinwheel.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}*/
+.from-pad {
+    padding: 30px;
+    over-flow-y: scroll;    
+}
+.from-pad::-webkit-scrollbar { 
+	display: none !important 
+}
+.dropdown-over {
+    margin: 0px 0px auto !important;
+    padding: 16px !important;
+    border-radius: 0px !important;
+    min-width: 100% !important;
+}
+
+.dropdown-contant {
+    padding: 9px !important;
+    border-radius: 0px !important;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px 10px 10px 10px !important;
+    min-width: 100% !important;
+}
+.buttonlebel2 {
+    background-color: #003a7e;
+    color: white;
+}
+.buttonlebel {
+    border: 1px solid black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 15px;
+    margin: 11px 2px;
+    cursor: pointer;
+}
+.radio-btn {
+    position: absolute;
+}
+
+.motor-ins-text {
+    padding: 20px;
+}
+/*.hide {
+  display: block;
+}*/
+.question-circle + .tooltip > .tooltip-inner {
+  background-color: #f2f2f2; 
+  color: #000000; 
+  border: 1px solid  #f2f2f2;
+  font-size: 15px;
+  margin: 10px 10px auto;
+}
+.question-circle + .tooltip.top > .tooltip-arrow {
+    border-top: 5px solid  #f2f2f2;
+}
+/* Style the tab */
+.nav-tabs {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.nav-tabs button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.nav-tabs button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.nav-tabs button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tab-pane {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+/*media quarys*/
+
+/* Extra small devices (phones, 600px and down) */
+
+/*@media only screen and (max-width: 600px) {
+  .example {background: red;}
+}*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+/*@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}*/
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .navbar-pad {
+    padding: 0px;
+  }
+  .navbar-under {
+    margin: 0px !important;
+    margin-right: 0px !important;
+  }
+  .navbar-logo {
+    padding: 0 !important;
+    margin: 10px;
+  }
+  .header , .text-f1  {
+    font-size: 30px !important;
+  }
+  div.car-list {
+    min-width: 100%;
+    margin-top: 15px;
+  }
+  .car-ins {
+    height: 50px !important;
+    width: unset !important;
+    margin-left: 0px !important;
+  }
+  .radio-custom {
+    padding: 17px;
+    right: unset;
+}
+.car-list {
+    list-style-type: none;
+    margin-right: unset !important;
+    left: unset !important;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+   .navbar-pad {
+    padding: 0px;
+   }
+   .navbar-under {
+    margin: 0px !important;
+    margin-right: 0px !important;
+   }
+   .navbar-logo {
+    padding: 0 !important;
+    margin: 10px;
+   }
+   .header , .text-f1  {
+    font-size: 25px !important;
+   }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+   
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
+#car-location:focus {
+    background-color: #5897fb !important;
+    color: #fff !important;
+    outline: none;
+}
+#car-location:target{
+	  background-color: #5897fb !important;
+    color: #fff !important;
+    outline: none !important;
+}
+.question-circle:focus { 
+    box-shadow: 0 0 3px 3px #286090 !Important;
+    border-radius: 10px !Important;
+}
+.car-list:hover {
+    border: 2px solid #33AFFF !important;  
+}
+.car-list:focus {
+    border: 2px solid #33AFFF !important;  
+} 
+.car-list.selected {
+    border: 2px solid #33AFFF !important;  
+}
+/*Sharing code*/
+/*.radio-custom [type=radio]:checked+label, .radio-custom [type=radio]:not(:checked)+label {
+    position: relative;
+    line-height: 37px;
+}*/
+
+.about_input {
+  height: 100px !important;
+  text-align: center !important;
+  background: #f2f2f2 !important;
+  border: 1px solid #ccc !important;
+  outline: none !important;
+  border-radius: unset !important;
+  font-size: 20px !important;
+}
+
+.welcome_us {
+  font-size: 26px !important;
+}
+.about_input:focus {
+  box-shadow: none !important;
+}
+.about_input {
+    outline: none !important;
+    border-radius: 6px !important;
+}

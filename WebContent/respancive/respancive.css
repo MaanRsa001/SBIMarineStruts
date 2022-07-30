@@ -1,0 +1,92 @@
+/******************************************
+    Version: 1.0
+/****************************************** */
+@media (min-width: 1310px) {
+   .lg-width {
+		margin-left: 9.333333%;
+		min-width:100%;
+   } 
+}
+@media (min-width: 1200px) {
+    .lg-width {
+		margin-left: 9.333333%;
+		min-width:100%;
+     } 
+}
+
+@media (max-width: 1310px) {
+    
+}
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 1158px) {
+   
+}
+
+@media (max-width: 1120px) {
+    
+}
+
+@media (max-width: 992px) {
+    .prem-contant {
+	    margin-top: 0px !important;
+	    position: relative;
+	    right: -18px !important;
+	    margin-bottom:12px;
+   }
+   .middle-content {
+   		margin-top: -49px;
+   }
+}
+
+@media (max-width: 1000px) {
+   .prem-contant {
+	    margin-top: 0px !important;
+	    position: relative;
+	    right: -18px !important;
+	    margin-bottom:12px;
+   }
+   .middle-content {
+   		margin-top: -49px;
+   }
+}
+
+@media (max-width: 768px) {
+    .prem-contant {
+	   margin-top: 0px !important;
+	    position: relative;
+	   right: -18px !important;
+	    margin-bottom:12px;
+   } 
+   .middle-content {
+   		margin-top: -49px;
+   }
+}
+
+@media (max-width: 600px) {
+    .prem-contant {
+	    margin-top: 0px !important;
+	    position: relative;
+	    right: -18px !important;
+	    margin-bottom:12px;
+   }
+   .middle-content {
+   		margin-top: -49px;
+   }
+}
+
+@media only screen and (max-width: 760px),(min-device-width: 768px) and (max-device-width: 1024px)  {
+	.prem-contant {
+	    margin-top: 0px !important;
+	    position: relative;
+	    right: -18px !important;
+	    margin-bottom:12px;
+   }
+   .middle-content {
+   		margin-top: -49px;
+   }
+   
+}

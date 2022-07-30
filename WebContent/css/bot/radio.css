@@ -1,0 +1,37 @@
+#botDiv {
+    margin:4px;
+    float:left;
+}
+
+#botDiv label {
+    float:left;
+    min-width:100px;
+    margin:4px;
+    background-color:#EFEFEF;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+       
+}
+
+#botDiv label span {
+    text-align:center;
+    font-size: 14px;
+    padding: 10px 0px;
+    display:block;
+}
+
+#botDiv label input {
+    position:absolute;
+    top:-20px;
+}
+
+#botDiv input:checked + span {
+    background-color:#404040;
+    color:#F7F7F7;
+}
+
+#botDiv .blue {
+    background-color:#00BFFF;
+    color:#333;
+}

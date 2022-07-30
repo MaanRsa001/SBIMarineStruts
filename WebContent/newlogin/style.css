@@ -1,0 +1,237 @@
+/*
+
+Theme Name: Walaa
+
+Theme URI: http://underscores.me/
+
+Author: Walaa
+
+Author URI: http://www.walaa.com/
+
+Description: Description
+
+Version: 1.0.0
+
+License: GNU General Public License v2 or later
+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Text Domain: walaa
+
+Tags:
+
+
+
+This theme, like WordPress, is licensed under the GPL.
+
+Use it to make something cool, have fun, and share what you've learned with others.
+
+
+
+Walaa is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+
+
+Normalizing styles have been helped along thanks to the fine work of
+
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+
+*/
+
+/*--------------------------------------------------------------
+
+>>> TABLE OF CONTENTS:
+
+----------------------------------------------------------------
+
+# Normalize
+
+# Typography
+
+# Elements
+
+# Forms
+
+# Navigation
+
+	## Links
+
+	## Menus
+
+# Accessibility
+
+# Alignments
+
+# Clearings
+
+# Widgets
+
+# Content
+
+	## Posts and pages
+
+	## Comments
+
+# Infinite scroll
+
+# Media
+
+	## Captions
+
+	## Galleries
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+
+# Normalize
+
+--------------------------------------------------------------*/
+
+h3.headline{
+
+    font-family: Times New Roman;
+
+     font-size: 24px;
+
+}
+
+h22.headline{
+
+    font-family: Times New Roman;
+
+     font-size: 64px;
+
+    letter-spacing: 0px;
+
+
+
+}
+
+p.content{
+
+    font-family: Arial;
+
+    font-size: 15px;
+
+}
+
+ul.content{
+
+    font-family: Arial;
+
+    font-size: 15px;
+
+}
+
+table.content{
+
+    font-family: Arial;
+
+    font-size: 15px;
+
+}
+
+li.content{
+
+    font-family: Arial;
+
+    font-size: 15px;
+
+}
+
+ol.content{
+
+font-family: Arial;
+
+    font-size: 15px;
+
+}
+
+hr.thick
+
+{
+
+    border: 1px solid #D5DCE1;
+
+}
+
+
+
+#very-special-field
+
+{
+
+height: 40px; 
+
+color: #065475;
+
+    border: 1px solid #065475;
+
+text-align: right;
+
+}
+
+
+
+.content .pad {
+
+    padding: 0px;
+
+}
+
+.tabBorder {
+	border: 1px solid #004499; 
+	padding:1px;
+}
+
+.tabsBg {
+	background-image: url('../images/tab_layout_bg.png');
+    background-size: 100% 400%;
+    background-repeat: repeat-x;
+	min-height: 35px;
+}
+
+.tabBg {
+	background-image: url('../images/tab_default.png');    
+    background-repeat: no-repeat;
+	height: 35px;
+	line-height: 35px;
+	padding: 0px 10px;
+	text-align:center;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	border:0;
+	text-decoration:none;
+}
+
+.tabBg:hover {
+	background-image: url('../images/tab_hover.png');    
+    background-repeat: no-repeat;
+	height: 35px;
+	line-height: 35px;
+	padding: 0px 10px;
+	text-align:center;
+	display: inline-block;
+	cursor: pointer;
+	color: #004499;
+	border:0;
+	text-decoration:none;
+}
+
+.tabBgA {
+	background-image: url('../images/tab_active.png');        
+    background-repeat: no-repeat;
+	height: 35px;
+	line-height: 35px;
+	padding: 0px 10px;
+	text-align:center;
+	display: inline-block;
+	cursor: pointer;
+	color: #fff;
+	border:0;
+	text-decoration:none;
+}

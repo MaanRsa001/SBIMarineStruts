@@ -1,0 +1,163 @@
+body {
+	/*font-family: 'Prompt', sans-serif !important;*/
+}
+.trim_info  {
+	border: 1px solid;
+}
+/*.col-md-2 , .col-md-3 {
+	border-left: 1px solid;
+	border-right: 1px solid;
+}*/
+.col-md-12 {
+	padding: 0 !important;
+}
+.fair_contain {
+    padding: 0 !important;
+    width: 100%;
+}
+.fair_pdf {
+    border: 1px solid;
+    padding: 40px !important;
+}
+tr , th , td {
+    text-align: center !important;
+}
+th , td {
+   height: 40px;
+}
+tr {
+	border-bottom: 1px solid;
+	padding: 0;
+}
+.text_row {
+	border-bottom: unset;
+}
+.fst_pg {
+	background: lightgray;
+}
+.fst_party , .second_party, .trim {
+	background-color: #27a4fd;
+	color: #fff;
+}
+.ro {
+	border-right: 1px solid;
+}
+input {
+	width: 60%;
+}
+label {
+	font-size: 15px;
+}
+th.ro {
+	border-right: 1px solid #000;
+}
+.vehicle_info , .license_info , .offense_info {
+    padding: 9px;
+    color: #040000 !important;
+    font-weight: 700;
+}
+p {
+	font-weight: 700;
+	top: 6px;
+    position: relative;
+    left: 5px;
+}
+.f_part , .s_part{
+	border: unset !important;
+}
+
+ 
+.trim_line {
+    border-bottom: 1px solid;
+}
+.vehicle , .license , .claim , .offense {
+    background-color: #27a4fd;
+    color: #fff;
+    padding: 5px;
+    font-size: 20px;
+}
+input.form-control {
+    width: 60% !important;
+    height: 40px;
+    border: 1px solid #7b7b8094;
+    border-radius: 5px !important;
+    float: none !important;
+    display: inline;
+    font-size: 17px !important;
+}
+.off_font {
+	font-weight: 700;
+	position: relative;
+    top: 4px;
+    padding-left: 13px;
+    font-family:	“Arsenal”,	sans-serif !important;
+    font-size:	1em;
+}
+img {
+	color: #fff;
+    background: #fbfafa;
+}
+nav.navbar.navbar-default.navbar-pad {
+    position: fixed;
+    width: 100% !important;
+    z-index: 1;
+}
+.navbar-logo {
+	width: 100px !important;
+}
+@media only screen and (max-width: 768px) {
+  tr , th , td {
+    text-align: center !important;
+	}
+	th , td {
+	   height: 40px;
+	}
+	tr {
+		border-bottom: 1px solid;
+		padding: 0;
+	}
+	.vehicle , .license , .claim , .offense {
+    padding: 0px 0px 1px 0px !important;
+    }
+    .engine_In {
+    	margin-top:15px;
+    }
+} 
+img.navbar-logo {
+	width: unset !important;
+    margin: 15px 3px 15px 0px;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+   tr , th , td {
+    text-align: center !important;
+	}
+	th , td {
+	   height: 40px;
+	}
+	tr {
+		border-bottom: 1px solid;
+		padding: 0;
+	}
+	.text_row {
+	    width: 300px;
+	    overflow-x: scroll;
+	}
+    .vehicle , .license , .claim , .offense {
+    padding: 0px 0px 1px 0px !important;
+    }
+    .engine_In {
+    	margin-top:15px;
+    }
+} 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
+

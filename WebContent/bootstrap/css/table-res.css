@@ -1,0 +1,459 @@
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	#insGoodsTable table, 
+	#insGoodsTable thead, 
+	#insGoodsTable tbody, 
+	#insGoodsTable th, 
+	#insGoodsTable td, 
+	#insGoodsTable tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#insGoodsTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#insGoodsTable tr { border: 1px solid #ccc; }
+ 
+	#insGoodsTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#insGoodsTable td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#insGoodsTable td:nth-of-type(1):before { content: "S.No."; text-align: left; }
+	#insGoodsTable td:nth-of-type(2):before { content: "Category Of Goods"; text-align: left; }
+	#insGoodsTable td:nth-of-type(3):before { content: "Policy Excess"; text-align: left; }
+	#insGoodsTable td:nth-of-type(4):before { content: "Description"; text-align: left; }
+	#insGoodsTable td:nth-of-type(5):before { content: "Insured Value"; text-align: left; }
+	#insGoodsTable td:nth-of-type(6):before { content: "Custom Duty - SI"; text-align: left; }
+	#insGoodsTable td:nth-of-type(7):before { content: "Rate"; text-align: left; }
+}
+
+/*****************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	#copyQuoteTable table, 
+	#copyQuoteTable thead, 
+	#copyQuoteTable tbody, 
+	#copyQuoteTable th, 
+	#copyQuoteTable td, 
+	#copyQuoteTable tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#copyQuoteTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#copyQuoteTable tr { border: 1px solid #ccc; }
+ 
+	#copyQuoteTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#copyQuoteTable td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#copyQuoteTable td:nth-of-type(1):before { content: "S.No."; }
+	#copyQuoteTable td:nth-of-type(2):before { content: ""; }
+	#copyQuoteTable td:nth-of-type(3):before { content: "Quote Number"; }
+	#copyQuoteTable td:nth-of-type(4):before { content: "Customer Name"; }
+	#copyQuoteTable td:nth-of-type(5):before { content: "Premium";}
+}
+/*************************************************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	#searchResult table, 
+	#searchResult thead, 
+	#searchResult tbody, 
+	#searchResult th, 
+	#searchResult td, 
+	#searchResult tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#searchResult thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#searchResult tr { border: 1px solid #ccc; }
+ 
+	#searchResult td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#searchResult td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+ 
+	/*
+	Label the data
+	*/
+	#searchResult td:nth-of-type(1):before { content: "S.No."; }
+	#searchResult td:nth-of-type(2):before { content: "Quote No."; }
+	#searchResult td:nth-of-type(3):before { content: "Broker Name.";  }
+	#searchResult td:nth-of-type(4):before { content: "Customer Name"; }
+	#searchResult td:nth-of-type(5):before { content: "Quotation Date";  }
+	#searchResult td:nth-of-type(6):before { content: "Policy Start Date"; }
+	#searchResult td:nth-of-type(7):before { content: "Policy Number"; }
+	#searchResult td:nth-of-type(8):before { content: "View"; }
+}
+
+/*************************************************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	#searchViewTable table, 
+	#searchViewTable thead, 
+	#searchViewTable tbody, 
+	#searchViewTable th, 
+	#searchViewTable td, 
+	#searchViewTable tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#searchViewTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#searchViewTable tr { border: 1px solid #ccc; }
+ 
+	#searchViewTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:left;
+	}
+ 
+	#searchViewTable td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+	
+	/*
+	Label the data
+	*/
+	#searchViewTable td:nth-of-type(1):before { content: "S.No."; }
+	#searchViewTable td:nth-of-type(2):before { content: "Category Of Goods"; }
+	#searchViewTable td:nth-of-type(3):before { content: "Policy Excess";  }
+	#searchViewTable td:nth-of-type(4):before { content: "Description"; }
+	#searchViewTable td:nth-of-type(5):before { content: "Invoice Value"; }
+	#searchViewTable td:nth-of-type(6):before { content: "Rate %"; }
+	#searchViewTable td:nth-of-type(7):before { content: "War Rate %"; }
+	#searchViewTable td:nth-of-type(8):before { content: "RI Code"; }
+ 	
+}
+
+/*************************************************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	.commissionDetails table, 
+	.commissionDetails thead, 
+	.commissionDetails tbody, 
+	.commissionDetails th, 
+	.commissionDetails td, 
+	.commissionDetails tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.commissionDetails thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	.commissionDetails tr { border: 1px solid #ccc; }
+ 
+	.commissionDetails td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:right;
+	}
+ 
+	.commissionDetails td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+	
+	/*
+	Label the data
+	*/
+	.commissionDetails td:nth-of-type(1):before { content: ""; }
+	.commissionDetails td:nth-of-type(2):before { content: "Products"; }
+	.commissionDetails td:nth-of-type(3):before { content: "Spcial Discount";  }
+	.commissionDetails td:nth-of-type(4):before { content: "Sum Insured (SAR)"; }
+	.commissionDetails td:nth-of-type(5):before { content: "Provision for Credit"; }
+ 	
+}
+
+
+/*************************************************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	.commisionDetailss table, 
+	.commisionDetailss thead, 
+	.commisionDetailss tbody, 
+	.commisionDetailss th, 
+	.commisionDetailss td, 
+	.commisionDetailss tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.commisionDetailss thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	.commisionDetailss tr { border: 1px solid #ccc; }
+ 
+	.commisionDetailss td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:right;
+	}
+ 
+	.commisionDetailss td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+	
+	/*
+	Label the data
+	*/
+	.commisionDetailss td:nth-of-type(1):before { content: ""; }
+	.commisionDetailss td:nth-of-type(2):before { content: "Products"; }
+	.commisionDetailss td:nth-of-type(3):before { content: "Spcial Discount";  }
+	.commisionDetailss td:nth-of-type(4):before { content: "Sum Insured (SAR)"; }
+	.commisionDetailss td:nth-of-type(5):before { content: "Provision for Credit"; }
+ 	
+}
+
+/*************************************************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	.portfolioTable table, 
+	.portfolioTable thead, 
+	.portfolioTable tbody, 
+	.portfolioTable th, 
+	.portfolioTable td, 
+	.portfolioTable tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.portfolioTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	.portfolioTable tr { border: 1px solid #ccc; }
+ 
+	.portfolioTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:right;
+	}
+ 
+	.portfolioTable td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+	
+	/*
+	Label the data
+	*/
+	.portfolioTable td:nth-of-type(1):before { content: "S.No."; }
+	.portfolioTable td:nth-of-type(2):before { content: "BROKER ORAGANIZATION"; }
+	.portfolioTable td:nth-of-type(3):before { content: "QUOTE CREATED BY";  }
+	.portfolioTable td:nth-of-type(4):before { content: "QUOTE NO"; }
+	.portfolioTable td:nth-of-type(5):before { content: "CUSTOMER NAME"; }
+	.portfolioTable td:nth-of-type(6):before { content: "PREMIUM"; }
+	.portfolioTable td:nth-of-type(7):before { content: "VIEW DRAFT"; }
+ 	
+}
+
+/*************************************************************************/
+@media only screen and (max-width: 760px) {
+	
+	/* Force table to not be like tables anymore */
+	#TravelTable table, 
+	#TravelTable thead, 
+	#TravelTable tbody, 
+	#TravelTable th, 
+	#TravelTable td, 
+	#TravelTable tr { 
+		display: block; 
+	}
+ 
+	/* Hide table headers (but not display: none;, for accessibility) */
+	#TravelTable thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+ 
+	#TravelTable tr { border: 1px solid #ccc; }
+ 
+	#TravelTable td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+		white-space: normal;
+		text-align:right;
+	}
+	 
+	#TravelTable td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		text-align:left;
+		font-weight: bold;
+	}
+	
+	/*
+	Label the data
+	*/
+	#TravelTable td:nth-of-type(1):before { content: "S.No."; }
+	#TravelTable td:nth-of-type(2):before { content: "First Name"; }
+	#TravelTable td:nth-of-type(3):before { content: "Last Name"; }
+	#TravelTable td:nth-of-type(4):before { content: "Date Of Birth";  }
+	#TravelTable td:nth-of-type(5):before { content: "Gender"; }
+	#TravelTable td:nth-of-type(6):before { content: "Relations"; }
+	#TravelTable td:nth-of-type(7):before { content: "Nationality"; }
+	#TravelTable td:nth-of-type(8):before { content: "Passport Number"; }
+	#TravelTable td:nth-of-type(9):before { content: "Passport Expiry Date"; }
+ 	
+}
+
+/*************************************************************************/

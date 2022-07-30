@@ -1,0 +1,400 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-family: "Tahoma", Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	color: #c4d5de;
+}
+img {
+	border:0;
+}
+table, td {
+	font-family: "Tahoma", Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	color: #fff;
+}
+h1 {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: bold;
+	color: #fff;
+}
+h2 {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: bold;
+	color: #f57b20;
+}
+h5 {
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: bold;
+	color: #455560;
+}
+p {
+	font-size: 12px;
+	color: #c4d5de;
+	line-height: 18px;
+}
+.loginHolderMain {
+	width: 952px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* start (header) */
+.headerMain {
+	width: 100%;
+	height: 75px;
+	margin: 0 auto;
+	padding: 0;
+}
+.headerMain td.left {
+	width: 280px;
+	padding: 10px 0;
+}
+.headerMain td.right {
+	padding: 0 0 0 50px;
+	color: #44555f;
+}
+/* end (header) */
+
+/* start (english) */
+.headerLinksEn {
+	width: 100%;
+	white-space: nowrap;
+}
+.headerLinksEn ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;	
+}
+.headerLinksEn ul li {
+	margin: 0;
+	padding: 0;
+	float: left;	
+}
+.headerLinksEn a:link, .headerLinksEn a:active {
+	margin: 0 10px;
+	padding: 0 0 0 10px;
+	color: #44555f;
+	text-decoration: none;
+	display: block;
+	background: url(../images/headerListBg.gif) left no-repeat;
+}
+.headerLinksEn a:hover {
+	margin: 0 10px;
+	padding: 0 0 0 10px;
+	color: #44555F;
+	text-decoration: none;
+	display: block;
+	background: url(../images/headerListBg.gif) left no-repeat;
+}
+.headerLinksEn a:visited {
+	margin: 0 10px;
+	padding: 0 0 0 10px;
+	color: #6b96ad;
+	text-decoration: none;
+	display: block;
+	background: url(../images/headerListBg.gif) left no-repeat;
+}
+/* end (english) */
+
+/* start (content) */
+.contentMain {
+	width: 100%;
+}
+.contentMain td.left {
+	width: 300px;
+	color: #194d8b;
+	background: #194d8b url(../images/leftEnBg.gif) top right no-repeat;
+}
+.contentMain td.right {
+	width: 652px;
+	color: #7a8797;
+	background-color: #f0f5f8;
+}
+.contentMain td.right ul {
+	color: #7a8797;
+}
+.contentMain td.right p {
+	color: #7a8797;
+}
+.leftHolderMain {
+	width: 250px;
+	margin: 0 0 20px 30px;
+}
+.loginTable {
+	margin-top: 50px;
+}
+.loginField {
+	width: 173px;
+	margin: 5px 0;
+	padding: 5px;
+	font-size: 12px;
+	color: #586773;
+	border: 1px solid #c0c0c0;
+}
+a.fPass:link, a.fPass:active {
+	margin: 0 10px;
+	padding: 0 0 0 10px;
+	color: #cacfd4;
+	text-decoration: none;
+	background: url(../images/headerListBg.gif) left no-repeat;
+}
+a.fPass:hover, a.fPass:visited {
+	margin: 0 10px;
+	padding: 0 0 0 10px;
+	color: #f57b20;
+	text-decoration: none;
+	background: url(../images/headerListBg.gif) left no-repeat;
+}
+.borderBlue {
+	border-top: 1px solid #85a9bc;
+}
+.contentLinkArea {
+	width: 100%;
+	height: 170px;
+	margin-top: 20px;
+	line-height: 20px;
+}
+a.mouseOverLink:link, a.mouseOverLink:active, a.mouseOverLink:hover, a.mouseOverLink:visited {
+	margin: 0;
+	padding: 0 30px;
+	color: #44555f;
+	display: block;
+	text-decoration: none;
+	background: url(../images/mouseOverLinkBg.gif) left no-repeat;
+}
+a.mouseOverLinkSelected:link, a.mouseOverLinkSelected:active, a.mouseOverLinkSelected:hover, a.mouseOverLinkSelected:visited {
+	height: 45px;
+	margin: 0;
+	padding: 0 30px;
+	color: #f57b20;
+	display: block;
+	font-weight: bold;
+	line-height: 2.8em;
+	text-decoration: none;
+	background: url(../images/mouseOverLinkSelectedBg.gif) left no-repeat;
+}
+.contentLinkAreaLeftBorder {
+	background: url(../images/contentLinkAreaLeftBorderBg.gif) top left repeat-y;
+}
+.captionList ul {
+	margin: 0 0 0 30px;
+	padding: 0;
+	list-style: none;
+}
+.mouseoverContentArea ul {
+	margin: 0 0 0 20px;
+	padding: 0;
+	list-style: none;
+}
+.mouseoverContentArea ul li {
+	display: block;	
+	padding: 0 15px;
+	background: url(../images/mouseOverContentAreaListBg.gif) left no-repeat;
+}
+.loginError {	
+	font-size: 12px;
+	color: #fff;
+	padding: 5px;
+	margin: 10px;
+	display: block;
+	line-height: 2em;
+	background-color: #495964;
+}
+/* end (content) */
+
+/* start (buttons) */
+a.lgnBtn {
+	width: 185px;
+	height: 45px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	float: left;
+	font-family: "Tahoma", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	background: transparent url(../images/regBtnLeftBg.gif) no-repeat top left;
+	display: block;
+	white-space: nowrap;
+	cursor: pointer;
+}
+a:link.lgnBtn, a:visited.lgnBtn, a:active.lgnBtn {
+	color: #fff;
+}
+a.lgnBtn span {
+	padding: 18px 15px 9px 2px;
+	background: transparent url(../images/lgnBtnRightBg.gif) no-repeat top right;
+	display: block;
+}
+a.lgnBtn:hover {
+	color: #fff;
+	background-position: bottom left;
+}
+a.lgnBtn:hover span {
+	color: #fff;
+	background-position: bottom right;
+}
+a.regBtn {
+	width: 185px;
+	height: 45px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	float: left;
+	font-family: "Tahoma", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	background: transparent url(../images/regBtnLeftBg.gif) no-repeat top left;
+	display: block;
+	white-space: nowrap;
+	cursor: pointer;
+}
+a:link.regBtn, a:visited.regBtn, a:active.regBtn {
+	color: #fff;
+}
+a.regBtn span {
+	padding: 18px 15px 9px 2px;
+	background: transparent url(../images/regBtnRightBg.gif) no-repeat top right;
+	display: block;
+}
+a.regBtn:hover {
+	color: #fff;
+	background-position: bottom left;
+}
+a.regBtn:hover span {
+	color: #fff;
+	background-position: bottom right;
+}
+a.hlpBtn {
+	width: 185px;
+	height: 45px;
+	margin: 0;
+	padding: 0 0 0 10px;
+	float: left;
+	font-family: "Tahoma", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	background: transparent url(../images/regBtnLeftBg.gif) no-repeat top left;
+	display: block;
+	white-space: nowrap;
+	cursor: pointer;
+}
+a:link.hlpBtn, a:visited.hlpBtn, a:active.hlpBtn {
+	color: #fff;
+}
+a.hlpBtn span {
+	padding: 18px 15px 9px 2px;
+	background: transparent url(../images/hlpBtnRightBg.gif) no-repeat top right;
+	display: block;
+}
+a.hlpBtn:hover {
+	color: #fff;
+	background-position: bottom left;
+}
+a.hlpBtn:hover span {
+	color: #fff;
+	background-position: bottom right;
+}
+/* end (buttons) */
+
+/* start (footer) */
+.footerMain {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	padding: 0;
+}
+.footerMain a:link, .footerMain a:active, .footerMain a:hover {
+	margin: 0;
+	padding: 0;
+	/*color: #a2aab0;*/
+	color: #fff;
+	text-decoration: none;
+}
+/*.footerMain a:hover {
+	color: #f57b20;
+	text-decoration: none;
+}*/
+.footerMain a:visited {
+	color: #6b96ad;
+	text-decoration: none;
+}
+a.foLink:link, a.foLink:active {
+	margin: 0;
+	padding: 0;
+	line-height: 2.5em;
+	color: #f57b20;
+	text-decoration: none;
+}
+a.foLink:hover {
+	margin: 0;
+	padding: 0;
+	line-height: 2.5em;
+	color: #f57b20;
+	text-decoration: none;
+}
+a.foLink:visited {
+	margin: 0;
+	padding: 0;
+	line-height: 2.5em;
+	color: #6b96ad;
+	text-decoration: none;
+}
+.footerLeft {
+	width: 30px;
+}
+.footerLeft div {
+	height: 90px;
+	background-color: #194d8b;
+}
+.footerMiddle {
+	width: 912px;
+	background-color: #455660;
+}
+.footerMiddle h2 {
+	margin: 0;
+	padding: 5px 0;
+	font-weight: normal;
+}
+.footerMiddle h2 a:link, .footerMiddle h2 a:active, .footerMiddle h2 a:hover, .footerMiddle h2 a:visited {
+	color: #f57b20;
+}
+.fList {
+	clear: both;
+	margin: 15px 0 0 0px;
+	padding: 0 0 0 44px;
+	list-style: none;
+}
+.fList li {
+	padding: 0 20px;
+	float: left;
+}
+.fList li ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.fList li ul li {
+	float: none;
+	padding: 0;
+	line-height: 2.5em;
+	display: block;
+}
+.footerMiddle p {
+	font-size: 11px;
+	color: #fff;
+	text-align: right;
+	clear: both;
+	display: block;
+	padding: 0 30px 5px;
+}
+.footerRight {
+	width: 10px;
+}
+.footerRight div {
+	height: 90px;
+	background-color: #f0f5f8;
+}
+/* end (footer) */

@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/layouts/baseLayout.jsp">
+		<put-attribute name="title" value="::: AlRajhi :::" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="menu" value="/templates/menu.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	<definition name="baseLayout1" template="/layouts/baseLayout1.jsp">
+		<put-attribute name="title" value="::: AlRajhi :::" />
+		<put-attribute name="header" value="/templates/header.jsp" />		
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	<definition name="error1" extends="baseLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Error :::" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="/pages/error.jsp" />
+	</definition>
+	<definition name="home"  template="/pages/login.jsp">
+		<put-attribute name="title" value="Home Page" />
+	</definition>
+	<definition name="login" template="/pages/login.jsp">
+		<put-attribute name="title" value="Login Page" />
+	</definition>
+	<definition name="SessionExpired" template="/pages/login/error_messg.jsp">
+		<put-attribute name="title" value="Session Expired" />
+	</definition>
+	 
+	 <definition name="viewajax" template="/pages/admin/portfolio/viewAjax.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	 </definition>
+	<definition name="FileUpload" extends="baseLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - File Upload :::" />
+		<put-attribute name="body" value="/pages/upload.jsp" />
+	</definition>
+		
+		
+	<definition name="ajaxDropdown" template="/pages/common/ajaxDropdown.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Ajax Dropdown :::" />
+	</definition>
+	<definition name="commoditySelection" template="/pages/commoditySelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Commodity Selection :::"/>
+	</definition>
+	<definition name="vesselSelection" template="/pages/vesselSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Vessel Selection :::"/>
+	</definition>
+	<definition name="coreCustomer" template="/CustomerInfo/CoreCustomerSearch.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Options Selection :::"/>
+	</definition>	
+	<definition name="customerSelection" template="/pages/customerSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Customer Selection :::"/>
+	</definition>
+	<definition name="newCustomerSelection" template="/pages/opencover/newCustomerSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Customer Selection :::"/>
+	</definition>
+	<definition name="lcSelection" template="/pages/lcSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - LC Selection :::"/>
+	</definition>
+	
+	<definition name="clauses" template="/pages/clauses.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Clauses Information :::"/>
+	</definition>
+	<definition name="OpenFileUpload" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Open Cover Upload :::" />
+		<put-attribute name="body" value="/pages/openCoverUpload.jsp" />
+	</definition>
+	<definition name="decfileupload" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Open Cover Upload :::" />
+		<put-attribute name="body" value="/pages/fileupload.jsp" />
+	</definition>
+	<definition name="citySelection" template="/pages/citySelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - City Selection :::"/>
+	</definition>
+	<definition name="vesselList" template="/pages/vesselList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Vessel List :::"/>
+	</definition>	
+	<definition name="referralStatusInfo" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Referral Status Info :::" />
+		<put-attribute name="body" value="/pages/referralStatusInfo.jsp" />
+	</definition>
+	<definition name="customerSearchList" template="/pages/customerSearchList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Customer List :::"/>
+	</definition>	
+	<definition name="lcSearchList" template="/pages/lcSearchList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - LC List :::"/>
+	</definition>	
+	<definition name="declaration" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Declaration :::" />
+		<put-attribute name="body" value="/pages/declaration.jsp" />
+	</definition>	
+	<definition name="declarationPolicy" extends="baseLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Declaration :::" />
+		<put-attribute name="body" value="/pages/declarationPolicy.jsp" />
+	</definition>
+	
+	<definition name="addConditions" template="/pages/addConditions.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Add Clauses :::"/>
+	</definition>
+	
+	<definition name="searchResult" template="/pages/searchResult.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Search Result :::"/>
+	</definition>
+	<definition name="viewQuote" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Quote Info :::" />
+		<put-attribute name="body" value="/pages/quoteInfo.jsp" />
+	</definition>
+	<definition name="customerDetails" extends="baseLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Customer Details :::" />
+		<put-attribute name="body" value="/pages/customer/customerDetails.jsp" />
+	</definition>
+	<definition name="baseLayoutAdmin" template="/layouts/baseLayout.jsp">
+		<put-attribute name="title" value="::: AlRajhi :::" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="menu" value="/templates/adminMenu.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	<definition name="baseLayoutOpenCover" template="/layouts/opencommonLayout.jsp">
+		<put-attribute name="title" value="::: AlRajhi :::" />
+		<put-attribute name="header" value="/templates/opencoverheader.jsp" />
+		<put-attribute name="menu" value="/templates/openCoverMenu.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	
+	<definition name="corecust" template="/pages/admin/brokerMgt/CoreCustomerSearch.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Customer Selection :::" />
+	</definition>
+	<definition name="brokerCommission" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - Broker Commission :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/commissionforBroker.jsp" />
+	</definition>
+	
+	<definition name="brokerStatus" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - Broker Status :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/AdminBrokerStatus.jsp" />
+	</definition>
+	<definition name="adminComboAjax" template="/pages/admin/adminComboAjax.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Ajax Broker List :::" />
+	</definition>
+	
+	<!--<definition name="adminajax" template="/pages/admin/adminAjax.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Ajax Broker List :::" />
+	</definition>-->
+	<definition name="referalAjax" template="/pages/admin/referalAjax.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Refferal List :::" />
+	</definition>
+	<definition name="customerListAjax" template="/pages/admin/customerMgt/adminCustomerList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Customer List :::"/>
+	</definition>
+	
+	<definition name="lcdetail" template="/pages/admin/openCover/lcDetailList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - LC Detail List :::" />
+	</definition>
+	<definition name="policyajax" template="/pages/admin/report/policyReport.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+	</definition>
+			
+	<definition name="exchange1" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/exchangeReport.jsp" />
+	</definition>
+	<definition name="smartlist" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - Smart Report :::" />
+		<put-attribute name="body" value="/pages/admin/report/smartlist.jsp" />
+	</definition>
+	
+	<definition name="newlc" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - LC Creation :::" />
+		<put-attribute name="body" value="/pages/admin/lcMaster/newLC.jsp" />
+	</definition>
+	<definition name="check" extends="baseLayoutAdmin">
+	    <put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	    <put-attribute name="body" value="/pages/admin/portfolio/CheckPortfolio.jsp"/>
+	</definition>
+	<definition name="byDate" extends="baseLayoutAdmin">
+	    <put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	    <put-attribute name="body" value="/pages/admin/portfolio/Portfolio_ByDate.jsp"/>
+	</definition>
+	<definition name="information" template="/pages/admin/portfolio/information.jsp">
+	    <put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>   
+	</definition>
+	
+	<definition name="PendingReUpload" extends="baseLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Pending ReUpload :::" />
+		<put-attribute name="body" value="/pages/pendingReUpload.jsp" />
+	</definition>
+	<definition name="commodityList" template="/pages/commodityList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Commodity List :::"/>
+	</definition>
+	<definition name="otherInfo" template="/pages/otherInfo.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Others Info :::"/>
+	</definition>
+	
+	<definition name="depositList" extends="baseLayoutAdmin">
+	    <put-attribute name="title" value="::: AlRajhi - Deposit Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/deposit/depositMaster.jsp"/>
+	</definition>
+	<definition name="customerOption" template="/pages/admin/deposit/customerSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Customer Selection :::" />
+	</definition>
+	<definition name="openCoverSelect" template="/pages/admin/deposit/openCoverSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - OpenCover Selection :::" />
+	</definition>
+	
+	<definition name="depositDetail" extends="baseLayoutAdmin">
+	 	<put-attribute name="title" value="::: AlRajhi - Deposit Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/deposit/chequeDetails.jsp"/>
+	</definition>
+	
+	
+	<definition name="premiumsummery" extends="baseLayout">
+		<put-attribute name="title" value="::: AlRajhi - Premium Summery :::"/>
+		<put-attribute name="body" value="/pages/home/premiumSummary.jsp"/>
+	</definition>
+	<definition name="underwriterList" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - Underwriter List :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/adminUnderwriterList.jsp"/>
+	</definition>
+	<definition name="viewUnderwriter" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - View User Info :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/viewadminUnderwriterInfo.jsp"/>
+	</definition>
+	
+		
+	<definition name="motorGrid" extends="baseLayoutAdmin">
+	    <put-attribute name="title" value="::: AlRajhi - Common Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/motor/motorGrid.jsp"/>
+	</definition>
+	<definition name="editareacov" extends="baseLayoutAdmin"  >
+		<put-attribute name="title" value="::: AlRajhi - Area Coverage :::" />
+		<put-attribute name="body" value="/pages/admin/motor/AreaMaster.jsp"/>
+	</definition>
+	
+	<definition name="enterTrn" extends="baseLayoutAdmin">
+		<put-attribute name="title" value="::: AlRajhi - Close TRN Transaction :::" />
+		<put-attribute name="body" value="/pages/admin/closeTrn/Close_Date.jsp" />
+	</definition>
+	
+	<definition name="branch1" extends="baseLayoutAdmin">
+		<put-attribute name="title" value="::: AlRajhi - Branch Master :::" />
+		<put-attribute name="body" value="/pages/admin/branchMgt/branch.jsp" />
+	</definition>
+	
+	<definition name="paymentmaster" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Payment Master :::" />
+		<put-attribute name="body" value="/pages/admin/motorNew/paymentMaster.jsp" />
+	</definition>
+	
+	<definition name="branchAjax" template="/pages/admin/branchMgt/branchAjax.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Branch Master :::" />
+	</definition>	
+	<definition name="viewdocuments" extends="baseLayoutAdmin">
+	    <put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	    <put-attribute name="body" value="/pages/admin/portfolio/viewdocuments.jsp"/>
+	</definition>
+		<definition name="claimBaseLayout" template="/layouts/claimBaseLayout.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/claimHeader.jsp" />		
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	<definition name="viewClaimDetails" extends="claimBaseLayout">
+		<put-attribute name="title" value="::: AlRajhi - Claim Details :::"></put-attribute>
+		<put-attribute name="body" value="/pages/claim/viewClaimReport.jsp"></put-attribute>		
+	</definition>
+	<definition name="claimSearch" template="/pages/claim/claimReport.jsp"  >
+		<put-attribute name="title" value="::: AlRajhi - Claim Search :::" />
+	</definition>
+	<definition name="documentUpload" template="/pages/admin/openCover/documentUpload.jsp">
+		<put-attribute name="tiles" value="::: AlRajhi - Documents :::"/>
+	</definition>
+	
+		
+	<!-- New Screens -->
+	
+	<definition name="commonLayout" template="/layouts/commonLayout.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="menu" value="/templates/menu.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	<definition name="commonLayout1" template="/layouts/commonLayout1.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>		
+	<definition name="homeLayout" template="/layouts/homeLayout.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+ 
+	<definition name="homeLayoutNew" template="/layouts/homeLayoutNew.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/headerNew.jsp" />
+		<put-attribute name="body" value="/templates/bodyNew.jsp" />
+		<put-attribute name="footer" value="/templates/footerNew.jsp" />
+	</definition>
+ 
+	<definition name="productSelection" extends="homeLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Product Selection :::" />
+		<put-attribute name="body" value="/pages/productSelection.jsp" />
+	</definition>
+	
+	<definition name="b2cProductSelection" extends="homeLayoutNew"  >
+		<put-attribute name="title" value="::: AlRajhi - Product Selection :::" />
+		<put-attribute name="body" value="/pages/b2cProductSelection.jsp" />
+	</definition>
+	
+	<definition name="cancelReq" extends="homeLayoutNew"  >
+		<put-attribute name="title" value="::: AlRajhi - Cancel Request :::" />
+		<put-attribute name="body" value="/pages/motor/cancelReq.jsp" />
+	</definition>
+	
+	<definition name="report" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Report :::" />
+		<put-attribute name="body" value="/pages/report.jsp" />
+	</definition>
+	
+	
+	<definition name="paymentTermsNew" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Report :::" />
+		<put-attribute name="body" value="/pages/paymentTermsNew.jsp" />
+	</definition>
+	<definition name="movePortal" template="/pages/portalRedirect.jsp"  >
+		<put-attribute name="title" value="::: AlRajhi - Claim Search :::" />
+	</definition>
+ 
+	
+	<definition name="quotation" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Report :::" />
+		<put-attribute name="body" value="/pages/quotation.jsp" />
+	</definition>
+	
+	<definition name="premiumInfo" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Report :::" />
+		<put-attribute name="body" value="/pages/premiumInfo.jsp" />
+	</definition> 
+	
+	<definition name="policyInfo" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Policy Information :::"/>
+		<put-attribute name="body" value="/pages/policyInfo.jsp" />
+	</definition>
+	
+	<definition name="copyQuote" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Copy Quote :::" />
+		<put-attribute name="body" value="/pages/copyQuote.jsp" />
+	</definition>
+	
+	<definition name="search" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Search :::" />
+		<put-attribute name="body" value="/pages/search.jsp" />
+	</definition>
+	
+	<definition name="policyPrint" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Declaration :::" />
+		<put-attribute name="body" value="/pages/policyPrint.jsp" />
+	</definition>
+	
+	<definition name="lcUpload" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - lcUpload :::" />
+		<put-attribute name="body" value="/pages/lcFileUpload.jsp" />
+	</definition>
+	
+	<definition name="links" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Copy Quote :::" />
+		<put-attribute name="body" value="/pages/links.jsp" />
+	</definition>
+		
+	<definition name="claimIntimation" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Claim Intimation :::" />
+		<put-attribute name="body" value="/pages/motor/claimIntimation.jsp" />
+	</definition>
+		
+	<definition name="motorEndorsement" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Endorsement Request :::" />
+		<put-attribute name="body" value="/pages/motor/motorEndorsement.jsp" />
+	</definition>
+	
+	<definition name="claimIntimationView" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Claim Intimation :::" />
+		<put-attribute name="body" value="/pages/motor/claimIntimationView.jsp" />
+	</definition>
+	
+	<!-- Admin Pages -->
+	
+	<definition name="commonLayoutAdmin" template="/layouts/commonLayoutAdmin.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/header.jsp" />
+		<put-attribute name="menu" value="/templates/adminMenu.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	
+	<definition name="adminHome" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Admin Home :::" />
+		<put-attribute name="body" value="/admin/admin_welcome.jsp" />
+	</definition>
+	
+	<definition name="adminClaimIndimation" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Admin Claim Intimation :::" />
+		<put-attribute name="body" value="/pages/claim/adminClaim.jsp" />
+	</definition>
+	
+	<definition name="viewDetail" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Admin Claim Intimation :::" />
+		<put-attribute name="body" value="/pages/claim/viewClaimReport.jsp"></put-attribute>		
+	</definition>
+	
+	<definition name="underwriterList" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Underwriter List :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/adminUnderwriterList.jsp"/>
+	</definition>
+	
+	<definition name="viewUnderwriter" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - View User Info :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/viewadminUnderwriterInfo.jsp"/>
+	</definition>
+	
+	<definition name="changePass" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Underwriter List :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/uwChangePassword.jsp"/>
+	</definition>
+	
+	<definition name="includeIssuer" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - View User Info :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/includeIssuer.jsp"/>
+	</definition>
+	
+	<definition name="excludeIssuer" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - View User Info :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/excludeIssuer.jsp"/>
+	</definition>
+	
+	<definition name="editUnderwriter" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Edit Issuer Info :::" />
+		<put-attribute name="body" value="/pages/admin/underwriterMgt/editadminUnderwriterInfo.jsp" />
+	</definition>
+	
+	<definition name="userList" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - User List :::" />
+		<put-attribute name="body" value="/pages/admin/userMgt/adminUserList.jsp"/>
+	</definition>
+	
+	<definition name="editUser" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Edit Broker Info :::" />
+		<put-attribute name="body" value="/pages/admin/userMgt/editadminUserInfo.jsp" />
+	</definition>
+	
+	<definition name="viewUser" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - View User Info :::" />
+		<put-attribute name="body" value="/pages/admin/userMgt/viewadminUserInfo.jsp"/>
+	</definition>
+	
+	<definition name="adminMgt" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Admin Management :::" />
+		<put-attribute name="body" value="/pages/admin/adminMgt/adminMgtMaster.jsp" />
+	</definition>
+	
+	<definition name="branchSelect" template="/pages/admin/adminMgt/branchSelection.jsp">
+		<put-attribute name="title" value="" />
+	</definition>
+	
+	<definition name="menuSelect" template="/pages/admin/adminMgt/menuSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Menu Selection :::" />
+	</definition>
+	
+	<definition name="brokerSelect" template="/pages/admin/adminMgt/brokerSelection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Broker Selection :::" />
+	</definition>
+	
+	<definition name="customerList" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Customer List :::" />
+		<put-attribute name="body" value="/pages/admin/customerMgt/adminCustomerList.jsp"/>
+	</definition>
+	
+	<definition name="viewCustomer" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - View User Info :::" />
+		<put-attribute name="body" value="/pages/admin/customerMgt/viewadminCustomerInfo.jsp"/>
+	</definition>
+	
+	<definition name="brokerList" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Broker List :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/AdminBrokerList.jsp" />
+	</definition>
+	
+	<definition name="viewBroker" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - View Broker Info :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/viewadminBrokerInfo.jsp" />
+	</definition>
+	
+	<definition name="opencoverList" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/admin/openCover/openCoverList.jsp" />
+	</definition>
+	
+	<definition name="brokeroc" extends="commonLayout" >
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/admin/openCover/brokerocList.jsp" />
+	</definition>
+	
+	<definition name="pwdChange" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Broker Management :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/changePWD.jsp" />
+	</definition>
+	
+	<definition name="assignNewPwd" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Broker New Password :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/assignnewPWD.jsp" />
+	</definition>
+	
+	<definition name="editBroker" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Edit Broker Info :::" />
+		<put-attribute name="body" value="/pages/admin/brokerMgt/editadminBrokerInfo.jsp" />
+	</definition>
+	
+	<definition name="openCover" template="/pages/admin/openCoverCommon.jsp"  >
+		<put-attribute name="title" value="::: AlRajhi - Open Cover Selection :::" />
+	</definition>
+	
+	<definition name="portfolio" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	    <put-attribute name="body" value="/pages/admin/portfolio/AdminPortfolio.jsp"/>
+	</definition>
+	
+	
+	<definition name="portfolioajax" template="/pages/admin/portfolio/portfolioAjax.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	</definition>
+	
+	<definition name="referalList" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Referral List :::" />
+		<put-attribute name="body" value="/pages/admin/referal/referalList.jsp" />
+	</definition>
+	
+	<definition name="branch" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/branchReport.jsp" />
+	</definition>
+	
+	<definition name="integration" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/integrationReport.jsp" />
+	</definition>
+	<definition name="integrationStatus" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/integrationStatus.jsp" />
+	</definition>
+	
+	<definition name="lcsmart" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/lcSmartReport.jsp" />
+	</definition>
+	
+	<definition name="smartreport" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Smart Report :::" />
+		<put-attribute name="body" value="/pages/admin/report/smartReport.jsp" />
+	</definition>
+	
+	<definition name="openCoverReport" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - openCover Report :::" />
+		<put-attribute name="body" value="/pages/admin/report/openCoverReport.jsp"/>
+	</definition>
+	
+	<definition name="marinereport" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Marine Report :::" />
+		<put-attribute name="body" value="/pages/admin/report/MarineReport.jsp"/>
+	</definition>
+	
+	<definition name="policyreport" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/policyReport.jsp" />
+	</definition>	
+	<definition name="commodityselect" template="/pages/admin/report/commodityselection.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Commodity Selection :::" />
+	</definition>
+	<definition name="acoreCustomer" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Core Customer List :::" />
+		<put-attribute name="body" value="/pages/admin/customerMgt/coreCustomer.jsp"></put-attribute>		
+	</definition>
+	
+	<definition name="editCoreCustomer" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Core Customer :::" />
+		<put-attribute name="body" value="/pages/admin/customerMgt/editCoreCustomer.jsp"></put-attribute>		
+	</definition>
+	
+	<definition name="lclist" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - LC Master Creation :::" />
+		<put-attribute name="body" value="/pages/admin/lcMaster/lcMasterList.jsp" />
+	</definition>
+	
+	<definition name="lcdetails" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - LC Details :::" />
+		<put-attribute name="body" value="/pages/admin/lcMaster/lcDetail.jsp" />
+	</definition>
+	<!--Motor Admin New Configuration Start-->	
+		<definition name="motorAdminAjax" template="/pages/admin/motorNew/motorAdminAjax.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Motor Master :::"/>
+		</definition>		  
+		<definition name="comprehensive" extends="commonLayout">
+			<put-attribute name="title" value="::: AlRajhi - Comprehensive Rate Configuration :::"/>
+			<put-attribute name="body" value="/pages/admin/motorNew/comprehensiveRateConfig.jsp"/>
+		</definition> 
+		<definition name="editSubPolicy" extends="commonLayout">
+			<put-attribute name="title" value="::: AlRajhi - Comprehensive Rate Configuration :::"/>
+			<put-attribute name="body" value="/pages/admin/motorNew/editSubPolicyType.jsp"/>
+		</definition> 
+		<definition name="editCompreRate" extends="commonLayout">
+			<put-attribute name="title" value="::: AlRajhi - Comprehensive Rate Configuration :::"/>
+			<put-attribute name="body" value="/pages/admin/motorNew/editComprehensiveRate.jsp"/>
+		</definition>
+		<definition name="makeMaster" extends="commonLayout">
+			<put-attribute name="title" value="::: AlRajhi - Make Configuration :::"/>
+			<put-attribute name="body" value="/pages/admin/motorNew/makeConfig.jsp"/>
+		</definition>
+		<definition name="modelMaster" extends="commonLayout">
+			<put-attribute name="title" value="::: AlRajhi - Model Rate Configuration :::"/>
+			<put-attribute name="body" value="/pages/admin/motorNew/modelConfig.jsp"/>
+		</definition>
+		
+		<definition name="modelDetail" extends="commonLayout">
+			<put-attribute name="title" value="::: AlRajhi - Model Rate Configuration :::"/>
+			<put-attribute name="body" value="/pages/admin/motorNew/modelDetailConfig.jsp"/>
+		</definition>
+		
+		<definition name="document" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Document Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/documentMaster.jsp"/>
+		</definition>
+		<definition name="vehicleTypeMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Vehicle Type Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/vehicleTypeMaster.jsp"/>
+		</definition>
+		<definition name="opCoverMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - OPCover Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/opCoverMaster.jsp"/>
+		</definition>
+		<definition name="deductibleMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Deductible Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/deductibleMaster.jsp"/>
+		</definition>
+		<definition name="bodyTypeMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Body Type Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/bodyTypeMaster.jsp"/>
+		</definition>
+		<definition name="opCoverDetail" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - OPCover Detail Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/opCoverDetail.jsp"/>
+		</definition>		
+		<definition name="thirdParty" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Third Party Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/thirdPartyRateConfig.jsp"/>
+		</definition>
+		<definition name="editThirdParty" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Third Party Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/editThirdParty.jsp"/>
+		</definition>
+		<definition name="areaCoverageMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Document Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/areaCoverageMaster.jsp"/>
+		</definition>
+		<definition name="bankFinanceMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Bank Finance Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/bankFinanceMaster.jsp"/>
+		</definition>
+		
+		
+		<definition name="bankMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Bank Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/bankMaster.jsp"/>
+		</definition>
+		<definition name="policyTypeMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Policy Type Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/policyTypeMaster.jsp"/>
+		</definition>
+		<definition name="colorMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Color Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/colorMaster.jsp"/>
+		</definition>
+		<definition name="groupMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Group Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/groupMaster.jsp"/>
+		</definition>
+		<definition name="cyclinderMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Cylinder Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/cyclinderMaster.jsp"/>
+		</definition>
+		<definition name="ncbMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - NCB Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/ncbMaster.jsp"/>
+		</definition>
+		<definition name="mfgCountryMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - OPCover Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/mfgCountryMaster.jsp"/>
+		</definition>	
+		
+		<definition name="motorReport" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Motor Report :::"/>
+		    <put-attribute name="body" value="/pages/admin/report/motorReport.jsp"/>
+		</definition>
+		
+		<definition name="dailyReport" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Motor Report :::"/>
+		    <put-attribute name="body" value="/pages/admin/report/dailyReport.jsp"/>
+		</definition>
+		
+		<definition name="claimIntimationReport" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Claim Intimation Detail :::"/>
+		    <put-attribute name="body" value="/pages/admin/report/claimIntimationReport.jsp"/>
+		</definition>
+		
+		<definition name="motorPayment" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Motor Payment Detail :::"/>
+		    <put-attribute name="body" value="/pages/admin/report/quotationStatus.jsp"/>
+		</definition>
+		
+		<definition name="feedbackdetail" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Motor Payment Detail :::"/>
+		    <put-attribute name="body" value="/pages/admin/report/feedbackDetails.jsp"/>
+		</definition>
+		
+		<definition name="quarterMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Quarter Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/quarterConfig.jsp"/>
+		</definition>
+		<definition name="subPolicy" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Sub Policy Type Maste :::r"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/subPolicyConfig.jsp"/>
+		</definition>
+		
+		<definition name="constantMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Constant Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/constantDetailConfig.jsp"/>
+		</definition>
+		
+		<definition name="cancelAdmin" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Cancel Endoresement Request :::"/>
+		    <put-attribute name="body" value="/pages/motor/cancelReqAdmin.jsp"/>
+		</definition>
+		
+		<definition name="uwProcessAdmin" extends="commonLayout"  > 
+			<put-attribute name="title" value="::: AlRajhi - Motor:::" />
+			<put-attribute name="body" value="/pages/motor/uwProcess.jsp" />
+		</definition>
+		
+		<definition name="najmEdit" extends="commonLayout"  > 
+			<put-attribute name="title" value="::: AlRajhi - Motor :::" />
+			<put-attribute name="body" value="/pages/motor/najmEdit.jsp" />
+		</definition>
+		
+		<definition name="yakeenDetails" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Yakeen Details Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/yakeenDetails.jsp"/>
+		</definition>
+		
+		<definition name="motorSearch" extends="commonLayout"  > 
+			<put-attribute name="title" value="::: AlRajhi - Motor:::" />
+			<put-attribute name="body" value="/pages/motor/searchMotorQuote.jsp" />
+		</definition>
+	<!-- Motor Admin New Configuration End-->	
+	<!-- Travel Admin New Start -->
+		<definition name="travel" extends="commonLayout"  > 
+			<put-attribute name="title" value="::: AlRajhi - Travel :::" />
+			<put-attribute name="body" value="/pages/travel/travel.jsp" />
+		</definition>
+		<definition name="adminajax" template="/pages/admin/adminAjax.jsp">
+			<put-attribute name="title" value="Ajax Broker List" />
+		</definition>
+		<definition name="scheme" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Scheme Master :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelScheme.jsp" />
+		</definition>
+		<definition name="schemehistory" template="/pages/admin/travel/travelScheme.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Scheme history :::"/>
+		</definition>
+			<definition name="option" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Travel Options :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelOption.jsp" />
+		</definition> 
+		<definition name="optionhistory" template="/pages/admin/travel/travelOption.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Option History :::"/>
+		</definition> 
+		<definition name="linkoption" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Link Option :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelLinkOption.jsp" />
+		</definition> 
+		<definition name="linkcoverage" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Link Coverage :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelLinkCoverage.jsp" />
+		</definition>
+		<definition name="coverage" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Coverage Admin :::"  />
+			<put-attribute name="body" value="/pages/admin/travel/travelMasterCoverage.jsp" />
+		</definition>
+			<definition name="coveragehistory" template="/pages/admin/travel/travelMasterCoverage.jsp">
+			<put-attribute name="title" value="::: AlRajhi - coveragehistory :::"/>
+		</definition> 
+		<definition name="discountrate" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Discount Rate :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelDiscountRate.jsp" />
+		</definition>
+		<definition name="discountratehistory" template="/pages/admin/travel/travelDiscountRate.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Discount Rate History :::"/>
+		</definition> 
+		<definition name="relationdiscount" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Relation Discount :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelRelationDiscount.jsp" />
+		</definition>
+		<definition name="relationdiscounthistory" template="/pages/admin/travel/travelRelationDiscount.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Relation Discount History :::"/>
+		</definition>	
+		<definition name="premiumrate" extends="commonLayout"  >
+			<put-attribute name="title" value="::: AlRajhi - Premium Rate :::" />
+			<put-attribute name="body" value="/pages/admin/travel/travelPremiumRate.jsp" />
+		</definition>
+		<definition name="premiumratehistory" template="/pages/admin/travel/travelPremiumRate.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Premium Rate History :::"/>
+		</definition>
+		<definition name="travelReport" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Travel Report :::"/>
+		    <put-attribute name="body" value="/pages/admin/report/travelReport.jsp"/>
+		</definition>
+	<!-- Travel Admin End-->
+	
+	<!-- Rating Engine Old -->
+	
+	<definition name="baseLayoutAdminOld" template="/layouts/baseLayoutOld.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/headerOld.jsp" />
+		<put-attribute name="menu" value="/templates/adminMenuOld.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	
+	<definition name="baseLayoutAdminOld1" template="/layouts/baseLayoutOld1.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/headerOld.jsp" />
+		<put-attribute name="menu" value="/templates/adminMenuOld.jsp" />
+		<put-attribute name="body" value="/templates/body.jsp" />
+		<put-attribute name="footer" value="/templates/footer.jsp" />
+	</definition>
+	
+	<definition name="common" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Common Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/commonMaster.jsp"/>
+	</definition>
+	
+	<definition name="baserate" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Base Rate :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/baserate.jsp"/>
+	</definition>
+	<definition name="editTransport" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Transport :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editTransport.jsp"/>
+	</definition>
+	<definition name="addError" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Add Error :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/addError.jsp"/>
+	</definition>
+	<definition name="editConveyance" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Conveyance :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editConveyance.jsp"/>
+	</definition>
+	<definition name="editExtraCover" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Extra Cover :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editExtraCover.jsp"/>
+	</definition>
+	<definition name="editCity" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit City :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCity.jsp"/>
+	</definition>
+	<definition name="editCountry" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Country :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCountry.jsp"/>
+	</definition>
+	<definition name="editBank" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Bank :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editBank.jsp"/>
+	</definition>
+	<definition name="editMaterial" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Material :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editMaterial.jsp"/>
+	</definition>
+	<definition name="editWar" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit War Rate :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editWarRate.jsp"/>
+	</definition>
+	<definition name="editPackage" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Package :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editPackage.jsp"/>
+	</definition>
+	<definition name="editSale" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Sale Term Master :::" />
+		<put-attribute name="body" value="/pages/admin/ratingEngine/editSaleTerm.jsp" />
+	</definition>
+	<definition name="editTole" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Tolerance Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editTolerance.jsp"/>
+	</definition>
+	<definition name="editComEx" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Commodity Excess :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editComEx.jsp"/>
+	</definition>
+	<definition name="editVessel" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Vessel Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editVessel.jsp"/>
+	</definition>
+	<definition name="editWarranty" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Warranty Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editWarranty.jsp"/>
+	</definition>
+	<definition name="editConstant" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Constant Detail :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editConstant.jsp"/>
+	</definition>
+	<definition name="editCountryDet" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Country Detail :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCountryDet.jsp"/>
+	</definition>
+	<definition name="editAgent" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Setting Agent :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editAgent.jsp"/>
+	</definition>
+   	<definition name="calculate" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Base Rate :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/calculation.jsp"/>
+	</definition>
+	<definition name="editCommodity" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Commodity Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCommodity.jsp"/>
+	</definition>
+	<definition name="editPromotional" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Commodity Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editPromotional.jsp"/>
+	</definition>
+	<definition name="editCurrency" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Currency Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCurrency.jsp"/>
+	</definition>
+	<definition name="editExchange" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Exchange Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editExchange.jsp"/>
+	</definition>
+	<definition name="editCover" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Cover Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCover.jsp"/>
+	</definition>
+	<definition name="editExclusion" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Exclusion :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editExclusion.jsp"/>
+	</definition>
+	
+	<definition name="editError" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Error :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editError.jsp"/>
+	</definition>
+	<definition name="editClauseID" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Clause ID :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editClauseID.jsp"/>
+	</definition>
+	<definition name="baserate1" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Base Rate :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/baserate.jsp"/>
+	</definition>
+	<definition name="wsrccCover" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - WSRCC Cover :::"/>
+		<put-attribute name="body" value="/pages/admin/ratingEngine/editWsrcc.jsp"/>
+	</definition>
+	<definition name="editCategory" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Category :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCargoCategory.jsp"/>
+	</definition>
+	<definition name="editCoverComm" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Edit Cover :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editCoverCommodity.jsp"/>
+	</definition>
+	<definition name="editConstantMaster" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Constant Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editConstantMaster.jsp"/>
+	</definition>
+	<definition name="ratingFileUpload" extends="commonLayout">
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/ratingFileUpload.jsp"/>
+	</definition>
+	<definition name="transDetail" extends="commonLayout">
+		<put-attribute name="body" value="/pages/admin/ratingEngine/transDetails.jsp" />
+	</definition>
+	<definition name="editExecutive" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Executive Master :::"/>
+	    <put-attribute name="body" value="/pages/admin/ratingEngine/editExecutiveMaster.jsp"/>
+	</definition>
+	
+	<!-- Motor Start -->
+	<definition name="motorHelpInfo" template="/pages/motor/motorHelpInfo.jsp"/>
+	<definition name="viewClaim" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Claim Information :::"/>
+		<put-attribute name="body" value="/pages/motor/viewClaim.jsp" />
+	</definition>
+	<definition name="motorDocumentUpload" template="/pages/motor/documentUpload.jsp" />
+	<definition name="motorDocumentDisplay" template="/pages/motor/displayUpload.jsp" />
+	<definition name="documentUploadCancel" template="/pages/motor/cancelUpload.jsp" />
+	
+	
+	<definition name="electricalPopUp" template="/pages/motor/electricalDetails.jsp" />
+	<definition name="NonelectricalPopUp" template="/pages/motor/NonelectricalDetails.jsp" />
+	
+	<definition name="commonLayoutNew" template="/layouts/commonLayoutNew.jsp">
+		<put-attribute name="title" value="::: AlRajhi - E-Way :::" />
+		<put-attribute name="header" value="/templates/headerNew.jsp" />
+		<put-attribute name="menu" value="/templates/menu.jsp" />
+		<put-attribute name="body" value="/templates/bodyNew.jsp" />
+		<put-attribute name="footer" value="/templates/footerNew.jsp" />
+	</definition>
+	
+	<definition name="motor" extends="commonLayoutNew"  > 
+		<put-attribute name="title" value="::: AlRajhi - Motor :::" />
+		<put-attribute name="body" value="/pages/motor/motor.jsp" />
+	</definition>
+	
+	<definition name="feedbackform" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Policy Information :::"/>
+		<put-attribute name="body" value="/pages/feedbackform.jsp" />
+	</definition>
+	
+	<!-- Motor End -->
+	
+	<!-- Payment Start -->
+	
+	<definition name="payFortRequest" template="/pages/payment/PayFortRequest.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Payment :::"/>
+	</definition>
+	
+	<!-- Payment End -->
+	
+	<!-- Motor User Registration Start -->
+	
+	<definition name="editMotorUser" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Motor User :::" />
+		<put-attribute name="body" value="/pages/motor/editMotorUser.jsp" />
+	</definition>
+	<definition name="editUserProfile" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Motor :::" />
+		<put-attribute name="body" value="/pages/motor/editUserProfile.jsp" />
+	</definition>
+	<definition name="addMotorUser" template="/pages/motor/addMotorUser.jsp"  > 
+		<put-attribute name="title" value="::: AlRajhi - Motor User :::" />
+	</definition>
+	
+	<!-- Motor User Registration End -->
+	<!-- Home Insurance | Start -->
+	<definition name="homeInsurance" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/home.jsp" />
+	</definition>
+	<definition name="packageSelection" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/packageSelection.jsp" />
+	</definition>
+	<definition name="premiumsummery" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/premiumSummary.jsp"/>
+	</definition>
+	<definition name="homePremiuminfo" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/homePremiuminfo.jsp"/>
+	</definition>
+	<definition name="coverageUpload" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/coverageUpload.jsp"/>
+	</definition>
+	<definition name="sublist" template="/pages/home/premiumSubList.jsp">
+		<put-attribute name="title" value="::: AlRajhi - SubList :::"/>
+	</definition>
+	<definition name="resultpage" template="/pages/home/resultPage.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Add Row :::"/>
+	</definition>
+	<definition name="uwmenu" template="/pages/home/uwMenu.jsp">
+		<put-attribute name="title" value="::: AlRajhi - UnderWriter Menu :::"/>
+	</definition>
+	<definition name="homepolicy" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/homepolicy.jsp"/>
+	</definition>
+	<definition name="helpinfo" template="/pages/home/homeHelpInfo.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Helpinfo :::"/>
+	</definition>
+	<definition name="farmerMotor" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/farmerMotor.jsp" />
+	</definition>
+	<definition name="tractorPremiuminfo" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/tractorPremiuminfo.jsp"/>
+	</definition>
+	<definition name="farmerPACover" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/farmerPACover.jsp"/>
+	</definition>
+	<definition name="farmPAPremiuminfo" extends="commonLayout">
+		<put-attribute name="body" value="/pages/home/farmPAPremiuminfo.jsp"/>
+	</definition>
+	<definition name="coverPremiumInfo" template="/pages/home/premiumInfo.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Helpinfo :::"/>
+	</definition>
+	<definition name="payGateWayRequest" template="/pages/payment/PayGateWayRequest.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Payment :::"/>
+	</definition>
+	<!-- Home Insurance | End -->
+	<!-- Travel Insurance Start -->
+	<definition name="travel" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Travel :::" />
+		<put-attribute name="body" value="/pages/travel/travel.jsp" />
+	</definition>
+	<definition name="showQuote" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Travel :::" />
+		<put-attribute name="body" value="/pages/travel/ShowQuoteTravel.jsp" />
+	</definition>
+	<definition name="ajaxDropdown" template="/pages/common/ajaxDropdown.jsp">
+		<put-attribute name="title" value="Ajax Dropdown" />
+	</definition>
+	<definition name="coverSelection" template="/pages/travel/getCover.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Cover Selection :::"/>
+	</definition>
+	<definition name="cancelReissue" template="/pages/travel/cancelReissue.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Cancel Reissue :::"/>
+	</definition>
+	<definition name="viewCustomerTravel" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - View Customer :::" />
+		<put-attribute name="body" value="/pages/travel/viewCustomer.jsp" />
+	</definition>	
+	<!-- Travel Insurance End -->
+	<!-- Open Cover Copy Quote Start-->
+	<definition name="showOpenCopy" template="/premiumOpenCover/copyQuote.jsp" >
+		<put-attribute name="title" value="::: AlRajhi  - Copy Quote :::" />
+	</definition>	
+
+
+	<definition name="openRedirect" template="/premiumOpenCover/showApprovedCover.jsp" >
+		<put-attribute name="title" value="::: AlRajhi  :::" />
+	</definition>	
+	<!-- Open Cover Copy Quote End -->
+
+	<definition name="marineVehicle" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: Marine Vehicle :::" />
+		<put-attribute name="body" value="/pages/marinevehicledetails.jsp" />
+	</definition>
+	
+	<definition name="vehicle" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: Marine Vehicle :::" />
+		<put-attribute name="body" value="/pages/vehiclefileupload.jsp" />
+	</definition>
+	
+	<definition name="paymentTerms" template="/premiumOpenCover/paymentTerms.jsp" >
+		<put-attribute name="title" value="::: AlRajhi  - Payment  Terms :::" />
+	</definition>	
+	<!--  Common Reports Start-->
+	<definition name="commonReport" extends="commonLayout"  > 
+		<put-attribute name="title" value="::: AlRajhi - Reports :::" />
+		<put-attribute name="body" value="/pages/admin/report/commonReport.jsp" />
+	</definition>
+	<!--  Common Reports End -->
+	<!--  Bulk Report Print Start-->
+	<definition name="bulkPrint" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Declaration :::" />
+		<put-attribute name="body" value="/pages/bulkPrint.jsp" />
+	</definition>
+	<definition name="bulkPrintOP" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Declaration :::" />
+		<put-attribute name="body" value="/pages/bulkPrintOP.jsp" />
+	</definition>
+	<!--  Bulk Report Print End-->	
+	
+	<definition name="loyalityDisMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Loyality Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/loyalityDisMaster.jsp"/>
+		</definition>
+		<definition name="claimLoadMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Claim Load Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/claimLoadMaster.jsp"/>
+		</definition>
+		<definition name="driverageMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Driver Age Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/driverageMaster.jsp"/>
+		</definition>
+		<definition name="constantDetailMaster" extends="commonLayout">
+		    <put-attribute name="title" value="::: AlRajhi - Constant Detail Master :::"/>
+		    <put-attribute name="body" value="/pages/admin/motorNew/contactDetailMaster.jsp"/>
+		</definition>
+		<definition name="countryMaster" template="/pages/admin/motorNew/countryMaster.jsp" />
+		<definition name="otp" template="/pages/otp.jsp" />
+		 <definition name="otppage" template="/pages/motor/motor.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	 </definition>
+	 <definition name="upload" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Upload :::" />
+		<put-attribute name="body" value="/upload/Upload.jsp" />
+	</definition>
+	 <definition name="transactionDetails" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Upload :::" />
+		<put-attribute name="body" value="/upload/transactionDetails.jsp" />
+	</definition>
+	 <definition name="uploadlist" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Upload :::" />
+		<put-attribute name="body" value="/upload/uploadedList.jsp" />
+	</definition>
+	 <definition name="tranlist" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Upload :::" />
+		<put-attribute name="body" value="/upload/transactionList.jsp" />
+	</definition>
+	<definition name="duplicatelist" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Upload :::" />
+		<put-attribute name="body" value="/upload/duplicateList.jsp" />
+	</definition>
+	<definition name="progressbar" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - Upload :::" />
+		<put-attribute name="body" value="/upload/progressbar.jsp" />
+	</definition>
+	 <definition name="smsEmailMaster" extends="commonLayout"  > 
+			<put-attribute name="title" value="::: AlRajhi - Mail Template Master :::" />
+			<put-attribute name="body" value="/pages/admin/smsEmail/SmsEmailMaster.jsp" />
+	</definition>
+	 <definition name="helpdetail" template="\pages\admin\smsEmail\HelpDetailEmail.jsp">
+			<put-attribute name="title" value="::: AlRajhi - Mail Template Master :::"/>
+	</definition>
+	<definition name="emailAttachment" template="/pages\admin\smsEmail\emailAttachment.jsp" />
+	<definition name="b2cquote" extends="commonLayout">
+	    <put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	    <put-attribute name="body" value="/pages/admin/b2cQuote/b2cQuote.jsp"/>
+	</definition>
+	<definition name="newopenquote" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newopenquote.jsp" />
+	</definition>
+	<definition name="newQuotation" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newQuotation.jsp" />
+	</definition>
+	
+	<definition name="newAjax" template="/pages/opencover/newAjaxDropdown.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Portfolio :::"/>
+	 </definition>
+	 <definition name="countrypopUp" template="/pages/opencover/newCountryList.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Country List :::"/>
+	 </definition>
+	 <definition name="commoditypopUp" template="/pages/opencover/newCommodityList.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Commodity List :::"/>
+	 </definition>
+	 <definition name="saletermpopUp" template="/pages/opencover/newSaletermList.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - SaleTerm List :::"/>
+	 </definition>
+	 <definition name="tolerancepopUp" template="/pages/opencover/newToleranceList1.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Tolerence List :::"/>
+	 </definition>
+	 <definition name="chooseCustomer" template="/pages/opencover/newChooseCustomer.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Customer List :::"/>
+	 </definition>
+	 <definition name="newModeofTransport" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newModeofTransport.jsp" />
+	</definition>
+	<definition name="newCommodityRate" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newCommodityRate.jsp" />
+	</definition>
+	<definition name="opencoverAjax" template="/pages/opencover/opencoverAjax.jsp">
+		<put-attribute name="title" value="::: AlRajhi - Open coverAjax  :::" />
+	</definition>
+	<definition name="covertype" template="/pages/opencover/newCoverType.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - CoverType List :::"/>
+	 </definition>
+	 <definition name="clausesPopup" template="/pages/opencover/condition/newClausesInfo.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Clauses List :::"/>
+	 </definition>
+	 <definition name="commodityclausePopup" template="/pages/opencover/newcondiCommodity.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Clauses List :::"/>
+	 </definition>
+	  <definition name="warrantyPopup" template="/pages/opencover/condition/newWarrantyInfo.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Warranty List :::"/>
+	 </definition>
+	 <definition name="exclusionPopup" template="/pages/opencover/condition/newExclusionInfo.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Exclusion List :::"/>
+	 </definition>
+	 <definition name="warPopup" template="/pages/opencover/condition/newWarInfo.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - War List :::"/>
+	 </definition>
+	 <definition name="othersPopup" template="/pages/opencover/condition/newOthersInfo.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Other List :::"/>
+	 </definition>
+	 <definition name="depositinfo" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newDepositInfo.jsp" />
+	</definition>
+	  <definition name="newpolicygenerate" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newPolicygeneration.jsp" />
+	</definition>
+	<definition name="newpolicyinfo" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/newPolicyInfo.jsp" />
+	</definition>
+	
+	<definition name="newquoteRegister" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newQuoteRegister.jsp" />
+	</definition>
+	<definition name="newpolicyRegister" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newPolicyRegister.jsp" />
+	</definition>
+	<definition name="newrenewalPolicy" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newRenewalPolicy.jsp" />
+	</definition>
+	<definition name="newCopyQuote" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newCopyQuote.jsp" />
+	</definition>
+	<definition name="newpendingAccept" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newPendingList.jsp" />
+	</definition>
+	<definition name="newpaymentTerms" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newpaymentTerms.jsp" />
+	</definition>
+	<definition name="newexpiredPolicy" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newExpiredPolicyList.jsp" />
+	</definition>
+	<definition name="newlapsedPolicy" extends="baseLayoutOpenCover"  > 
+		<put-attribute name="title" value="::: AlRajhi - Open Cover :::" />
+		<put-attribute name="body" value="/pages/opencover/reportRegister/newLapsedPolicy.jsp" />
+	</definition>
+	<definition name="vesselAjax" template="/pages/vessel/vesselAjax.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Vessel :::"/>
+	 </definition>
+	 <definition name="viewAjax" template="/pages/vessel/ViewVessel.jsp">
+	 	<put-attribute name="title" value="::: AlRajhi - Vessel :::"/>
+	 </definition>
+  	<definition name="shipDetails" extends="commonLayout"  >
+		<put-attribute name="title" value="::: AlRajhi - ship :::" />
+		<put-attribute name="body" value="/pages/admin/report/shipDetails.jsp" />
+	</definition>
+	<definition name="dashboard" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - DashBoard :::" />
+		<put-attribute name="body" value="/pages/admin/marineDashboard.jsp" />
+	</definition>
+	<definition name="integrationList" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Integration :::" />
+		<put-attribute name="body" value="/pages/admin/report/integrationList.jsp" />
+	</definition>
+	<definition name="editintegration" extends="commonLayout">
+		<put-attribute name="title" value="::: AlRajhi - Integration :::" />
+		<put-attribute name="body" value="/pages/admin/report/integrationEdit.jsp" />
+	</definition>  
+	
+	<definition name="viewdoc" template="/pages/viewdoc.jsp" />
+</tiles-definitions>
