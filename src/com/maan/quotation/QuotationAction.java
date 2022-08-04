@@ -201,6 +201,12 @@ public class QuotationAction extends ActionSupport{
 	private String exposureValue;
 	private String status;
 	private String aplicationNo;
+	private String state;
+	private String customerType;
+	private String gstIdentityNo;
+	private String aadharNo;
+	private String eiaNumber;
+	private String ianocode;
 	private List<Map<String, Object>> quotationInfo;
 	private List<Map<String, Object>> insuredGoodsInfo;
 	//private Map<String, Object> policyEndtInfo;
@@ -209,6 +215,43 @@ public class QuotationAction extends ActionSupport{
 	private List<Map<String, Object>> policyInformation;
 	private List<Object>vesselList;
 	
+	
+	public String getCustomerType() {
+		return customerType;
+	}
+	public void setCustomerType(String customerType) {
+		this.customerType = customerType;
+	}
+	public String getGstIdentityNo() {
+		return gstIdentityNo;
+	}
+	public void setGstIdentityNo(String gstIdentityNo) {
+		this.gstIdentityNo = gstIdentityNo;
+	}
+	public String getAadharNo() {
+		return aadharNo;
+	}
+	public void setAadharNo(String aadharNo) {
+		this.aadharNo = aadharNo;
+	}
+	public String getEiaNumber() {
+		return eiaNumber;
+	}
+	public void setEiaNumber(String eiaNumber) {
+		this.eiaNumber = eiaNumber;
+	}
+	public String getIanocode() {
+		return ianocode;
+	}
+	public void setIanocode(String ianocode) {
+		this.ianocode = ianocode;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	public List<Object> getVesselList() {
 		return vesselList;
 	}
@@ -906,7 +949,7 @@ public class QuotationAction extends ActionSupport{
 		String userId = issuer==null?loginId:issuer;
 		String qStatus = "0".equals(settlingAgent)?"RA":"";
 	Object[] objects=new String[]{option,productId,belongingBranch,openCoverNo,modeOfTransport,cover,originCountry,
-			destCountry,saleTerm,saleTermPercent,lcBank,issuer,brokerCode,userId,qStatus};
+			destCountry,saleTerm,saleTermPercent,lcBank,issuer,brokerCode,userId,qStatus,state};
 		return objects;
 	}
 	public Object[] getbrokerParams()
@@ -921,9 +964,21 @@ public class QuotationAction extends ActionSupport{
 
 		return service.dropDownList("title", getParams());
 	}
+	public List<Map<String, Object>> getStateList(){
+
+		return service.dropDownList("state", getParams());
+	}
 	public List<Map<String, Object>> getCityList(){
 
 		return service.dropDownList("city", getParams());
+	}
+	public List<Map<String, Object>> getCustomerTypeList(){
+
+		return service.dropDownList("customertype", getParams());
+	}
+	public List<Map<String, Object>> getIrtypeList(){
+
+		return service.dropDownList("irtype", getParams());
 	}
 	public List<Map<String, Object>> getOrgCityList(){
 
@@ -1441,12 +1496,18 @@ public class QuotationAction extends ActionSupport{
 			cd.setCoreAppCode(coreAppCode==null?"":coreAppCode);
 			cd.setAddress1(address1==null?"":address1);
 			cd.setAddress2(address2==null?"":address2);
+			cd.setStatecode(state==null?"":state);
 			cd.setCityCode(city==null?"":city);
 			//cd.setCityName(service.getDropDownDesc(getCityList(),city==null?"":city));
 			cd.setPoBox(poBox==null?"":poBox);
 			cd.setMobileNo(mobileNo==null?"":mobileNo);
 			cd.setEmailId(email==null?"":email);
 			cd.setVatRegNo(custVatRegNo==null?"":custVatRegNo);
+			cd.setCustomertype(customerType==null?"":customerType);
+			cd .setGstIdentityNo(gstIdentityNo==null?"":gstIdentityNo);
+			cd.setAadharNo(aadharNo==null?"":aadharNo);
+			cd.setEiaNumber(eiaNumber==null?"":eiaNumber);
+			cd.setIanocode(ianocode==null?"":ianocode);
 			qm.setCustomerDetails(cd);
 			
 			QuoteDetails qd = new QuoteDetails();
@@ -1555,6 +1616,11 @@ public class QuotationAction extends ActionSupport{
 			e.printStackTrace();
 		}
 		return qm;
+	}
+	public String cityList()
+	{
+		request.setAttribute(FIELD, "city");
+		return DROPDOWN;
 	}
 	public String coverList()
 	{

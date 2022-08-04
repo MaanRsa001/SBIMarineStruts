@@ -32,6 +32,8 @@ public class QuotationDropDown {
     private String userType;
     @SerializedName("CoverCode") 
     private String coverCode;
+    @SerializedName("StateCode") 
+    private String stateCode;
 	@SerializedName("Result")
 	private List<DropDown> dropdownList;
 	/**
@@ -195,6 +197,12 @@ public class QuotationDropDown {
 	}
 	public void setIncotermPercent(String incotermPercent) {
 		this.incotermPercent = incotermPercent;
+	}
+	public String getStateCode() {
+		return stateCode;
+	}
+	public void setStateCode(String stateCode) {
+		this.stateCode = stateCode;
 	}
 	
 }

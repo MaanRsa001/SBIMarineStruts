@@ -199,14 +199,6 @@ document.onkeypress = stopRKey;
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text">
-				 			<s:text name="quotation.vatReg" />
-				 		</div>
-				 		<div class="tbox">
-				 			<s:textfield name="custVatRegNo" id="custVatRegNo" cssClass="inputBox tooltipContent" data-content="VAT Reg No" disabled="#disable" maxlength="15"  />
-				 		</div>
-			 		</div>
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<div class="text">
 				 			<s:text name="quotation.title"  /><font color="red">*</font>
 				 		</div>
 				 		<div class="tbox">
@@ -217,67 +209,25 @@ document.onkeypress = stopRKey;
 			 			<div class="text">
 				 			<s:text name="quotation.customerName" /><font color="red">*</font>
 				 		</div>
-				 		
-				 		
-				 		<div class="input-group">
+						<div class="input-group">
                                <s:textfield name="customerName" id="customerName" cssClass="inputBox tooltipContent" data-content="Custome Name"   maxlength="500" disabled="#disable" onchange="setCustomerId();"/>
                                <s:hidden name="customerId" id="customerId" />
-					      <%--  <span class="input-group-addon">
-					      <s:submit  type="button" value="..."  onclick="return customerSelectionAction()" disabled="#disable" name="customerPopup"/>
-					      </span> --%>
 					       <span class="input-group-addon">
                              <a onclick="customerSelectionAction()" style="cursor: pointer"  disabled="#disable"><span class="glyphicon glyphicon-list"></a>
 					      </span>
-					     <%--  <span class="input-group-addon" >
-			                	<a onclick="customerSelectionAction()" style="cursor: pointer" data-toggle="modal" data-target="#customerSelectionModal" disabled="#disable"><span class="glyphicon glyphicon-list"></a>
-			                </span> --%>
-					      
-					    </div>
-				 		
-				 		<%-- <div class="tbox">
-				 			<div class="inputAppend">
-                               <s:textfield name="customerName" id="customerName" cssClass="inputBox1 inputBox tooltipContent" data-content="Custome Name" cssStyle="border: none;background: transparent;"  maxlength="500" disabled="#disable" onchange="setCustomerId();"/>
-                               <s:hidden name="customerId" id="customerId" />                           
-                                
-                               <s:submit  type="button" value="..." cssClass="inputButton" onclick="return customerSelectionAction()" disabled="#disable" name="customerPopup"/>
-                           </div>
-				 		</div>--%>
+					    </div>			 		
 			 		</div>
-			 		
-			 		<%--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-			 			<div class="text">
-				 			<s:text name="quotation.customerNameAr" /><font color="red">*</font>
-				 		</div>
-				 		<div class="tbox">
-				 			<div class="inputAppend">
-                               <s:textfield name="customerNameAr" id="customerNameAr" cssClass="inputBox1 inputBox tooltipContent" data-content="Custome Name Arabic" cssStyle="border: none;background: transparent;"  maxlength="500" />
-                                
-                           </div>
-				 		</div>	
-			 		</div> --%>
-			 		</div>
-			 		<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-			 			<div class="text">
-				 			<s:text name="quotation.coreAppCode" />
-				 		</div>
-				 		<div class="tbox">
-				 			<s:textfield name="coreAppCode" id="coreAppCode" cssClass="inputBox tooltipContent" data-content="Core App Code" maxlength="20" readonly="true" disabled="#disable"/>
-                     		<s:hidden name="nameAndCode" id="nameAndCode"/>
-                     		<s:hidden name="custArNo" id="custArNo"/>
-                     		<s:hidden name="coreCustomerName" id="coreCustomerName"/>
-				 		</div>	
-			 		</div>
-				
-			
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text">
 				 			<s:text name="quotation.address1" />
 				 		</div>
 				 		<div class="tbox">
 				 			<s:textfield name="address1" id="address1" cssClass="inputBox tooltipContent" data-content=""  maxlength="150" disabled="#disable"/>
-				 		</div>	
+				 		</div>
+				 	</div>
+			 		
 			 		</div>
+			 		<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 			 			<div class="text">
 				 			<s:text name="quotation.address2" />
@@ -286,18 +236,25 @@ document.onkeypress = stopRKey;
 				 			<s:textfield name="address2" id="address2" cssClass="inputBox tooltipContent" data-content="" maxlength="150" disabled="#disable"/>
 				 		</div>
 			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.state" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:select name="state" id="state" list="stateList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="State" disabled="#disable" onchange="getList('?state='+this.value,'cityList');" />
+				 		</div>
 			 		</div>
-				<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 			 			<div class="text">
 				 			<s:text name="quotation.city" /><font color="red">*</font>
 				 		</div>
 				 		<div class="tbox">
-				 			<s:select name="city" id="city" list="cityList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="City" disabled="#disable"/>
+				 			<div id="cityList"><s:select name="city" id="city" list="cityList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="City" disabled="#disable"/></div>
 				 		</div>
 			 		</div>
-				
-					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 		</div>
+				<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text">
 				 			<s:text name="quotation.poBox" /><font color="red">*</font>
 				 		</div>
@@ -313,8 +270,6 @@ document.onkeypress = stopRKey;
 				 			<s:textfield name="mobileNo" id="mobileNo" cssClass="inputBox tooltipContent" data-content="Mobile No." disabled="#disable"  maxlength="10" onchange="checkNumbers(this);" />
 				 		</div>	
 			 		</div>
-			 		</div>
-				<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 			 			<div class="text">
 				 			<s:text name="quotation.email" />
@@ -323,8 +278,71 @@ document.onkeypress = stopRKey;
 				 			<s:textfield name="email" id="email" cssClass="inputBox tooltipContent" data-content="E-Mail" disabled="#disable" maxlength="100"/>
 				 		</div>	
 			 		</div>
-				
-					
+			 	</div>
+				<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.customerType" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:select name="customerType" id="customerType" list="customerTypeList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="CustomerType" disabled="#disable"/>
+				 		</div>
+			 		</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.gstno" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="gstIdentityNo" id="gstIdentityNo" cssClass="inputBox tooltipContent" data-content="GST Number" disabled="#disable" maxlength="16"/>
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.aadharNumber" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="aadharNo" id="aadharNo" cssClass="inputBox tooltipContent" data-content="AAdhar Number" disabled="#disable" maxlength="12"/>
+				 		</div>	
+			 		</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.eiaNumber" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="eiaNumber" id="eiaNumber" cssClass="inputBox tooltipContent" data-content="GST Number" disabled="#disable" maxlength="16"/>
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.iaCode" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:select name="ianocode" id="ianocode" list="irtypeList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="IA No Code" disabled="#disable"/>
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.coreAppCode" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="coreAppCode" id="coreAppCode" cssClass="inputBox tooltipContent" data-content="Core App Code" maxlength="20" readonly="true" disabled="#disable"/>
+                     		<s:hidden name="nameAndCode" id="nameAndCode"/>
+                     		<s:hidden name="custArNo" id="custArNo"/>
+                     		<s:hidden name="coreCustomerName" id="coreCustomerName"/>
+				 		</div>	
+			 		</div>
+			 	</div>
+			 		<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.sezYn" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="sezYn" id="sezYn"  value='%{(sezYn==null || "".equals(sezYn))?"NO":sezYn}' disabled="#disable" onclick="editCustomerInfo();"/>
+				 		</div>	
+			 		</div>
 			 	</div>
 				<div class="row" id="editCustomerDIV">
 					<s:if test='%{productId==openCover1 && customerId.equals(#session.customer_id) && !(#disable)}'>

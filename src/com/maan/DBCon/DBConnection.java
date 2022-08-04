@@ -34,7 +34,7 @@ public class DBConnection implements Serializable
 		try
 		{	
 			initContext = new InitialContext();
-			ds = (DataSource)initContext.lookup("java:comp/env/MARINENEW");
+			ds = (DataSource)initContext.lookup("java:comp/env/SBIGENERAL");
 			template = new JdbcTemplate(ds);
 			mySimpleJdbcCall=new SimpleJdbcCall(ds);
 		}

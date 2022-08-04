@@ -117,6 +117,9 @@
 		<s:select name="conveyance" list="conveyanceList" headerKey="" headerValue="-Select-" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" theme="simple" id="conveyanceList" />
 	</s:else>
 </s:elseif>
+<s:elseif  test="#request.ELEMENT_NAME=='city'">
+	<s:select name="city" id="city" list="cityList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="City" disabled="#disable" theme="simple"/>
+</s:elseif>
 <s:elseif  test="#request.ELEMENT_NAME=='agent'">
 	<s:select name="settlingAgent" list="agentList" headerKey="" headerValue="-Select-" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" theme="simple" id="agentList" onchange="disableOthers(this);"/>
 </s:elseif>

@@ -558,7 +558,9 @@ public class ReportAction extends ActionSupport  implements ModelDriven<ReportBe
 				productId=(String)session.get("product_id");
 			}
 			issuer=(String)session.get("RSAISSUER")==null?"":(String)session.get("RSAISSUER");
-			openCoverNo=(String)session.get("openCoverNo")==null?"":(String)session.get("openCoverNo");
+			if(StringUtils.isBlank(openCoverNo)) {
+				openCoverNo=(String)session.get("openCoverNo")==null?"":(String)session.get("openCoverNo");
+			}
 			if(openCover.equalsIgnoreCase(productId) && !"User".equalsIgnoreCase(userType)){
 				loginId=(String)session.get("userName");
 				session.put("BROKER_LOGIN_ID", loginId);

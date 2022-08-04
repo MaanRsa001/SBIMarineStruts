@@ -1,5 +1,6 @@
 package com.maan.quotation.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
 public class CustomerDetails{
@@ -29,6 +30,20 @@ public class CustomerDetails{
     private String vatRegNo;
     @SerializedName("VatApplicable") 
     private String vatApplicable;
+    @SerializedName("StateCode") 
+    private String statecode;
+    @SerializedName("State") 
+    private String state;
+    @SerializedName("CustomerType")
+	private String customertype;
+    @SerializedName("GstIdentityNo")
+	private String gstIdentityNo;
+    @SerializedName("AadharNo")
+	private String aadharNo;
+    @SerializedName("EIANumber")
+	private String eiaNumber;
+    @SerializedName("IANOCode")
+	private String ianocode;
 	/**
 	 * @return the title
 	 */
@@ -185,4 +200,47 @@ public class CustomerDetails{
 	public void setCode(String code) {
 		this.code = code;
 	}
+	public String getStatecode() {
+		return statecode;
+	}
+	public void setStatecode(String statecode) {
+		this.statecode = statecode;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getCustomertype() {
+		return customertype;
+	}
+	public void setCustomertype(String customertype) {
+		this.customertype = customertype;
+	}
+	public String getGstIdentityNo() {
+		return gstIdentityNo;
+	}
+	public void setGstIdentityNo(String gstIdentityNo) {
+		this.gstIdentityNo = gstIdentityNo;
+	}
+	public String getAadharNo() {
+		return aadharNo;
+	}
+	public void setAadharNo(String aadharNo) {
+		this.aadharNo = aadharNo;
+	}
+	public String getEiaNumber() {
+		return eiaNumber;
+	}
+	public void setEiaNumber(String eiaNumber) {
+		this.eiaNumber = eiaNumber;
+	}
+	public String getIanocode() {
+		return ianocode;
+	}
+	public void setIanocode(String ianocode) {
+		this.ianocode = ianocode;
+	}
+	
 }

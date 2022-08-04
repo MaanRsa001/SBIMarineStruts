@@ -54,6 +54,8 @@ public class QuotationApiCall extends ApiConfig {
 
 	public List<Map<String, Object>> dropDownList(String key, Object[] args) {
 		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
+		String jsonResponse ="";
+		QuotationDropDown qddRes=null;
 		try {
 			QuotationDropDown qddReq = new QuotationDropDown();
 			
@@ -68,6 +70,7 @@ public class QuotationApiCall extends ApiConfig {
 			qddReq.setIncotermPercent(args[9]==null?"":args[9].toString());
 			qddReq.setBrokerCode(args[12]==null?"":args[12].toString());
 			qddReq.setLoginId(args[13]==null?"":args[13].toString());
+			qddReq.setStateCode(args[15]==null?"":args[15].toString());
 			
 			String jsonRequest = jsonConvertor.toJson(qddReq);
 			/*String cacheKey = key+jsonRequest;
@@ -75,9 +78,13 @@ public class QuotationApiCall extends ApiConfig {
 				Element element =  certdrpdwnCache.get(cacheKey);
 				list = (List<Map<String, Object>>) element.getObjectValue();
 			}else{*/
-				String jsonResponse = callAPI(key, ApiUrl.getQuoteDropDown()+key, getApiToken(), jsonRequest);
-				QuotationDropDown qddRes = jsonConvertor.fromJson(jsonResponse, QuotationDropDown.class);
-				
+			if("state".equalsIgnoreCase(key) || "customertype".equalsIgnoreCase(key) ||"irtype".equalsIgnoreCase(key)) {
+				jsonResponse = callAPIGet(ApiUrl.getQuoteDropDown()+key, getApiToken());
+				qddRes = jsonConvertor.fromJson(jsonResponse, QuotationDropDown.class);
+			}else {
+				jsonResponse = callAPI(key, ApiUrl.getQuoteDropDown()+key, getApiToken(), jsonRequest);
+				qddRes = jsonConvertor.fromJson(jsonResponse, QuotationDropDown.class);
+			}
 				List<DropDown> ddRes = qddRes.getDropdownList();
 				if(ddRes != null && ddRes.size()>0) {
 					for(DropDown dd :ddRes) {

@@ -33,7 +33,7 @@ public class TokenSessionStoreInterceptor
   
   private boolean checkUnCheckAct(ActionInvocation invocation) throws Exception{
 	  boolean res = true;
-	  String[] checkStr = {"lcListQuotation","brokersListQuotation","executiveListQuotation","promotionalListQuotation",
+	  String[] checkStr = {"lcListQuotation","brokersListQuotation","executiveListQuotation","promotionalListQuotation","cityListQuotation",
 			  "coverListQuotation","conveyanceListQuotation","packageListQuotation","agentListQuotation",
 			  "percentListQuotation","toleranceListQuotation","initPremium","clausesPremium","customerSelectionQuotation",
 			  "countryCityListQuotation","commodityListQuotation","vesselQuotation","addCommodityQuotation",
