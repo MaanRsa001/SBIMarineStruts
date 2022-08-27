@@ -451,7 +451,7 @@ public class ReportAPI  extends ApiConfig{
 			JSONParser parser = new JSONParser();
 			json = (JSONObject) parser.parse(response);
 			saveToken(json);
-			bean.setErrors((JSONArray) json.get("Errors"));
+			bean.setErrors((JSONArray) json.get("ErrorMessage"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -52,7 +52,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<s:iterator value="branchList" status="stat" var="record">
+					<s:iterator value="attachedBranchList" status="stat" var="record">
 					<tr>
 						<td align="center"> <input type="checkbox"  value="<s:property value="#record.BranchCode"/>" id="checkbox<s:property value="#record.BranchCode"/>" /> </td>
 						<td> <s:property value="BranchName" /> </td>
@@ -71,7 +71,6 @@
 		<input name="back" type="button" class="btn btn-sm btn-danger" onclick="javascript:window.close()" value="Back" style ="cursor:hand"/>
 	</div>
 </div>
-<s:token/>
 </s:form>
 <script type="text/javascript">
 if(window.opener.adminlist.branchId.value.length>=1){
@@ -120,17 +119,7 @@ function fnsubmit(){
 	window.opener.adminlist.branchId.value=checkedItems;
 	window.close();
 }
-$(function () {
-	try{
-	var strutsToken = "<s:property value="#session['struts.tokens.token']" />"
-	try{$('.token input').val(strutsToken);}catch(e){}
-	try{window.opener.document.forms[0].token.value = strutsToken;}catch(e){}
-	try{window.opener.document.forms[1].token.value = strutsToken;}catch(e){}
-	try{window.opener.document.forms[2].token.value = strutsToken;}catch(e){}
-	try{window.opener.document.forms[3].token.value = strutsToken;}catch(e){}
-	try{window.opener.document.forms[4].token.value = strutsToken;}catch(e){}
-	}catch(e){}
-	});
+
 </script>
 </body>
 </html>

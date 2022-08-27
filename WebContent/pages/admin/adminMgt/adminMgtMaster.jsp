@@ -4,6 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap-multiselect.css" />
 	<script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap-multiselect.js" type="text/javascript"></script>
 	<link href="<%=request.getContextPath()%>/bootstrap/css//style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/dataTables/css/dataTables.responsive.css">
@@ -174,6 +175,12 @@
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text"><s:text name="admin.user.region.select"/> <font color="red">*</font></div>
+						<div class="tbox">
+							<s:select name="attachedregion" id="attachedregion" cssClass="inputBoxS" list="regionsList"  listKey="RegionId" listValue="RegionName"  headerKey=""  multiple="true"/>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text"><s:text name="admin.user.branch.select"/> <font color="red">*</font></div>
 						<div class="tbox">
 							<s:textarea name="branchId" id="branchId" cssClass="inputBoxA" rows="2" cssStyle="width: 85%;"/>
@@ -240,7 +247,26 @@
 <s:token/>
 </s:form>
 <script type="text/javascript">
-function callPopupbranch(URL) {
+function callPopupbranch(url){	 
+	var checkedItems='';
+	try
+	{
+		var elements=document.getElementById("attachedregion");		 
+		for(i=0; i<elements.length; i++)
+		{
+			obj=elements[i];
+			if(obj.selected)
+				checkedItems+=obj.value+',';
+		}
+	}catch(e){}	 
+	if(checkedItems.length>1)
+		checkedItems=checkedItems.substring(0, checkedItems.length-1);	 
+	if(checkedItems!=null && checkedItems!="")
+		return callPopup(url+'?selregions='+checkedItems);
+	else
+		alert('Please Select Attached Region');	
+}
+function callPopupbranch1(URL) {
 	var regioncode=document.getElementById("regionCode").value;
 	URL=URL+"?regionCode="+regioncode;
  	var bwidth = window.innerWidth;
@@ -325,7 +351,12 @@ $(document).ready(function() {
     $('#uwgrades').multiselect({ 
         includeSelectAllOption: true,
           enableFiltering:true 
-    	});   
+    	});
+    $('#attachedregion').multiselect({ 
+        includeSelectAllOption: true,
+          enableFiltering:true 
+          
+    	});
  	<s:if test='uwgrade!=null && !"".equals(uwgrade)'>	
  		var uwgrade='<s:property value="uwgrade"/>';
 		 var data=uwgrade.replace(/ /g,'');	

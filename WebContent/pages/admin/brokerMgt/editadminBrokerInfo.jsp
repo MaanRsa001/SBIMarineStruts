@@ -5,6 +5,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap-multiselect.css" />
 	<style>
 	#loading {
 	  width: 100%;
@@ -65,7 +66,8 @@
 		</div>
 		<s:hidden name="agencyCode"/>
 		<s:hidden name="login_Id"/>
-		<s:hidden name="mode"/>	
+		<s:hidden name="mode"/>
+		<s:token/>	
 	</s:form>	
 </s:if>
 <div <s:if test='"new".equals(mode)'> class="col-xs-12 col-sm-12 col-md-12 col-lg-12"</s:if><s:else> class="col-xs-12 col-sm-12 col-md-9 col-lg-9"</s:else>>
@@ -160,7 +162,7 @@
 																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 																		<div class="text"><s:text name="broker.brokercode" /> <font color="red">*</font></div>
 																		<div class="tbox">
-																			<s:textfield name="bcode" id="bcode"  cssClass="inputBox"  size="35" maxlength="7"  />
+																			<s:textfield name="bcode" id="bcode"  cssClass="inputBox"  size="35" maxlength="15"  />
 																		</div>
 																	</div>
 																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -241,6 +243,21 @@
 																			<div id="branchId"><s:select name="branchCodeS" id="branchCodeS" cssClass="inputBoxS" list="branchList"  listKey="BranchCode" listValue="BranchName"  headerKey="" headerValue="---Select---" /></div>
 																		</div>
 																	</div>
+																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																		<div class="text"><s:text name="admin.user.region.select"/> <font color="red">*</font></div>
+																		<div class="tbox">
+																			<s:select name="attachedregion" id="attachedregion" cssClass="inputBoxS" list="regionsList"  listKey="RegionId" listValue="RegionName"  headerKey=""  multiple="true"/>
+																		</div>
+																	</div>
+																	</div>
+																	<div class="row">
+																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																		<div class="text"><s:text name="admin.user.branch.select"/> <font color="red">*</font></div>
+																		<div class="tbox">
+																			<s:textarea name="branchId" id="branchId" cssClass="inputBoxA" rows="2" cssStyle="width: 85%;"/>
+																			<input class="btn btn-sm btn-primary" value="..." style="float:right;" type="button" name="menu" onclick="return callPopupbranch('<%=request.getContextPath()%>/branchSelectionBrokerMgm.action')"/>							
+																		</div>
+																	</div>
 																	<%--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 																		<div class="text"> <s:text name="user.linked.location" /> </div>
 																		<div class="tbox">
@@ -292,7 +309,7 @@
 																			<s:textfield name="lastname" id="lastname" cssClass="inputBox" size="35" maxlength="30"/>
 																		</div>
 																	</div>
-																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																	<%-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 																		<div class="text"> <s:text name="broker.gender" /> </div>
 																		<div class="tbox">
 																			<s:radio name="gender" id="gender" list="#{'M':'Male','F':'Female'}" />
@@ -303,19 +320,19 @@
 																		<div class="tbox">
 																			<s:textfield id="dob" name="dob" cssClass="inputBox datepicker" />
 																		</div>
-																	</div>
+																	</div> --%>
 																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 																		<div class="text"> <s:text name="broker.nationality" /> <font color="red">*</font> </div>
 																		<div class="tbox">
 																			<s:select name="nationality" list="nationalitiesInfo" cssClass="inputBoxS" listKey="NationalityCode" listValue="NationalityName" headerKey="" headerValue="---Select---"/>
 																		</div>
 																	</div>
-																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																	<%-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 																		<div class="text"><s:text name="broker.occupation" /></div>
 																		<div class="tbox">
 																			<s:textfield name="occupation" id="occupation"  cssClass="inputBox" size="35" maxlength="30"/>
 																		</div>
-																	</div>
+																	</div> --%>
 																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 																		<div class="text"><s:text name="broker.mobile" /></div>
 																		<div class="tbox">
@@ -332,6 +349,12 @@
 																		<div class="text"><s:text name="broker.executive" /><font color="red">*</font></div>
 																		<div class="tbox">
 																			<s:select name="executive" list="executivesInfo" cssClass="inputBoxS" listKey="AcExecutiveId" listValue="AcExecutiveName" headerKey="" headerValue="---Select---" />
+																		</div>
+																	</div>
+																	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																		<div class="text"><s:text name="policy.eff" /> <font color="red">*</font></div>
+																		<div class="tbox">
+																			<s:textfield id="effecdate" name="effecdate" cssClass="inputBox datepicker" />
 																		</div>
 																	</div>
 																</div>
@@ -364,7 +387,12 @@
 																</div>
 															</div>
 														</s:if>
-														<div class="panel panel-primary">
+														<s:hidden id="policy_fee" name="policy_fee" value="N"></s:hidden>
+														<s:hidden id="policFee" name="policFee" value="0"></s:hidden>
+														<s:hidden id="app_for" name="app_for" value="broker"></s:hidden>
+														<s:hidden id="oneOffCommission" name="oneOffCommission"></s:hidden>
+														<s:hidden id="openCoverCommission" name="openCoverCommission"></s:hidden>
+														<%-- <div class="panel panel-primary">
 															<div class="panel-heading"> <s:text name="tax.info" /> </div>
 															<div class="panel-body">
 																<s:set var="taxInfo" value="customerTaxInfo[0]" />
@@ -411,7 +439,7 @@
 																	</div>
 																</div>
 															</div>
-														</div>
+														</div> --%>
 													</div>
 												</div>
 												<s:hidden name="agencyCode"/>
@@ -685,7 +713,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.infoCommon.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.infoCommon.action = "opencoverOC.action";
+		document.infoCommon.action = "opencoverBrokerMgm.action";
 	else
 		document.infoCommon.action = from+"BrokerMgm.action";
 	document.infoCommon.submit();
@@ -734,6 +762,31 @@ $(document).ready(function() {
 	}catch(e){}
 		
 });
-
+$(document).ready(function() {     
+    $('#attachedregion').multiselect({ 
+        includeSelectAllOption: true,
+          enableFiltering:true 
+          
+    	});
+});
+function callPopupbranch(url){	 
+	var checkedItems='';
+	try
+	{
+		var elements=document.getElementById("attachedregion");		 
+		for(i=0; i<elements.length; i++)
+		{
+			obj=elements[i];
+			if(obj.selected)
+				checkedItems+=obj.value+',';
+		}
+	}catch(e){}	 
+	if(checkedItems.length>1)
+		checkedItems=checkedItems.substring(0, checkedItems.length-1);	 
+	if(checkedItems!=null && checkedItems!="")
+		return callPopup(url+'?selregions='+checkedItems);
+	else
+		alert('Please Select Attached Region');	
+}
 </script>
 </html>

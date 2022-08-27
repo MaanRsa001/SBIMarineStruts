@@ -150,4 +150,7 @@ public class BrokerManagementService
 			e.printStackTrace();
 		}
 	}
+	public List<Object> getPolicyRegisterList(String login_Id, String branch) {
+		return dao.getPolicyRegisterList( login_Id,  branch);
+	}
 }

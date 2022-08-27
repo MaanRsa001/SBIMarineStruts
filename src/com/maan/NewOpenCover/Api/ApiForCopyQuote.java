@@ -41,7 +41,7 @@ public class ApiForCopyQuote extends ApiConfig implements Callable<Object>{
 			String link=getValueFromWebservice("maan.client.opencover."+requestfor);
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("SearchValue", bean.getSearchValue());
-				
+			hp.put("BranchCode", bean.getBranchCode());	
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				JSONObject jo  = (JSONObject) parser.parse(responseStr);
@@ -62,7 +62,7 @@ public class ApiForCopyQuote extends ApiConfig implements Callable<Object>{
 			String link=getValueFromWebservice("maan.client.opencover."+requestfor);
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("SearchValue", bean.getSearchValue());
-				
+			hp.put("BranchCode", bean.getBranchCode());	
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				dropdownList  = (JSONArray) parser.parse(responseStr);

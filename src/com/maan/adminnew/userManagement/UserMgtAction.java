@@ -115,9 +115,11 @@ public class UserMgtAction extends ActionSupport implements
 	public List<Map<String,Object>> getLinkedBranchList(){
 		return cservice.getLinkedBranchList();
 	}
-
+	public List<Map<String,Object>> getRegionsList(){
+		return cservice.getRegionsList();
+	}
 	public String getOCCertificate() {
-		occList = service.getOCCertificate(bean.getAgencyCode());
+		occList = service.getOCCertificate(bean.getAgencyCode(),bean.getUagencyCode());
 		return "openCover";
 	}
 
@@ -360,5 +362,15 @@ public class UserMgtAction extends ActionSupport implements
 				addActionError(map.get("Message").toString());
 			}
 		}
+	}
+	public String regionSelection(){
+		bean.setAttchedRegionsList(cservice.getAttancedRegion(bean.getAgencyCode()));
+		return "regionSelection";
+	}
+	public String branchSelection(){
+		return "branchSelection";
+	}
+	public List<Map<String,Object>> getAttachedBranchList(){
+		return cservice.getUserAttachedBranchList(bean.getAgencyCode(),bean.getSelregions());
 	}
 }

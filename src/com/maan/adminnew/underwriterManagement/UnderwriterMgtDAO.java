@@ -43,6 +43,7 @@ public class UnderwriterMgtDAO extends MyJdbcTemplate{
 				ba.setBroLinkLoc(temp.get("SubBranch")==null?"":temp.get("SubBranch").toString());
 				ba.setRegionCode(temp.get("RegionCode")==null?"":temp.get("RegionCode").toString());
 				ba.setBranchCodeS(temp.get("BranchCode")==null?"":temp.get("BranchCode").toString());
+				ba.setAttachedregion(temp.get("AttachedRegion").toString().trim().split(","));
 			}
 			String[] productIds=products.split(",");
 			List<String> product=new ArrayList<String>();

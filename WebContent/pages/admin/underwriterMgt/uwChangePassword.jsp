@@ -49,7 +49,6 @@
 								<s:text name="Underwriter.uwmanagement" />
 							</div>
 							<div class="panel-body">
-							<span style="color:red"><s:actionerror/> </span>
 								<s:if test='"passwordsuccess".equals(display)'>
 									<div class="row">
 										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">	
@@ -125,7 +124,7 @@ function fnCall(from){
 	else if(from=='exclude')
 		document.underwriter.action = "excludeIssuerUnderwriterMgm.action?type1=exclude";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else if(from=='statistics')
 		document.info.action = "statisticsRE.action";
 	<%--alert(from);

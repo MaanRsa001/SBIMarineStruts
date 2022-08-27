@@ -40,7 +40,7 @@ public class ReportDAO extends MyJdbcTemplate{
 		}else if("RR".equalsIgnoreCase(menuType) || "RA".equalsIgnoreCase(menuType) || "RU".equalsIgnoreCase(menuType)) {
 			reportList=	api.getReferralList(loginId,productId,issuer,  menuType, openCoverNo, startDate, endDate,  quoteNo,  policyNo, searchBy, searchValue,  searchField, searchString, searchOper, branchCode,  userLogin, schemeId, vehicleId);
 		} else if ("C".equalsIgnoreCase(menuType)) {
-			reportList = api.getCustomerList(loginId, issuer);
+			reportList = api.getCustomerList(loginId, issuer,branchCode);
 			return reportList;
 		} else if ("E".equalsIgnoreCase(menuType)) {
 			reportList = api.getEndorsementList(loginId,productId,issuer,  menuType, openCoverNo, startDate, endDate,  quoteNo,  policyNo, searchBy, searchValue,  searchField, searchString, searchOper, branchCode,  userLogin, schemeId, vehicleId);
@@ -1022,24 +1022,24 @@ public List<Object> getOpenCoverEndorseList(ReportBean bean, String userType, St
 }
 
 
-public List<Map<String, Object>> dashboardCharts(String key, String productId, String userType, String issuer,String loginId, String branch) {
-	return api.dashboardCharts( key,  productId,  userType,  issuer, loginId,  branch);
+public List<Map<String, Object>> dashboardCharts(String key, String productId, String userType, String issuer,String loginId, String branch, String openCoverNo) {
+	return api.dashboardCharts( key,  productId,  userType,  issuer, loginId,  branch,openCoverNo);
 	
 }
 
 
-public List<Map<String,Object>> dashboardTopBroker(String productId, String loginId, String userType, String branch) {
-		return api.dashboardTopBroker( productId,  loginId,  userType,  branch);
+public List<Map<String,Object>> dashboardTopBroker(String productId, String loginId, String userType, String branch, String opencoverno) {
+		return api.dashboardTopBroker( productId,  loginId,  userType,  branch,opencoverno);
 	
 }
 
-public List<Map<String,Object>> dashboardTopReferrals(String productId, String loginId, String userType, String branch) {
-	return api.dashboardTopReferrals( productId,  loginId,  userType,  branch);
+public List<Map<String,Object>> dashboardTopReferrals(String productId, String loginId, String userType, String branch, String opencoverno) {
+	return api.dashboardTopReferrals( productId,  loginId,  userType,  branch,opencoverno);
 }
 
 
-public List<Map<String, Object>> dashboardTopCustomer(String productId, String loginId, String userType,String branch) {
-	return api.dashboardTopCustomer( productId,  loginId,  userType,  branch);
+public List<Map<String, Object>> dashboardTopCustomer(String productId, String loginId, String userType,String branch, String opencoverno) {
+	return api.dashboardTopCustomer( productId,  loginId,  userType,  branch,opencoverno);
 	
 }
 

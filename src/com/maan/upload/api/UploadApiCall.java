@@ -210,7 +210,7 @@ public class UploadApiCall extends ApiConfig {
 				bean.setVatTax(json.get("VatTax")==null?"":json.get("VatTax").toString());
 				bean.setVatPercent(json.get("VatPercent")==null?"":json.get("VatPercent").toString());
 				bean.setPolicyfee(json.get("PolicyFee")==null?"":json.get("PolicyFee").toString());
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

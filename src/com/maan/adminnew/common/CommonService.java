@@ -164,4 +164,13 @@ public class CommonService {
 	public List<Map<String, Object>> getBranchList(String regionCode) {
 		return dao.getBranchList(regionCode);
 	}
+	public List<Map<String, Object>> getAttachedBranchList(String selregions) {
+		return dao.getAttachedBranchList(selregions);
+	}
+	public List<Map<String, Object>> getAttancedRegion(String agencyCode) {
+		return dao.getAttancedRegion(agencyCode);
+	}
+	public List<Map<String, Object>> getUserAttachedBranchList(String agencyCode, String selregions) {
+		return dao.getUserAttachedBranchList( agencyCode,  selregions);
+	}
 }

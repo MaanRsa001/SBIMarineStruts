@@ -46,7 +46,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<s:iterator value="branchList" status="stat" var="record">
+					<s:iterator value="attachedBranchList" status="stat" var="record">
 					<tr>
 						<td align="center"> <input type="checkbox"  value="<s:property value="#record.BranchCode"/>" id="checkbox<s:property value="#record.BranchCode"/>" /> </td>
 						<td> <s:property value="BranchName" /> </td>

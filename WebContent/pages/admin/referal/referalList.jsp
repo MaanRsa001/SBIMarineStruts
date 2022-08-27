@@ -282,7 +282,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.rejected.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.rejected.action = "opencoverOC.action";
+		document.rejected.action = "opencoverBrokerMgm.action";
 	else
 		document.rejected.action = from+"BrokerMgm.action";
 	document.rejected.submit();

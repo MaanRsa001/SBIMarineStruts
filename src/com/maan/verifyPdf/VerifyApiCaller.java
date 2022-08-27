@@ -59,7 +59,7 @@ public class VerifyApiCaller extends ApiConfig {
 			JSONParser parser = new JSONParser();
 			json = (JSONObject) parser.parse(response);
 			saveToken(json);
-			bean.setErrors((JSONArray) json.get("Errors"));
+			bean.setErrors((JSONArray) json.get("ErrorMessage"));
 			resultList = (JSONArray)json.get("VerfiyPolicyResponse");
 			
 		} catch (Exception e) {

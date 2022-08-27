@@ -33,7 +33,7 @@ public class TokenSessionStoreInterceptor
   
   private boolean checkUnCheckAct(ActionInvocation invocation) throws Exception{
 	  boolean res = true;
-	  String[] checkStr = {"lcListQuotation","brokersListQuotation","executiveListQuotation","promotionalListQuotation","cityListQuotation",
+	  String[] checkStr = {"lcListQuotation","brokersListQuotation","executiveListQuotation","promotionalListQuotation",
 			  "coverListQuotation","conveyanceListQuotation","packageListQuotation","agentListQuotation",
 			  "percentListQuotation","toleranceListQuotation","initPremium","clausesPremium","customerSelectionQuotation",
 			  "countryCityListQuotation","commodityListQuotation","vesselQuotation","addCommodityQuotation",
@@ -84,7 +84,7 @@ public class TokenSessionStoreInterceptor
 			  "insertCustomerNewOpenCover","editcustomerOpenCover","documentReportReg","searchListVessel","viewListVessel","pointingShips","shipDetailsReport","LoginbranchSelection",
 			  "getListAjaxRating","pointingVessel","checkCodeVerify","getOCCertificateUserMgm","openCoverJasperAreport","dashboardInfoAreport","openCoverdetailJasperAreport",
 			  "uploadDocument","submitDocument","downloadDocument","deleteDocument","documentpdfReport","viewdocPortfolio","uploadOpenUpload","listOpenUpload","errorOpenUpload","redirectOpenUpload","downloadOpenUpload","integrationAreport",
-			  "documentUploadAreport"};
+			  "documentUploadAreport","Loginsubmit","branchSelectionBrokerMgm","getUserAjaxUserMgm","regionSelectionUserMgm","branchSelectionUserMgm","opencoverBrokerMgm","statisticsBrokerMgm","clausespdfReport"};
 	  for(String str: checkStr) {
 		  if(str.equals(invocation.getProxy().getActionName())) {
 			  return false;

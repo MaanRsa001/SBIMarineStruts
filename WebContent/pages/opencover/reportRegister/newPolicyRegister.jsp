@@ -138,11 +138,10 @@ jQuery(function ($) {
 									<s:else><span style="color:#00aeef !important;">N/A</span></s:else>
 									</b></td>
 									<td><b>
-									<a href="#" title="Policy Wordings" style="color:#42ca6c !important;" onclick="return viewDoc('<s:property value="%{#var.ProposalNo}" />','<s:property value="%{#var.OpenCoverNo}" />','<s:property value="%{#session.user}" />','clauses','false','');">Policy Wordings</a>
-									<%-- <s:if test='!"Y".equalsIgnoreCase(#var.EndtStatus)'>
-										
+									<s:if test='!"Y".equalsIgnoreCase(#var.EndtStatus)'>
+										<a href="#" title="Policy Wordings" style="color:#42ca6c !important;" onclick="return viewDoc('<s:property value="%{#var.ProposalNo}" />','<s:property value="%{#var.OpenCoverNo}" />','<s:property value="%{#session.user}" />','clauses','false','');">Policy Wordings</a>
 									</s:if>
-									<s:else><span style="color:#42ca6c !important;">N/A</span></s:else> --%>
+									<s:else><span style="color:#42ca6c !important;">N/A</span></s:else>
 									</b></td>
 									<td><b>
 									<%-- <s:if test="#var.DebitNoteNo!=null && #var.DebitNoteNo!=''">
@@ -151,11 +150,10 @@ jQuery(function ($) {
 									<s:if test="#var.CreditNoteNo!=null && #var.CreditNoteNo!=''">
 										<a href="#" title="CreditNoteNo" onclick="return viewDoc('<s:property value="%{#var.ProposalNo}" />','<s:property value="%{#var.OpenCoverNo}" />','<s:property value="%{#session.user}" />','credit','false','<s:property value="%{#var.CreditNoteNo}" />');">Credit</a>
 									</s:if> --%>
-									<a href="#" title="Policy Wordings" style="color:#ff8d00 !important;" onclick="return addDoc('<s:property value="%{#var.OpenCoverNo}" />');">Documents</a>
-									<%-- <s:if test='!"Y".equalsIgnoreCase(#var.EndtStatus)'>
-										
+									<s:if test='!"Y".equalsIgnoreCase(#var.EndtStatus)'>
+										<a href="#" title="Policy Wordings" style="color:#ff8d00 !important;" onclick="return addDoc('<s:property value="%{#var.OpenCoverNo}" />');">Documents</a>
 									</s:if>
-									<s:else><span style="color:#ff8d00 !important;">N/A</span></s:else> --%>
+									<s:else><span style="color:#ff8d00 !important;">N/A</span></s:else>
 									</b></td>
 									<td><b>
 									<s:if test="#var.OriginalPolicyNo!=null && #var.OriginalPolicyNo!=''">

@@ -52,6 +52,10 @@ public class QuotationModel {
 	private String subjectivityName;
 	@SerializedName("SubjectivityYn")
 	private String subjectivityYn;
+	@SerializedName("TotalInsuredValue") 
+	private double totalInsuredValue;
+	@SerializedName("EquivalentInsuredValue") 
+    private double equivalentInsuredValue;
 	@SerializedName("PremiumDetails")
 	private PremiumDetails premiumDetails;
 	@SerializedName("Referral")
@@ -631,6 +635,18 @@ public class QuotationModel {
 	}
 	public void setPdfStampStatus(String pdfStampStatus) {
 		this.pdfStampStatus = pdfStampStatus;
+	}
+	public double getTotalInsuredValue() {
+		return totalInsuredValue;
+	}
+	public void setTotalInsuredValue(double totalInsuredValue) {
+		this.totalInsuredValue = totalInsuredValue;
+	}
+	public double getEquivalentInsuredValue() {
+		return equivalentInsuredValue;
+	}
+	public void setEquivalentInsuredValue(double equivalentInsuredValue) {
+		this.equivalentInsuredValue = equivalentInsuredValue;
 	}
 	
 }

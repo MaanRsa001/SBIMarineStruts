@@ -133,10 +133,10 @@ public class LogInAction extends ActionSupport  implements SessionAware, Servlet
 					session.put("accesstype", jo.get("AccessType")==null?"":jo.get("AccessType").toString());
 					session.put("belongs_to_b2c", getText("B2C_AGENCY_CODE").equals(jo.get("OaCode")==null?"":jo.get("OaCode").toString()));
 				}else { // broker and issuer
-                	String userType=jo.get("UserType").toString();
+					String userType=jo.get("UserType").toString();
                 	String loginType=!"B2C".equals(b2cType)?bean.getLoginType():"";
                 	boolean issuerCondition=("RSAIssuer".equalsIgnoreCase(userType) && "admin".equalsIgnoreCase(loginType)) ;
-                	boolean brokerCondition=(!"RSAIssuer".equalsIgnoreCase(userType) &&  ("Broker".equalsIgnoreCase(loginType) || "".equalsIgnoreCase(loginType) || "user".equalsIgnoreCase(loginType) ));
+                	boolean brokerCondition=("admin".equalsIgnoreCase(loginType) &&  ("Broker".equalsIgnoreCase(userType) || "".equalsIgnoreCase(userType) || "user".equalsIgnoreCase(userType) ));
                 	
                 	if( issuerCondition || brokerCondition ){			                    	
                 		if(issuerCondition){
@@ -237,7 +237,7 @@ public class LogInAction extends ActionSupport  implements SessionAware, Servlet
 		JSONParser parser = new JSONParser();
 		Object obj = parser.parse(response);
 		JSONObject jo = (JSONObject) obj;
-		bean.setErrors((JSONArray)jo.get("Errors"));
+		bean.setErrors((JSONArray)jo.get("ErrorMessage"));
 		validation();
 		if(!hasActionErrors()) {
 			String message = jo.get("Message")==null?"":jo.get("Message").toString();

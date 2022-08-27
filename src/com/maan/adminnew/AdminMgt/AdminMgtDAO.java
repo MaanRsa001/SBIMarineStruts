@@ -78,6 +78,7 @@ public class AdminMgtDAO extends MyJdbcTemplate
 				
 				bean.setUwgrade(uwg);
 				bean.setBranchId(map.get("AttachedBranch")==null?"":map.get("AttachedBranch").toString());
+				bean.setAttachedregion(map.get("AttachedRegion").toString().trim().split(","));
 				//bean.setProduct("Marine");
 			}
 		}catch (Exception e) {
@@ -541,15 +542,15 @@ public class AdminMgtDAO extends MyJdbcTemplate
 	}
 
 	public List<Map<String, Object>> dashboardCharts(String key, String productId, String userType, String branch,String loginId) {
-		return rapi.dashboardCharts( key,  productId,  userType,  "", loginId,  branch);
+		return rapi.dashboardCharts( key,  productId,  userType,  "", loginId,  branch,"");
 	}
 
 	public List<Map<String,Object>> dashboardTopBroker(String productId, String branch, String userType) {
-		return rapi.dashboardTopBroker( productId, "", userType, branch);
+		return rapi.dashboardTopBroker( productId, "", userType, branch,"");
 	}
 
 	public List<Map<String,Object>> dashboardTopReferrals(String productId, String branch, String userType) {
-		return rapi.dashboardTopReferrals( productId, "", userType, branch);
+		return rapi.dashboardTopReferrals( productId, "", userType, branch,"");
 		
 	}
 

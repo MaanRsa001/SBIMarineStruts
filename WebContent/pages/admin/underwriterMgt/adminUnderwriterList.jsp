@@ -44,7 +44,7 @@
 	                <input type="button" class="btn btn-sm btn-info" value="Customer Details" onclick="fnCall('customerDetail')"/><br/>
 	                <input type="button" class="btn btn-sm btn-info" value="OpenCover" onclick="fnCall('openCover')"/><br/>
 	                <input type="button" class="btn btn-sm btn-info" value="Referral" onclick="fnCall('referal')"/><br/>
-	                <input type="button" class="btn btn-sm btn-info" value="Statistics" onclick="fnCall('statistics')"/><br/>
+	                <!-- <input type="button" class="btn btn-sm btn-info" value="Statistics" onclick="fnCall('statistics')"/><br/> -->
 				</div>
 			</div>
 		</div>
@@ -132,7 +132,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.info.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else
 		document.info.action = from+"BrokerMgm.action";
 	document.info.submit();

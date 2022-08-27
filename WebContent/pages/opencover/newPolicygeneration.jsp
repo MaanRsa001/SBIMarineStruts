@@ -304,14 +304,7 @@ document.onkeypress = stopRKey;
 							</div>
 						</div>
 <%-- 						<s:if test='"11".equalsIgnoreCase(type) ||"13".equalsIgnoreCase(type)'> --%>
-						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="PolicyFee">
-							<div class="text">
-								<s:text name="Policy Fee" /><font color="red">*</font>
-					 		</div>
-					 		<div class="tbox">
-								<s:textfield name="policyFee"  maxlength="15" onkeyup="checkNumbers(this);vatCalc1(this.value)" class="inputBox"/>
-							</div>
-						</div>
+						
 <%-- 						</s:if> --%>
 					</div>
 				 </div>

@@ -273,7 +273,7 @@ public class MarineVehicleApiCaller extends ApiConfig {
 				bean.setPolicyNo(json.get("PolicyNo")==null?"":json.get("PolicyNo").toString());
 				bean.setCreditNoteNo(json.get("CreditNoteNo")==null?"":json.get("CreditNoteNo").toString());
 				bean.setDebitNoteNo(json.get("DebitNoteNo")==null?"":json.get("DebitNoteNo").toString());
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 				
 			}
 		} catch (Exception e) {
@@ -314,7 +314,7 @@ public class MarineVehicleApiCaller extends ApiConfig {
 				bean.setPolicyFee(json.get("PolicyFee")==null?"":json.get("PolicyFee").toString());
 				bean.setConditionDesc(json.get("ConditionDesc")==null?"":json.get("ConditionDesc").toString());
 				bean.setTranId(json.get("TranId")==null?"":json.get("TranId").toString());
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 				
 			}
 		} catch (Exception e) {

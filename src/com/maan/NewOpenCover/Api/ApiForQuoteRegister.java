@@ -42,6 +42,7 @@ public class ApiForQuoteRegister extends ApiConfig implements Callable<Object>{
 			String link=getValueFromWebservice("maan.client.opencover."+requestfor);
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("LoginId", bean.getBrokerId());
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -65,6 +66,7 @@ public class ApiForQuoteRegister extends ApiConfig implements Callable<Object>{
 			String link=getValueFromWebservice("maan.client.opencover."+requestfor);
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("LoginId", bean.getBrokerId());
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -86,7 +88,7 @@ public class ApiForQuoteRegister extends ApiConfig implements Callable<Object>{
 			String link=getValueFromWebservice("maan.client.opencover."+requestfor);
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("LoginId", bean.getBrokerId());
-			
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -111,6 +113,7 @@ public class ApiForQuoteRegister extends ApiConfig implements Callable<Object>{
 			hp.put("LoginId", bean.getBrokerId());
 			hp.put("Status", bean.getStatus());
 			hp.put("UserType", bean.getUserType());
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -134,6 +137,7 @@ public class ApiForQuoteRegister extends ApiConfig implements Callable<Object>{
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("LoginId", bean.getBrokerId());
 			hp.put("PolicyNo", bean.getPolicyNo());
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -157,6 +161,7 @@ public class ApiForQuoteRegister extends ApiConfig implements Callable<Object>{
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("LoginId", bean.getBrokerId());
 			hp.put("PolicyNo", bean.getPolicyNo());
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);

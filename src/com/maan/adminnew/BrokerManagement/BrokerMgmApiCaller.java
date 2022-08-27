@@ -1,6 +1,7 @@
 package com.maan.adminnew.BrokerManagement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -109,7 +110,10 @@ public class BrokerMgmApiCaller extends ApiConfig {
 	@SuppressWarnings("unchecked")
 	public void insertBrokerInfoApi(BrokerMgmBean bean) {
 		JSONObject req = new JSONObject();
+		JSONArray attachedArr = new JSONArray();
+		JSONArray attachedReg = new JSONArray();
 		try {
+			List<String> attachedBranchCode = Arrays.asList(bean.getBranchId().split(","));
 			link = getValueFromWebservice("maan.admin.broker.insert");
 			
 			if(!"new".equalsIgnoreCase(bean.getMode())) {
@@ -159,7 +163,22 @@ public class BrokerMgmApiCaller extends ApiConfig {
 			req.put("Status", bean.getStatus());
 			req.put("Mode", bean.getMode());
 			req.put("RegionCode", bean.getRegionCode());
-			
+			if(bean.getAttachedregion()!=null) {
+				for (int i = 0; i < bean.getAttachedregion().length; i++) {
+					JSONObject obj = new JSONObject();
+					obj.put("RegionCode", bean.getAttachedregion()[i]);
+					attachedReg.add(obj);
+				}
+				}
+			req.put("AttachedRegionInfo", attachedReg);
+			if(attachedBranchCode!=null) {
+			for (int i = 0; i < attachedBranchCode.size(); i++) {
+				JSONObject obj = new JSONObject();
+				obj.put("AttachedBranchId", attachedBranchCode.get(i));
+				attachedArr.add(obj);
+			}
+			}
+			req.put("AttachedBranchInfo", attachedArr);
 			response = callAPI(link, token, req.toString());
 			JSONObject json = new JSONObject();
 			JSONParser parser = new JSONParser();
@@ -187,7 +206,7 @@ public class BrokerMgmApiCaller extends ApiConfig {
 			JSONParser parser = new JSONParser();
 			json = (JSONObject) parser.parse(response);
 			saveToken(json);
-			bean.setErrors((JSONArray) json.get("Errors"));
+			bean.setErrors((JSONArray) json.get("ErrorMessage"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -251,4 +270,25 @@ public class BrokerMgmApiCaller extends ApiConfig {
 		return result;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<Object> getPolicyRegisterList(String login_Id, String branch) {
+		List<Object> result = new ArrayList<Object>();
+		JSONObject hp = new JSONObject();
+		JSONObject json = null;
+		try {
+			link = getValueFromWebservice("maan.client.opencover.policyregister");
+			hp.put("LoginId", login_Id);
+			hp.put("BranchCode", branch);
+			token = session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString();
+			response = callAPI(link, token, hp.toJSONString());
+			JSONParser parser = new JSONParser();
+			json = (JSONObject) parser.parse(response);
+			result =  (JSONArray) json.get("Result");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 }
+

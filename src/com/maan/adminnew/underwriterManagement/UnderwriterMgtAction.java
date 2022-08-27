@@ -88,6 +88,9 @@ public class UnderwriterMgtAction extends ActionSupport implements ModelDriven<U
 	public List<Map<String,Object>> getBranchList(){
 		return cservice.getBranchList(bean.getRegionCode());
 	}
+	public List<Map<String,Object>> getAttachedBranchList(){
+		return cservice.getAttachedBranchList(bean.getSelregions());
+	}
 	public String getABList(){
     	logger.info("ENTER-->Method to getABList");
 		underwriterList=service.getAdminUnderwriterList(bean, bean.getAgencyCode(), bean.getMode1(),branchCode);

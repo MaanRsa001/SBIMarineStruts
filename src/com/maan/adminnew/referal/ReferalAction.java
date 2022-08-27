@@ -104,11 +104,11 @@ public class ReferalAction extends ActionSupport implements ModelDriven<ReferalB
 		branchDet = cservice.getBranchList(getRegion()); 
 		
 		if(StringUtils.isNotBlank(bean.getReqFrom()))
-		occList = service.getOCListApi(bean.getReqFrom(),bean.getProductID(), bean.getBranchId(), bean.getAgencyCode(),login_id,attched_Branch);
+		occList = service.getOCListApi(bean.getReqFrom(),bean.getProductID(), bean.getBranchId(), bean.getAgencyCode(),login_id,regionCode);
 		if(bean.getRdate()!=null && !"".equals(bean.getRdate())){
 			if("".equals(bean.getFrom1()) || "ajax".equalsIgnoreCase(bean.getFrom1()))
 				returnResult="referalAjax";
-			policyList=service.getPolicyList(bean.getBranchId(), bean.getRdate(), bean.getProductID(), bean.getReqFrom(), bean.getAgencyCode(),login_id,attched_Branch);
+			policyList=service.getPolicyList(bean.getBranchId(), bean.getRdate(), bean.getProductID(), bean.getReqFrom(), bean.getAgencyCode(),login_id,regionCode);
 		}else if("".equals(bean.getFrom1()) || "ajax".equalsIgnoreCase(bean.getFrom1())){
 			returnResult="referalAjax";
     	}else{

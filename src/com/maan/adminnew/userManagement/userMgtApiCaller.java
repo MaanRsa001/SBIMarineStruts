@@ -91,7 +91,11 @@ public class userMgtApiCaller extends ApiConfig {
 
 	@SuppressWarnings("unchecked")
 	public void newUserInsertOrUpdate(UserMgtBean bean,String branchCode) {
+		JSONArray attachedArr = new JSONArray();
+		JSONArray attachedReg = new JSONArray();
 		try {
+			List<String> attachedBranchCode = Arrays.asList(bean.getBranchId().split(","));
+			List<String> attachedRegionCode = Arrays.asList(bean.getAttachedregion().split(","));
 			link = getValueFromWebservice("maan.admin.user.insert");
 			JSONObject req = new JSONObject();
 			
@@ -122,7 +126,22 @@ public class userMgtApiCaller extends ApiConfig {
 			req.put("SubBranch", bean.getBroLinkLoc());
 			req.put("Mode", bean.getMode());
 			req.put("UserType", "User");
-			
+			if(attachedRegionCode!=null) {
+				for (int i = 0; i < attachedRegionCode.size(); i++) {
+					JSONObject obj = new JSONObject();
+					obj.put("RegionCode", attachedRegionCode.get(i));
+					attachedReg.add(obj);
+				}
+				}
+			req.put("AttachedRegionInfo", attachedReg);
+			if(attachedBranchCode!=null) {
+			for (int i = 0; i < attachedBranchCode.size(); i++) {
+				JSONObject obj = new JSONObject();
+				obj.put("AttachedBranchId", attachedBranchCode.get(i));
+				attachedArr.add(obj);
+			}
+			}
+			req.put("AttachedBranchInfo", attachedArr);
 			logger.info(req.toString());
 			token = session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString();
 			response = callAPI(link, token, req.toString());
@@ -131,7 +150,7 @@ public class userMgtApiCaller extends ApiConfig {
 				JSONParser parser = new JSONParser();
 				json = (JSONObject) parser.parse(response);
 				saveToken(json);
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -245,7 +264,7 @@ public class userMgtApiCaller extends ApiConfig {
 				JSONParser parser = new JSONParser();
 				json = (JSONObject) parser.parse(response);
 				saveToken(json);
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 			}
 			
 		}catch(Exception e) {
@@ -253,12 +272,14 @@ public class userMgtApiCaller extends ApiConfig {
 		}
 	}
 
-	public List<Object> getOccCertificate(String agencyCode) {
+	@SuppressWarnings("unchecked")
+	public List<Object> getOccCertificate(String agencyCode, String uagencyCode) {
 		List<Object> result = null;
 		try {
 			link = getValueFromWebservice("maan.admin.user.product.getOccertificate");
 			JSONObject req = new JSONObject();
 			req.put("AgencyCode", agencyCode);
+			req.put("UAgencyCode", uagencyCode);
 			token = session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString();
 			response = callAPI(link, token, req.toString());
 			if(response!=null) {

@@ -1917,7 +1917,7 @@ public class PremiumAction extends ActionSupport {
 					
 					PremiumDetails pd = qm.getPremiumDetails();
 					if(pd != null) {
-						qim.put("EQUIVALENT", pd.getEquivalentInsuredValue());
+						//qim.put("EQUIVALENT", pd.getEquivalentInsuredValue());
 						qim.put("TOTAL_PREMIUM", pd.getTotalPremium());
 						qim.put("MARINE_PREMIUM", pd.getMarinePremium());
 						qim.put("WAR_PREMIUM", pd.getWarPremium());
@@ -1961,8 +1961,8 @@ public class PremiumAction extends ActionSupport {
 						setInsuredGoodsInfo(igil);
 					}
 					
-					qim.put("TOTAL_INSURED", totalInsued);
-					
+					qim.put("TOTAL_INSURED", qm.getTotalInsuredValue());
+					qim.put("EQUIVALENT", qm.getEquivalentInsuredValue());
 					qil.add(qim);
 					setQuotationInfo(qil);
 					setPolicyInformation(qil);

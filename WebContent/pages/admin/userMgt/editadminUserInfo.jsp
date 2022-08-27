@@ -5,6 +5,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap-multiselect.css" />
+	<script src="<%=request.getContextPath()%>/bootstrap/js/bootstrap-multiselect.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="row">
@@ -37,11 +39,11 @@
 								<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Referral" onclick="fnCall('referal')"/>
 							</div>
 						</div>
-						<div class="row">
+						<!-- <div class="row">
 							<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 								<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Statistics" onclick="fnCall('statistics')"/>
 							</div>
-						</div>
+						</div> -->
 					</s:if>
 					<s:else>
 						<div class="row">
@@ -156,11 +158,11 @@
 																		<div class="text"> <s:text name="user.broker" /> </div>
 																		<div class="tbox">
 																			<s:if test='"".equals(borganization) || borganization==null'>
-					                           									<s:select name="broker" list="brokerList" listKey="AgencyCode" listValue="CompanyName" cssClass="inputBoxS" headerKey="" headerValue="---Select---"/>
+					                           									<s:select name="broker" id="broker" list="brokerList" listKey="AgencyCode" listValue="CompanyName" cssClass="inputBoxS" headerKey="" headerValue="---Select---" />
 					                           								</s:if>
 					                           								<s:else>
 					                           									<s:property value="borganization"/>
-					                           									<s:hidden name="broker" value="%{agencyCode}"></s:hidden>
+					                           									<s:hidden name="broker" id="broker" value="%{agencyCode}"></s:hidden>
 					                           								</s:else>
 																		</div>
 																	</div>
@@ -178,11 +180,12 @@
 																		<div class="text"> <s:text name="user.broker" /> <font color="red">*</font></div>
 																		<div class="tbox">
 																			<s:if test='"".equals(borganization) || borganization==null'>
-					                           									<s:select name="broker" list="brokerList" listKey="AgencyCode" listValue="CompanyName" cssClass="inputBoxS" headerKey="" headerValue="---Select---"/>
+					                           									<s:select name="broker" id="broker" list="brokerList" listKey="AgencyCode" listValue="CompanyName" cssClass="inputBoxS" headerKey="" headerValue="---Select---"/>
 					                           								</s:if>
 					                           								<s:else>
-					                           									<s:property value="borganization"/>
-					                           									<s:hidden name="broker" value="%{agencyCode}"></s:hidden>
+					                           								<s:select name="broker" id="broker" list="brokerList" listKey="AgencyCode" listValue="CompanyName" cssClass="inputBoxS" headerKey="" headerValue="---Select---" value="%{agencyCode}"/>
+					                           									<%-- <s:property value="borganization"/>
+					                           									<s:hidden name="broker" id="broker" value="%{agencyCode}"></s:hidden> --%>
 					                           								</s:else>
 																		</div>
 																	</div>
@@ -289,6 +292,21 @@
 																	<div class="text"> <s:text name="user.fax" /> </div>
 																	<div class="tbox">
 																		<s:textfield name="ufax" id="ufax" cssClass="inputBox" size="35" maxlength="10"/>
+																	</div>
+																</div>
+																<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																	<div class="text"><s:text name="admin.user.region.select"/> <font color="red">*</font></div>
+																	<div class="tbox">
+																		<s:textarea name="attachedregion" id="attachedregion" cssClass="inputBoxA" rows="2" cssStyle="width: 85%;"/>
+																		<input class="btn btn-sm btn-primary" value="..." style="float:right;" type="button" name="menu" onclick="return callPopupregion('<%=request.getContextPath()%>/regionSelectionUserMgm.action')"/>							
+																	</div>
+																</div>
+																
+																<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+																	<div class="text"><s:text name="admin.user.branch.select"/> <font color="red">*</font></div>
+																	<div class="tbox">
+																		<s:textarea name="branchId" id="branchId" cssClass="inputBoxA" rows="2" cssStyle="width: 85%;"/>
+																		<input class="btn btn-sm btn-primary" value="..." style="float:right;" type="button" name="menu" onclick="return callPopupbranch('<%=request.getContextPath()%>/branchSelectionUserMgm.action')"/>							
 																	</div>
 																</div>
 																<%-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -580,7 +598,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.info.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else
 		document.info.action = from+"BrokerMgm.action";
 	document.info.submit();
@@ -629,7 +647,25 @@ $(document).ready(function() {
 function forward1(agcode, id, value, mode1){
 	postRequest('<%=request.getContextPath()%>/getUserAjaxUserMgm.action?reqFrom='+id+'&agencyCode='+agcode+'&productID='+value+'&mode1='+mode1, id);
 }
-	
+function fnRegion1(agcode, id){
+	postRequest('<%=request.getContextPath()%>/getUserAjaxUserMgm.action?reqFrom='+id+'&agencyCode='+agcode, id);
+}	
+function fnRegion(agcode, id){
+
+	 $.ajax({
+        type: "POST",
+        url: '${pageContext.request.contextPath}/getUserAjaxUserMgm.action?reqFrom='+id+'&agencyCode='+agcode,
+        success: function(data){
+            $('#' + id).html(data);
+            $('#attachedregion').multiselect({ 
+                includeSelectAllOption: true,
+                  enableFiltering:true 
+                  
+            	});
+        }
+        });
+       // getAjaxCover(value,'coverdepartid0','0');
+}
 function fnsubmit(from, action, frm){
 	frm.action=action+".action";
 	frm.submit();
@@ -648,6 +684,38 @@ function addProduct(){
 	document.form1.submit();	
 }
 
+function callPopupregion(url){	 
+	var checkedItems='';
+	try
+	{
+		var elements=document.getElementById("broker");		 
+		for(i=0; i<elements.length; i++)
+		{
+			obj=elements[i];
+			if(obj.selected)
+				checkedItems+=obj.value+',';
+		}
+	}catch(e){}	 
+	if(checkedItems.length>1)
+		checkedItems=checkedItems.substring(0, checkedItems.length-1);	 
+	if(checkedItems!=null && checkedItems!="")
+		return callPopup(url+'?agencyCode='+checkedItems);
+	else
+		alert('Please Select Broker');	
+}
+function callPopupbranch(url){	 
+	var checkedItems='';
+	var agencycode='';
+	try
+	{
+		 checkedItems=document.getElementById("attachedregion").value;		 
+		 agencycode=document.getElementById("broker").value;		 
+	}catch(e){}	 	 
+	if(checkedItems!=null && checkedItems!="")
+		return callPopup(url+'?selregions='+checkedItems+'&agencyCode='+agencycode);
+	else
+		alert('Please Select Attached Region');	
+}
 </script>
 </body>
 </html>

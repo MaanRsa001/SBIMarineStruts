@@ -387,6 +387,14 @@ document.onkeypress = stopRKey;
 							<s:textfield name="marginPercent" id="marginPercent" cssClass="inputBox tooltipContent" data-content="Margin Percent" disabled="#disable" maxlength="6" onchange="checkNumbers(this);" />
 						</div>
 					</div> --%>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
+							<div class="text">
+								<s:text name="Policy Fee" /><font color="red">*</font>
+					 		</div>
+					 		<div class="tbox">
+								<s:textfield name="policyFee"  maxlength="15" onkeyup="checkNumbers(this);" class="inputBox"/>
+							</div>
+						</div>
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text">
 				 			<s:text name="Voyage Remarks" />

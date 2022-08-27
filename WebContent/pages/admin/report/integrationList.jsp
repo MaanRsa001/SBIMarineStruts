@@ -131,15 +131,15 @@
 							<tr>
 								<td></td>
 								<td><s:property value="%{#stat.index+1}" /> </td>
-								<td><s:property value="Product" /> </td>
+								<td><s:property value="product" /> </td>
 								<td><s:property value="QuoteNo" /> </td>
 								<td><s:property value="BrokerName" /> </td>
 								<td><s:property value="IssuedBy" /> </td>
 								<td><s:property value="CustomerName" /> </td>
-								<td><s:property value="Queotationdate" /> </td>
+								<td><s:property value="InceptionDate" /> </td>
 								<td><s:property value="ExpiryDate" /> </td>
 								<td><s:property value="Premium" /> </td>
-								<td><s:property value="CoreIntgError" /> </td>
+								<td><s:property value="coreIntgError" /> </td>
 								<td><button class="btn btn-sm btn-primary" onclick="reIntegEditMarine('<s:property value="QuoteNo" />');"><i class='fas fa-pen'></i></button> </td>
 								<td><s:a href="#" cssClass="btn btn-sm btn-primary" onclick="return reintegrate('%{#record.ApplicationNO}');"><i class="glyphicon glyphicon-book"></i></s:a> </td>
 							</tr>

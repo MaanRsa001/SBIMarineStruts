@@ -52,17 +52,17 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
-						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="OpenCover" onclick="fnCall('customerDetail')"/>
+						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="OpenCover" onclick="fnCall('openCover')"/>
 					</div>
 					<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Referral" onclick="fnCall('referal')"/>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Statistics" onclick="fnCall('statistics')"/>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -83,25 +83,25 @@
 							<th><s:text name="Customer Name" /></th>
 							<th><s:text name="Policy Start Date" /></th>
 							<th><s:text name="Policy End date" /></th>
-							<th><s:text name="Schedule" /></th>
-							<th><s:text name="LC Details" /></th>
+							<%-- <th><s:text name="Schedule" /></th>
+							<th><s:text name="LC Details" /></th> --%>
 						</tr>
 						</thead>
 						<tbody>
 						<s:iterator value="portfolioList" status="stat" var="record">
 						<tr>
 							<td></td>
-							<td><s:property value="MISSIPPI_OPENCOVER_NO" /></td>
-							<td><s:property value="PROPOSAL_NO" /></td>
-							<td><s:property value="CUSTOMER_NAME" /></td>
-							<td><s:property value="START_DATE" /></td>
-							<td><s:property value="END_DATE" /></td>						
-							<td align="center">
+							<td><s:property value="MissippiOpenCoverNo" /></td>
+							<td><s:property value="ProposalNo" /></td>
+							<td><s:property value="CompanyName" /></td>
+							<td><s:property value="OpenCoverStartDate" /></td>
+							<td><s:property value="OpenCoverEndDate" /></td>						
+							<%-- <td align="center">
 								<a href="#" type="button" class="btn btn-sm btn-info" onclick="fndoc('<s:property value="#record.MISSIPPI_OPENCOVER_NO"/>', '<s:property value="session.user"/>', 'schedule', '<s:property value="#record.MISSIPPI_OPENCOVER_NO"/>', '', '<s:property value="#record.proposal_no"/>', 'false')"> <i class="fa fa-book"></i> </a>
 							</td>
 							<td align="center">
 								<a href="#" type="button" class="btn btn-sm btn-default" onclick="fnlcdetail('<s:property value="#record.MISSIPPI_OPENCOVER_NO"/>', '<s:property value="#record.PROPOSAL_NO"/>', '<s:property value="session.user"/>')"><i class="fa fa-eye"></i></a>
-							</td>
+							</td> --%>
 						</tr>
 						</s:iterator>
 						</tbody>						
@@ -141,7 +141,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.info.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else
 		document.info.action = from+"BrokerMgm.action";
 	document.info.submit();

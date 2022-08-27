@@ -49,7 +49,7 @@ public class ReferalAPI extends ApiConfig {
 	
 	@SuppressWarnings("unchecked")
 	public List<Object> getOcListApi(String reqFrom, String productID, String branchId, String agencyCode,
-			String login_id, String attched_Branch) {
+			String login_id, String region) {
 		List<Object>resultList= new ArrayList<Object>();
 		if("approved".equalsIgnoreCase(reqFrom)) {
 			link = getValueFromWebservice("maan.admin.referral.approved");
@@ -63,6 +63,7 @@ public class ReferalAPI extends ApiConfig {
 			req.put("LoginId", login_id);
 			req.put("ProductId", productID);
 			req.put("BranchCode", branchId);
+			req.put("RegionCode", region);
 			response = callAPI(link, token, req.toString());
 			JSONParser parser = new JSONParser();
 			JSONObject json = new JSONObject();

@@ -110,7 +110,7 @@ public class ApiForCustomer extends ApiConfig implements Callable<Object>{
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 				
 			} 
 		}catch (Exception e) {
@@ -130,7 +130,7 @@ public class ApiForCustomer extends ApiConfig implements Callable<Object>{
 			String link=getValueFromWebservice("maan.client.opencover."+requestfor);
 			String authorization= "Bearer " + (session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString());
 			hp.put("LoginId", bean.getBrokerId());
-			hp.put("CustomerId", bean.getCustomerId());
+			hp.put("BranchCode", bean.getBranchCode());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -170,7 +170,7 @@ public class ApiForCustomer extends ApiConfig implements Callable<Object>{
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
 				
-				bean.setErrors((JSONArray) json.get("Errors"));
+				bean.setErrors((JSONArray) json.get("ErrorMessage"));
 				bean.setProposalNo(json.get("ProposalNo")==null?"":json.get("ProposalNo").toString()); 
 				
 			}

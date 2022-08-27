@@ -957,7 +957,7 @@ public class QuotationAction extends ActionSupport{
 		String userId = issuer==null?loginId:issuer;
 		String qStatus = "0".equals(settlingAgent)?"RA":"";
 	Object[] objects=new String[]{option,productId,branchCode,openCoverNo,modeOfTransport,cover,originCountry,
-			destCountry,saleTerm,saleTermPercent,lcBank,issuer,brokerCode,userId,qStatus};
+			destCountry,saleTerm,saleTermPercent,lcBank,issuer,brokerCode,userId,qStatus,state};
 		return objects;
 	}
 	public List<Map<String, Object>> getTitleList(){
@@ -1400,7 +1400,6 @@ public class QuotationAction extends ActionSupport{
 					
 					PremiumDetails pd = qm.getPremiumDetails();
 					if(pd != null) {
-						qim.put("EQUIVALENT", pd.getEquivalentInsuredValue());
 						qim.put("TOTAL_PREMIUM", pd.getTotalPremium());
 						qim.put("MARINE_PREMIUM", pd.getMarinePremium());
 						qim.put("WAR_PREMIUM", pd.getWarPremium());
@@ -1443,8 +1442,8 @@ public class QuotationAction extends ActionSupport{
 						setInsuredGoodsInfo(igil);
 					}
 					
-					qim.put("TOTAL_INSURED", totalInsued);
-					
+					qim.put("TOTAL_INSURED", qm.getTotalInsuredValue());
+					qim.put("EQUIVALENT", qm.getEquivalentInsuredValue());
 					qil.add(qim);
 					setQuotationInfo(qil);
 					setPolicyInformation(qil);
@@ -1508,6 +1507,7 @@ public class QuotationAction extends ActionSupport{
 			cd.setAadharNo(aadharNo==null?"":aadharNo);
 			cd.setEiaNumber(eiaNumber==null?"":eiaNumber);
 			cd.setIanocode(ianocode==null?"":ianocode);
+			cd.setCode(customerId==null?"":customerId);
 			qm.setCustomerDetails(cd);
 			
 			QuoteDetails qd = new QuoteDetails();

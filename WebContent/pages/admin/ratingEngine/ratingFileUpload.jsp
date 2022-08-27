@@ -107,7 +107,7 @@
 																<tr>
 																	<td class="bg">
 																	  <table width="100%" border="0" align="center" cellpadding="4" cellspacing="0">
-																		<s:if test='"exchangeupload".equals(menuType)'>
+																		<%-- <s:if test='"exchangeupload".equals(menuType)'> --%>
 																			<div class="boxcontent" style="margin-top: 10px;" align="center">				    						    		
 																				<div id="loaderImage" style="display:none">
 																					<b><s:label key="upload.progress" cssStyle="color:#073e8f" /></b>
@@ -120,10 +120,10 @@
 																			<tr>
 																				<td>&nbsp;</td>
 																				<td> <s:text name="Effective Date"/><font color="red">*</font> </td>
-																				<td> <div class="inputAppend form-control" style="width:51%;height:30px;"><sj:datepicker id="eff_date" name="eff_date" cssClass="inputBox1" cssStyle="border: none;background: transparent;width:80%;" displayFormat="mm/dd/yy" readonly="true" showAnim="slideDown" duration="fast" disabled="#disable" /></div> </td>
+																				<td> <s:textfield name="eff_date" id="eff_date" cssClass="inputBox datePicker form-control" cssStyle="width:51%;" readonly="true" /> </td>
 																				<td>&nbsp;</td>
 																			</tr>
-																		</s:if>
+																		<%-- </s:if> --%>
 																		<tr>
 																			<td>&nbsp;</td>
 																			<td> <s:text name="Upload File"/><font color="red">*</font> </td>
@@ -137,7 +137,7 @@
 																		</tr>
 																		<tr> <td colspan="4" align="center">
 																		<br/><br/>
-																			<a href="downloadRating.do?reqFrom=${menuType}" class="form">Download Sample File</a></td>
+																			<a href="downloadRating.do?reqFrom=exchangeupload" class="form">Download Sample File</a></td>
 																		</tr>
 																	 </table></td>
 																	 </tr>
@@ -148,7 +148,7 @@
 														</tr>
 													</table>
 											   		<s:hidden name="menuType"/>
-											   		<s:hidden name="reqFrom" value="%{menuType}" id="reqFrom"/>
+											   		<s:hidden name="reqFrom" value="exchangeupload" id="reqFrom"/>
 												</td>
 											</tr>
 										</table>
@@ -194,7 +194,7 @@
 							    					<s:hidden name="typeId"/>
 							    					<s:hidden name="downloadType" id="downloadType"/>
 							    					<s:hidden name="menuType"/>
-							    					<s:hidden name="reqFrom" id='reqFrom'/>
+							    					<s:hidden name="reqFrom" value="exchangeupload" id="reqFrom"/>
 												</td>
 											</tr>
 										</s:iterator>

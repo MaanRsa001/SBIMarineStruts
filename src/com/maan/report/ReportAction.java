@@ -612,7 +612,7 @@ public class ReportAction extends ActionSupport  implements ModelDriven<ReportBe
 			
 			try{
 				if("chart".equalsIgnoreCase(menuType) && ("3".equals(productId) || "11".equals(productId))){
-					service.dashboardCharts(productId, userType, issuer, (String)session.get("user"),(String)session.get("LoginBranchCode"), bean);
+					service.dashboardCharts(productId, userType, issuer, (String)session.get("user"),(String)session.get("LoginBranchCode"), bean,getOriginalPolicyNo());
 				}
 			}catch(Exception e){
 				logger.debug("Exception @ dashBoardGraph "+e);
@@ -1666,13 +1666,13 @@ public long diffInDays(String startDate,String endDate){
 		return "viewOpencover";
 	}
 	public List<Map<String,Object>>getTopBrokerList(){
-		return service.dashboardTopBroker(productId,(String)session.get("user"),userType,(String)session.get("LoginBranchCode"));
+		return service.dashboardTopBroker(productId,(String)session.get("user"),userType,(String)session.get("LoginBranchCode"),getOriginalPolicyNo());
 	}
 	public List<Map<String,Object>>getTopReferralsList(){
-		return service.dashboardTopReferrals(productId,(String)session.get("user"),userType,(String)session.get("LoginBranchCode"));
+		return service.dashboardTopReferrals(productId,(String)session.get("user"),userType,(String)session.get("LoginBranchCode"),getOriginalPolicyNo());
 	}
 	public List<Map<String,Object>>getTopCustomerList(){
-		return service.dashboardTopCustomer(productId,(String)session.get("user"),userType,(String)session.get("LoginBranchCode"));
+		return service.dashboardTopCustomer(productId,(String)session.get("user"),userType,(String)session.get("LoginBranchCode"),getOriginalPolicyNo());
 	}
 	public String documentpdf() {
 		logger.info("Enter document "+bean.getDocType());

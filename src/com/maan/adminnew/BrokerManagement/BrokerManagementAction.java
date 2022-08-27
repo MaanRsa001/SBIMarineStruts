@@ -47,6 +47,7 @@ public class BrokerManagementAction extends ActionSupport implements ModelDriven
 	private List <Object> productInfo=new ArrayList<Object>();
 	private List <Object> userInfo;
 	private List <Object> userInfo1;
+	private List<Object> portfolioList;
 	final Validation validate=new Validation();
 	
 	BrokerManagementService service=new BrokerManagementService();
@@ -61,6 +62,18 @@ public class BrokerManagementAction extends ActionSupport implements ModelDriven
 	public BrokerMgmBean getModel() {
 		return bean;
 	}
+	
+	
+	public List<Object> getPortfolioList() {
+		return portfolioList;
+	}
+
+
+	public void setPortfolioList(List<Object> portfolioList) {
+		this.portfolioList = portfolioList;
+	}
+
+
 	public List<Object> getProductInfo() {
 		return productInfo;
 	}
@@ -92,13 +105,13 @@ public class BrokerManagementAction extends ActionSupport implements ModelDriven
 		return service.getBrokerCode();
 	}
 	public List <Object> getCountriesInfo() {
-		return cservice.getCountries(branchCode);
+		return cservice.getCountries(belongingBranch);
 	}
 	public List <Object> getEmiratesInfo() {
 		return cservice.getEmirates(branchCode);
 	}
 	public List <Object> getNationalitiesInfo() {
-		return cservice.getNationalities(branchCode);
+		return cservice.getNationalities(belongingBranch);
 	}
 	public List <Object> getTitlesInfo() {
 		return cservice.getTitles(belongingBranch);
@@ -138,6 +151,12 @@ public class BrokerManagementAction extends ActionSupport implements ModelDriven
 	}
 	public List<Map<String,Object>> getBranchList(){
 		return cservice.getBranchList(bean.getRegionCode());
+	}
+	public List<Map<String,Object>> getAttachedBranchList(){
+		return cservice.getAttachedBranchList(bean.getSelregions());
+	}
+	public String branchSelection(){
+		return "branchSelection";
 	}
 	public String getABList(){
     	logger.info("ENTER-->Method to getABList");
@@ -713,5 +732,9 @@ public class BrokerManagementAction extends ActionSupport implements ModelDriven
 				addActionError(map.get("Message").toString());
 			}
 		}
+	}
+    public String opencover() {
+    	portfolioList=service.getPolicyRegisterList(bean.getLogin_Id(),branchCode); 
+		return "brokeroc";
 	}
 }

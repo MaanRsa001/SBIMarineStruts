@@ -534,7 +534,7 @@ public class DeclarationAction extends ActionSupport {
 	public String update() {
 		try {
 			JSONObject response = api.policyGeneration(this);
-			List<Map<String, Object>> err = (JSONArray) response.get("Errors");
+			List<Map<String, Object>> err = (JSONArray) response.get("ErrorMessage");
 			if (StringUtils.isNotBlank(response.get("PolicyNo") == null ? "" : response.get("PolicyNo").toString())) {
 				policyNo = response.get("PolicyNo").toString();
 				declarationList = service.getDeclarationList(selectedAllQuote);

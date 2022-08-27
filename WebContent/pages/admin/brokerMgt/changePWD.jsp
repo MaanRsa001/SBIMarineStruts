@@ -37,11 +37,11 @@
 						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Referral" onclick="fnCall('referal')"/>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Statistics" onclick="fnCall('statistics')"/>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -145,7 +145,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.brokeredit.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.brokeredit.action = "opencoverOC.action";
+		document.brokeredit.action = "opencoverBrokerMgm.action";
 	else
 		document.brokeredit.action = from+"BrokerMgm.action";
 	document.brokeredit.submit();

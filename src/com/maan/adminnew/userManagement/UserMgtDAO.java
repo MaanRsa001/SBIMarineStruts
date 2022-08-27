@@ -52,6 +52,8 @@ public class UserMgtDAO extends MyJdbcTemplate{
 					ba.setBroker(map.get("AgencyCode")==null?"":map.get("AgencyCode").toString());
 					ba.setUtitle(map.get("Title")==null?"":map.get("Title").toString());
 					ba.setBroLinkLoc(map.get("SubBranch")==null?"":map.get("SubBranch").toString());
+					ba.setAttachedregion(map.get("AttachedRegion")==null?"":map.get("AttachedRegion").toString());
+					ba.setBranchId(map.get("AttachedBranch")==null?"":map.get("AttachedBranch").toString());
 			}
 		}catch (Exception e) {			
 			logger.debug("EXCEPTION @ { " + e + " }");
@@ -95,10 +97,10 @@ public class UserMgtDAO extends MyJdbcTemplate{
 		return brokerList;
 	}
 	
-	public List <Object> getOCCertificate(String agencyCode){
+	public List <Object> getOCCertificate(String agencyCode, String uagencyCode){
     	List <Object> occList=null;
     	try{
-    		occList= api.getOccCertificate(agencyCode);
+    		occList= api.getOccCertificate(agencyCode,uagencyCode);
 		   }
 		catch (Exception e) {			
 			logger.debug("EXCEPTION @ { " + e + " }");

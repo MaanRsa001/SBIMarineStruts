@@ -3,6 +3,24 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<style>
+  	.information-grid{
+  	grid-area: main;
+  display: grid;
+  grid-auto-rows: auto;
+  /* gap: 10px; */
+  grid-template-columns: 1fr 1fr;
+  	}
+  	.information-grid-item{
+  	display:flex;
+  	justify-content: space-between;
+  	border: 1px solid #ccc;
+  	padding: 0.6rem;
+  	}
+  		.information-grid-item div:last-child{
+  		color:#8f7f7fed;
+  		}
+  	</style>
 </head>
 <body>
 <div class="row">	
@@ -34,11 +52,11 @@
 							<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Referral" onclick="fnCall('referal')"/>
 						</div>
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 							<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Statistics" onclick="fnCall('statistics')"/>
 						</div>
-					</div>
+					</div> -->
 				</s:if>
 				<s:else>
 					<div class="row">
@@ -83,188 +101,82 @@
 										<s:text name="User Details" />
 									</div>
 									<div class="panel-body">
-										<div class="row">
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.broker"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="brokerName"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.type"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="utype"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.userId"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="userId"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.name"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="uname"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.gender"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value='%{ugender=="M"?"Male":"Female"}'/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.dob"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="udob"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.occupation"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="uoccupation"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.address1"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="uaddress1"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.address2"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="uaddress2"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.city"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="emirate"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.country"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="ucountryNa"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.pobox"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="upobox"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.telephone"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="uphone"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.mobile"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="umobile"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.email"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="uemail"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.fax"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="ufax"/> </td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.nationality"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="unationalityName"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<table width="100%">
-													<tbody>
-													<tr>
-														<td width="40%"><s:text name="user.loginid"/></td>
-														<td width="60%" style="font-weight: bold;">&nbsp;:&nbsp;<s:property value="ulogin_Id"/></td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
+										<div class="information-grid">
+													<div class="information-grid-item">
+														<div><s:text name="user.broker"/></div>
+														<div><s:property value="brokerName"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.type"/></div>
+														<div><s:property value='utype'/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.userId"/></div>
+														<div><s:property value="userId"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.name"/></div>
+														<div><s:property value="uname"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.gender"/></div>
+														<div><s:property value='%{ugender=="M"?"Male":"Female"}'/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.dob"/></div>
+														<div><s:property value="udob"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.occupation"/></div>
+														<div><s:property value="uoccupation"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.address1"></s:text> </div>
+														<div><s:property value="uaddress1"/></div>
+													</div>
+													
+													<div class="information-grid-item">
+														<div><s:text name="user.address2"/></div>
+														<div><s:property value="uaddress2"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.city"/></div>
+														<div><s:property value='emirate'/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.country"/></div>
+														<div><s:property value="ucountryNa"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.pobox"/></div>
+														<div><s:property value="upobox"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.telephone"/></div>
+														<div><s:property value='uphone'/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.mobile"/></div>
+														<div><s:property value="umobile"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.email"/></div>
+														<div><s:property value="uemail"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.fax"></s:text> </div>
+														<div><s:property value="ufax"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.nationality"></s:text> </div>
+														<div><s:property value="unationalityName"/></div>
+													</div>
+													<div class="information-grid-item">
+														<div><s:text name="user.loginid"></s:text> </div>
+														<div><s:property value="ulogin_Id"/></div>
+													</div>
+												</div>
+									
 									</div>
 								</div>
 							</div>
@@ -306,7 +218,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.info.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else
 		document.info.action = from+"BrokerMgm.action";
 	document.info.submit();

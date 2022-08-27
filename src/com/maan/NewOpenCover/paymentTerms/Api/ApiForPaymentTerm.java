@@ -231,7 +231,7 @@ public class ApiForPaymentTerm extends ApiConfig implements Callable<Object>{
 				json = (JSONObject) parser.parse(responseStr);
 			
 				jo1 = (JSONObject) json.get("PaymentResponse");
-				bean.setErrors((JSONArray) jo1.get("Errors"));
+				bean.setErrors((JSONArray) jo1.get("ErrorMessage"));
 			}
 			
 	

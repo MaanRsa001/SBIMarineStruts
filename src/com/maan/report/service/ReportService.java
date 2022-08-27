@@ -205,10 +205,10 @@ public class ReportService {
 		return report.getOpenCoverEndorseList(bean,  userType,  adminLoginId,  issuer, branchCode);
 	}
 
-	public void dashboardCharts(String productId, String userType, String issuer, String loginId, String branch, ReportBean bean) {
+	public void dashboardCharts(String productId, String userType, String issuer, String loginId, String branch, ReportBean bean, String openCoverNo) {
 			// Quote Prod
 			try{
-				List<Map<String, Object>> qDashList = report.dashboardCharts("quoteProd",productId,userType,issuer,loginId,branch);
+				List<Map<String, Object>> qDashList = report.dashboardCharts("quoteProd",productId,userType,issuer,loginId,branch,openCoverNo);
 				bean.setDcQuoteProdShow("No");
 				bean.setDcBQuoteProdShow("No");
 				if(qDashList != null && qDashList.size()>0){
@@ -251,7 +251,7 @@ public class ReportService {
 			
 			// Policy Prod
 			try{
-				List<Map<String, Object>> pDashList = report.dashboardCharts("policyProd",productId,userType,issuer,loginId,branch);
+				List<Map<String, Object>> pDashList = report.dashboardCharts("policyProd",productId,userType,issuer,loginId,branch, openCoverNo);
 				bean.setDcPolicyProdShow("No");
 				bean.setDcBPolicyProdShow("No");
 				if(pDashList != null && pDashList.size()>0){
@@ -294,7 +294,7 @@ public class ReportService {
 		//}
 		// Quote
 		try{
-			List<Map<String, Object>> qDashList = report.dashboardCharts("quote",productId,userType,issuer,loginId,branch);
+			List<Map<String, Object>> qDashList = report.dashboardCharts("quote",productId,userType,issuer,loginId,branch, openCoverNo);
 			bean.setDcQuoteShow("No");
 			bean.setDcBQuoteShow("No");
 			if(qDashList != null && qDashList.size()>0){
@@ -337,7 +337,7 @@ public class ReportService {
 		
 		// Policy
 		try{
-			List<Map<String, Object>> pDashList = report.dashboardCharts("policy",productId,userType,issuer,loginId,branch);
+			List<Map<String, Object>> pDashList = report.dashboardCharts("policy",productId,userType,issuer,loginId,branch, openCoverNo);
 			bean.setDcPolicyShow("No");
 			bean.setDcBPolicyShow("No");
 			if(pDashList != null && pDashList.size()>0){
@@ -380,7 +380,7 @@ public class ReportService {
 			
 		// Referral Pending
 		try{
-			List<Map<String, Object>> rpDashList = report.dashboardCharts("referralPend",productId,userType,issuer,loginId,branch);
+			List<Map<String, Object>> rpDashList = report.dashboardCharts("referralPend",productId,userType,issuer,loginId,branch, openCoverNo);
 			bean.setDcRefPendShow("No");
 			bean.setDcBRefPendShow("No");
 			if(rpDashList != null && rpDashList.size()>0){
@@ -419,7 +419,7 @@ public class ReportService {
 				
 		// Referral Completed
 		try{
-			List<Map<String, Object>> rcDashList = report.dashboardCharts("referralComp",productId,userType,issuer,loginId,branch);
+			List<Map<String, Object>> rcDashList = report.dashboardCharts("referralComp",productId,userType,issuer,loginId,branch, openCoverNo);
 			bean.setDcRefCompShow("No");
 			bean.setDcBRefCompShow("No");
 			if(rcDashList != null && rcDashList.size()>0){
@@ -458,7 +458,7 @@ public class ReportService {
 					
 		// Referral Rejected
 		try{
-			List<Map<String, Object>> rrDashList = report.dashboardCharts("referralReject",productId,userType,issuer,loginId,branch);
+			List<Map<String, Object>> rrDashList = report.dashboardCharts("referralReject",productId,userType,issuer,loginId,branch, openCoverNo);
 			bean.setDcRefRejectShow("No");
 			bean.setDcBRefRejectShow("No");
 			if(rrDashList != null && rrDashList.size()>0){
@@ -496,14 +496,14 @@ public class ReportService {
 		}
 	}
 
-	public List<Map<String,Object>> dashboardTopBroker(String productId, String loginId, String userType,String branch) {
-		return report.dashboardTopBroker(productId,loginId,userType,branch);
+	public List<Map<String,Object>> dashboardTopBroker(String productId, String loginId, String userType,String branch, String opencoverno) {
+		return report.dashboardTopBroker(productId,loginId,userType,branch,opencoverno);
 	}
-	public List<Map<String,Object>> dashboardTopReferrals(String productId, String loginId, String userType,String branch) {
-		return report.dashboardTopReferrals(productId, loginId, userType,branch);
+	public List<Map<String,Object>> dashboardTopReferrals(String productId, String loginId, String userType,String branch, String opencoverno) {
+		return report.dashboardTopReferrals(productId, loginId, userType,branch,opencoverno);
 	}
-	public List<Map<String, Object>> dashboardTopCustomer(String productId, String loginId, String userType,String branch) {
-		return report.dashboardTopCustomer(productId, loginId, userType,branch);
+	public List<Map<String, Object>> dashboardTopCustomer(String productId, String loginId, String userType,String branch, String opencoverno) {
+		return report.dashboardTopCustomer(productId, loginId, userType,branch,opencoverno);
 	}
 
 	public String schedulePdf(String applicationNo, String branchCode) {

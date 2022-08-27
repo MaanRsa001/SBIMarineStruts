@@ -137,7 +137,7 @@ function fnCall(from){
 	else if(from=='exclude')
 		document.underwriter.action = "excludeIssuerUnderwriterMgm.action?type1=exclude";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else if(from=='statistics')
 		document.info.action = "statisticsRE.action";
 	<%--alert(from);

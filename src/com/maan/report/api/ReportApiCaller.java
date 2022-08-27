@@ -161,7 +161,8 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ApplicationId", issuer);
 			req.put("LoginId", loginId);
 			req.put("OpenCoverNo", openCoverNo);
-
+			req.put("BranchCode", branchCode);
+			
 			response = callAPI(url, token, req.toString());
 			JSONParser parser = new JSONParser();
 			JSONObject json = null;
@@ -210,6 +211,8 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("LoginId", "gotherPolicyNo".equals(searchBy)?"":loginId);
 			req.put("OpenCoverNo", openCoverNo);
 			req.put("OtherPolicyNo", searchString);
+			req.put("BranchCode", branchCode);
+			
 			response = callAPI(link, token, req.toString());
 			JSONObject json = new JSONObject();
 			JSONParser parser = new JSONParser();
@@ -261,6 +264,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ProductId", productId);
 			req.put("ApplicationId", issuer);
 			req.put("OpenCoverNo", openCoverNo);
+			req.put("BranchCode", branchCode);
 			
 			response = callAPI(link, token, req.toString());
 			if (response != null) {
@@ -278,7 +282,7 @@ public class ReportApiCaller extends ApiConfig {
 	}
 
 	@SuppressWarnings({ "unchecked", "null" })
-	public List<Object> getCustomerList(String loginId, String issuer) {
+	public List<Object> getCustomerList(String loginId, String issuer, String branchCode) {
 		List<Object> resultList =new ArrayList<Object>();
 		try {
 			String url = getValueFromWebservice("maan.quote.report");
@@ -286,6 +290,7 @@ public class ReportApiCaller extends ApiConfig {
 			JSONObject req = new JSONObject();
 			req.put("LoginId", loginId);
 			req.put("ApplicationId", issuer);
+			req.put("BranchCode", branchCode);
 			token = Token.value();
 			response = callAPI(link, token, req.toString());
 			JSONObject json = new JSONObject();
@@ -380,7 +385,7 @@ public class ReportApiCaller extends ApiConfig {
 			json = (JSONObject) parser.parse(response);
 			saveToken(json);
 			resultList =(JSONArray) json.get("Result");
-			
+			if(resultList!=null) {
 			if("custName".equalsIgnoreCase(searchby) || "quoteNo".equalsIgnoreCase(searchby)) {
 				if (resultList !=null && resultList.size() > 0) {
 					for (int i = 0; i < resultList.size(); i++) {
@@ -436,7 +441,7 @@ public class ReportApiCaller extends ApiConfig {
 					}
 				}
 			}
-				
+			}	
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -660,7 +665,7 @@ public class ReportApiCaller extends ApiConfig {
 			json = (JSONObject) parser.parse(response);
 			saveToken(json);
 			resultList = (JSONArray)json.get("ShipMapResponse");
-			bean.setErrors((JSONArray) json.get("Errors"));
+			bean.setErrors((JSONArray) json.get("ErrorMessage"));
 			bean.setShipDetailList(resultList);
 			
 			
@@ -712,6 +717,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ProductId", productId);
 			req.put("ApplicationId", issuer);
 			req.put("OpenCoverNo", openCoverNo);
+			req.put("BranchCode", branchCode);
 			token = Token.value();
 			response = callAPI(link, token, req.toString());
 			JSONObject json = new JSONObject();
@@ -741,6 +747,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ProductId", productId);
 			req.put("ApplicationId", issuer);
 			req.put("UserType", userType);
+			req.put("BranchCode", branchCode);
 			token = Token.value();
 			response = callAPI(url, token, req.toString());
 			JSONParser parser = new JSONParser();
@@ -819,6 +826,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("SearchOption", bean.getSearchBy());
 			req.put("SearchValue", bean.getSearchValue());
 			req.put("UserType", userType);
+			req.put("BranchCode", branchCode);
 			token = Token.value();
 			response = callAPI(url, token, req.toString());
 			JSONParser parser = new JSONParser();
@@ -859,7 +867,7 @@ public class ReportApiCaller extends ApiConfig {
 
 
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> dashboardCharts(String key, String productId, String userType, String issuer,String loginId, String branch) {
+	public List<Map<String, Object>> dashboardCharts(String key, String productId, String userType, String issuer,String loginId, String branch, String openCoverNo) {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try{
 			String query = "",link="";
@@ -941,7 +949,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ApplicationId",issuer);
 			req.put("BranchCode", branch);
 			req.put("LoginId", loginId);
-			
+			req.put("OpenCoverNo", StringUtils.isBlank(openCoverNo)?"":openCoverNo);
 			token = Token.value();
 			response = callAPI(link, token, req.toString());
 			JSONParser parser = new JSONParser();
@@ -956,7 +964,7 @@ public class ReportApiCaller extends ApiConfig {
 
 
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> dashboardTopBroker(String productId, String loginId, String userType,String branch) {
+	public List<Map<String, Object>> dashboardTopBroker(String productId, String loginId, String userType,String branch, String openCoverNo) {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		String link="";
 		try{
@@ -971,7 +979,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ProductId", productId);
 			req.put("BranchCode", branch);
 			req.put("LoginId", loginId);
-			
+			req.put("OpenCoverNo", StringUtils.isBlank(openCoverNo)?"":openCoverNo);
 			token = Token.value();
 			response = callAPI(link, token, req.toString());
 			JSONParser parser = new JSONParser();
@@ -986,7 +994,7 @@ public class ReportApiCaller extends ApiConfig {
 
 
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> dashboardTopReferrals(String productId, String loginId, String userType,String branch) {
+	public List<Map<String, Object>> dashboardTopReferrals(String productId, String loginId, String userType,String branch, String openCoverNo) {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		String link="";
 		try{
@@ -1003,7 +1011,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ProductId", productId);
 			req.put("BranchCode", branch);
 			req.put("LoginId", loginId);
-			
+			req.put("OpenCoverNo", StringUtils.isBlank(openCoverNo)?"":openCoverNo);
 			token = Token.value();
 			response = callAPI(link, token, req.toString());
 			JSONParser parser = new JSONParser();
@@ -1018,7 +1026,7 @@ public class ReportApiCaller extends ApiConfig {
 
 
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> dashboardTopCustomer(String productId, String loginId, String userType,String branch) {
+	public List<Map<String, Object>> dashboardTopCustomer(String productId, String loginId, String userType,String branch, String openCoverNo) {
 		String link="";
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		try{
@@ -1032,7 +1040,7 @@ public class ReportApiCaller extends ApiConfig {
 			req.put("ProductId", productId);
 			req.put("BranchCode", branch);
 			req.put("LoginId", loginId);
-			
+			req.put("OpenCoverNo", StringUtils.isBlank(openCoverNo)?"":openCoverNo);
 			token = Token.value();
 			response = callAPI(link, token, req.toString());
 			JSONParser parser = new JSONParser();

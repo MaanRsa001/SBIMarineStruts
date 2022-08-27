@@ -9,8 +9,6 @@ public class PremiumDetails {
     private String additionalPremium;
     @SerializedName("DiscountPremium") 
     private double discountPremium;
-    @SerializedName("EquivalentInsuredValue") 
-    private double equivalentInsuredValue;
     @SerializedName("ExcessSign") 
     private String excessSign;
     @SerializedName("ExcessPremium") 
@@ -33,8 +31,6 @@ public class PremiumDetails {
     private double policyIssunceFee;
     @SerializedName("PremiumWithoutTax") 
     private double premiumWithoutTax;
-    @SerializedName("TotalInsuredValue") 
-    private double totalInsuredValue;
     @SerializedName("TotalPremium") 
     private double totalPremium;
     @SerializedName("VatTaxAmount") 
@@ -74,18 +70,7 @@ public class PremiumDetails {
 	public void setDiscountPremium(double discountPremium) {
 		this.discountPremium = discountPremium;
 	}
-	/**
-	 * @return the equivalentInsuredValue
-	 */
-	public double getEquivalentInsuredValue() {
-		return equivalentInsuredValue;
-	}
-	/**
-	 * @param equivalentInsuredValue the equivalentInsuredValue to set
-	 */
-	public void setEquivalentInsuredValue(double equivalentInsuredValue) {
-		this.equivalentInsuredValue = equivalentInsuredValue;
-	}
+	
 	/**
 	 * @return the excessSign
 	 */
@@ -193,18 +178,6 @@ public class PremiumDetails {
 	 */
 	public void setPremiumWithoutTax(double premiumWithoutTax) {
 		this.premiumWithoutTax = premiumWithoutTax;
-	}
-	/**
-	 * @return the totalInsuredValue
-	 */
-	public double getTotalInsuredValue() {
-		return totalInsuredValue;
-	}
-	/**
-	 * @param totalInsuredValue the totalInsuredValue to set
-	 */
-	public void setTotalInsuredValue(double totalInsuredValue) {
-		this.totalInsuredValue = totalInsuredValue;
 	}
 	/**
 	 * @return the totalPremium

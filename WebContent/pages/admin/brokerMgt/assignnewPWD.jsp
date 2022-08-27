@@ -38,9 +38,9 @@
 					<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Referral" onclick="fnCall('referal')"/>
 					</div>
-					<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+					<!-- <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 						<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Statistics" onclick="fnCall('statistics')"/>		
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -76,7 +76,6 @@
 						<s:elseif test="'different'.equals(display)">
 							<span style="color: red;"> <s:text name="error.different"/> </span>
 						</s:elseif>
-						<span style="color: red;"><s:actionerror/></span>
 						<table width="100%">
 							<tbody>
 							<tr>
@@ -138,7 +137,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.newPwd.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.newPwd.action = "opencoverOC.action";
+		document.newPwd.action = "opencoverBrokerMgm.action";
 	else
 		document.newPwd.action = from+"BrokerMgm.action";
 	document.newPwd.submit();

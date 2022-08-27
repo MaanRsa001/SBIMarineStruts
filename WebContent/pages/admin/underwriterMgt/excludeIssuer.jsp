@@ -101,7 +101,7 @@
 											<td> <s:property value="AgencyCode" /> </td>
 											<td> <s:property value="CompanyName" /> </td>
 											<td> <s:property value="BranchName" /> </td>
-											<td> <s:checkboxlist name="ProductId[%{#stat.index}]" list="productList" listKey="ProductId" listValue="ProductName"/> </td>
+											<td> <s:checkboxlist name="productId[%{#stat.index}]" list="productList" listKey="ProductId" listValue="ProductName"/> </td>
 										</tr>
 										</s:iterator>
 										</tbody>
@@ -137,7 +137,7 @@ function fnCall(from){
 	else if(from=='exclude')
 		document.underwriter.action = "excludeIssuerUnderwriterMgm.action?type1=exclude";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else if(from=='statistics')
 		document.info.action = "statisticsRE.action";
 	<%--alert(from);

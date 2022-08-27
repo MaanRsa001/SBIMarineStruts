@@ -125,6 +125,9 @@ public class BrokerMgmBean {
 	private String checkeryn;
 	private String regionCode;
 	private String branchCodeS;
+	private String branchId;
+	private String[] attachedregion;
+	private String selregions;
 	private List<HashMap<String,Object>> errors=new ArrayList<HashMap<String,Object>>();
 	public String getRegionCode() {
 		return regionCode;
@@ -815,6 +818,24 @@ public class BrokerMgmBean {
 	}
 	public void setErrors(List<HashMap<String, Object>> errors) {
 		this.errors = errors;
+	}
+	public String getBranchId() {
+		return branchId;
+	}
+	public void setBranchId(String branchId) {
+		this.branchId = branchId;
+	}
+	public String[] getAttachedregion() {
+		return attachedregion;
+	}
+	public void setAttachedregion(String[] attachedregion) {
+		this.attachedregion = attachedregion;
+	}
+	public String getSelregions() {
+		return selregions;
+	}
+	public void setSelregions(String selregions) {
+		this.selregions = selregions;
 	}
 	
 }

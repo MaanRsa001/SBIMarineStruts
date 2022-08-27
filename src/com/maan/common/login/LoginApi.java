@@ -55,7 +55,7 @@ public class LoginApi extends ApiConfig {
 		try {
 			Object obj = parser.parse(response);
 			JSONObject jo = (JSONObject) obj;
-			errors = (JSONArray) jo.get("Errors");
+			errors = (JSONArray) jo.get("ErrorMessage");
 			bean.setErrors(errors);
 			jo = (JSONObject) jo.get("LoginResponse");
 			if(jo!=null) {
@@ -95,7 +95,7 @@ public class LoginApi extends ApiConfig {
 			String response = callAPI(link, "", obj.toString());
 			JSONParser parser = new JSONParser();
 			JSONObject jo = (JSONObject) parser.parse(response);
-			errors = (JSONArray) jo.get("Errors");
+			errors = (JSONArray) jo.get("ErrorMessage");
 			bean.setErrors(errors);
 			bean.setStatus(jo.get("Message").toString());
 			bean.setLoginId(jo.get("LoginId").toString());
@@ -121,7 +121,7 @@ public class LoginApi extends ApiConfig {
 			String response = callAPI(link, "", obj.toString());
 			JSONParser parser = new JSONParser();
 			JSONObject jo = (JSONObject) parser.parse(response);
-			errors = (JSONArray) jo.get("Errors");
+			errors = (JSONArray) jo.get("ErrorMessage");
 			bean.setErrors(errors);
 			bean.setStatus(jo.get("Message") == null ? "" : jo.get("Message").toString());
 			bean.setLoginId(jo.get("LoginId") == null ? "" : jo.get("LoginId").toString());

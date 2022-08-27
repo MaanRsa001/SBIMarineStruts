@@ -69,7 +69,7 @@ public class ApiForVesselSearch extends ApiConfig implements Callable<Object> {
 				//Object obj = new JSONParser().parse(responseStr);
 				//JSONObject jo = (JSONObject) obj;
 				//JSONArray errors = (JSONArray) jo.get("Ships");
-				//bean.setError((List<HashMap<String,Object>>)jo.get("Errors"));
+				//bean.setError((List<HashMap<String,Object>>)jo.get("ErrorMessage"));
 				
 			} 
 		}catch (Exception e) {

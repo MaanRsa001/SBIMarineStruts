@@ -43,42 +43,23 @@
 			function downloadFile(tranId,val) {
 				document.getElementById("tranId").value=tranId;
 				document.getElementById("downloadType").value=val;
-				document.forms[0].action="${pageContext.request.contextPath}/downloadTransRating.do";
-				document.forms[0].submit();
+				document.info.action="${pageContext.request.contextPath}/downloadTransRating.do";
+				document.info.submit();
 			}
 			function transHome() {
 				document.getElementById("tranId").value='';
 				document.getElementById("reqFrom").value='';
-				document.forms[0].action="${pageContext.request.contextPath}/uploadRating.do";
-				document.forms[0].submit();
+				document.info.action="${pageContext.request.contextPath}/uploadRating.do";
+				document.info.submit();
 			}
 			
 			function transDetails() {
-				document.forms[0].action="${pageContext.request.contextPath}/transDetailsRating.do";
-				document.forms[0].submit();
+				document.info.action="${pageContext.request.contextPath}/transDetailsRating.do";
+				document.info.submit();
 			}
 			
 		</script>
-		<script type="text/javascript">
-    $(function() {
-	try {
 		
-		$('#startDate').datepicker({
-			todayHighlight: true,			
-			format: "mm/dd/yyyy"			
-		}).on('changeDate', function(e){
-		    $(this).datepicker('hide');
-		});
-		$('#endDate').datepicker({
-			todayHighlight: true,			
-			format: "mm/dd/yyyy"			
-		}).on('changeDate', function(e){
-		    $(this).datepicker('hide');
-		});
-		
-	} catch(err){}
-});
-    </script>
 		<script type="text/javascript" src="pages/admin/ratingEngine/menu.js"></script>
 <style>
 td , th {
@@ -108,7 +89,7 @@ td , th {
 				            <div class="easyui-tabs" data-options="fit:true,border:false,plain:true" id="mainTab">
 				                <div title="${title}" style="padding:5px">
 				                <s:if test='"TransHome".equals(display)'>
-									<s:form  name="info"  action="transDetailsRating" method="post" theme="simple" id="info" >
+									<s:form  name="info"  theme="simple" id="info" >
 										<table width="100%">
 				                          <tr>
 										    <td height="5"></td>
@@ -135,13 +116,13 @@ td , th {
 																			<tr>
 																				<td>&nbsp;</td>
 																				<td> <s:text name="Start Date"/><font color="red">*</font> </td>
-																				<td> <s:textfield name="startDate" id="startDate" cssClass="tcal form-control" style="width:50%;"/> </td>
+																				<td> <s:textfield name="startDate" id="startDate" cssClass="form-control" style="width:50%;"/> </td>
 																				<td>&nbsp;</td>
 																			</tr>
 																			<tr>
 																				<td>&nbsp;</td>
 																				<td> <s:text name="End Date"/><font color="red">*</font> </td>
-																				<td> <s:textfield name="endDate" id="endDate" cssClass="tcal form-control" style="width:50%;"/> </td>
+																				<td> <s:textfield name="endDate" id="endDate" cssClass="form-control" style="width:50%;"/> </td>
 																				<td>&nbsp;</td>
 																			</tr>
 																			<tr> 
@@ -160,10 +141,11 @@ td , th {
 														</table>
 												   		<s:hidden name="menuType"/>
 												   		<s:hidden name="tranId" id="tranId"/>
-												   		<s:hidden name="reqFrom" value="%{menuType}" id="reqFrom"/>
+												   		<s:hidden name="reqFrom" value="exchangeupload" id="reqFrom"/>
 													</td>
 												</tr>
 											</table>
+											<s:token/>
 								    </s:form>
 								</s:if>
 								<s:elseif test="display=='result'">
@@ -228,7 +210,7 @@ td , th {
 														<s:hidden name="downloadType" id="downloadType"/>
 														<s:hidden name="typeId" id="typeId"/>
 														<s:hidden name="menuType"/>
-												   		<s:hidden name="reqFrom" value="%{menuType}" id="reqFrom"/>
+												   		<s:hidden name="reqFrom" value="exchangeupload" id="reqFrom"/>
 													</td>
 												</tr>
 												<tr height="20">
@@ -236,10 +218,11 @@ td , th {
 												</tr>
 												<tr>
 													<td align="center">
-														<input type="button" name="dsfdsg" onclick="transHome();" class="btn" value="Back" />
+														<input type="button" name="dsfdsg" onclick="transHome();" class="btn btn-sm btn-danger" value="Back" />
 													</td>
 												</tr>
 											</table>
+											<s:token/>
 										</s:form>
 									</s:elseif>
 				                </div>

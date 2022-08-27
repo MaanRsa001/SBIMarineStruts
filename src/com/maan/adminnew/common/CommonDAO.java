@@ -626,4 +626,15 @@ public class CommonDAO extends MyJdbcTemplate{
 	public List<Map<String, Object>> getBranchList(String regionCode) {
 		return api.getBranchList(regionCode);
 	}
+	public List<Map<String, Object>> getAttachedBranchList(String selregions) {
+		return api.getAttachedBranchList(selregions);
+	}
+
+	public List<Map<String, Object>> getAttancedRegion(String agencyCode) {
+		return api.getAttancedRegion(agencyCode);
+	}
+
+	public List<Map<String, Object>> getUserAttachedBranchList(String agencyCode, String selregions) {
+		return api.getUserAttachedBranchList( agencyCode,  selregions);
+	}
 }

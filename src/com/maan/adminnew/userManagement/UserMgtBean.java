@@ -60,7 +60,11 @@ public class UserMgtBean {
 	private String broLinkLoc;
 	private String customerId;
 	private String emirate;
+	List<Map<String,Object>> attchedRegionsList=new ArrayList<>();
 	private List<HashMap<String,Object>> errors=new ArrayList<HashMap<String,Object>>();
+	private String selregions;
+	private String branchId;
+	private String attachedregion;
 	public String getLogin_Id() {
 		return login_Id;
 	}
@@ -390,6 +394,30 @@ public class UserMgtBean {
 	}
 	public void setErrors(List<HashMap<String, Object>> errors) {
 		this.errors = errors;
+	}
+	public List<Map<String, Object>> getAttchedRegionsList() {
+		return attchedRegionsList;
+	}
+	public void setAttchedRegionsList(List<Map<String, Object>> attchedRegionsList) {
+		this.attchedRegionsList = attchedRegionsList;
+	}
+	public String getSelregions() {
+		return selregions;
+	}
+	public void setSelregions(String selregions) {
+		this.selregions = selregions;
+	}
+	public String getBranchId() {
+		return branchId;
+	}
+	public void setBranchId(String branchId) {
+		this.branchId = branchId;
+	}
+	public String getAttachedregion() {
+		return attachedregion;
+	}
+	public void setAttachedregion(String attachedregion) {
+		this.attachedregion = attachedregion;
 	}
 	
 }

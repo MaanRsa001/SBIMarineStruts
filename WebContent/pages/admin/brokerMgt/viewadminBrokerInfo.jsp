@@ -30,6 +30,24 @@
 		} catch(err){}
 	} );
   	</script>
+  	<style>
+  	.information-grid{
+  	grid-area: main;
+  display: grid;
+  grid-auto-rows: auto;
+  /* gap: 10px; */
+  grid-template-columns: 1fr 1fr;
+  	}
+  	.information-grid-item{
+  	display:flex;
+  	justify-content: space-between;
+  	border: 1px solid #ccc;
+  	padding: 0.6rem;
+  	}
+  		.information-grid-item div:last-child{
+  		color:#8f7f7fed;
+  		}
+  	</style>
 </head>
 <body>
 <div class="row">
@@ -86,51 +104,51 @@
 										<div class="panel panel-primary">
 											<div class="panel-heading"> <s:text name="broker.companyinfo"/> </div>
 											<div class="panel-body">
-												<div class="row">
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.branch"/></div>
-														<div class="tboxV"><s:property value="%{branchData[0].BranchName}"/></div>
+												<div class="information-grid">
+													<div class="information-grid-item">
+														<div><s:text name="broker.branch"/></div>
+														<div><s:property value="%{branchData[0].BranchName}"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.brokercode"/></div>
-														<div class="tboxV"><s:property value="bcode"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.brokercode"/></div>
+														<div><s:property value="bcode"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.brokerOrg"/></div>
-														<div class="tboxV"><s:property value="companyName"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.brokerOrg"/></div>
+														<div><s:property value="companyName"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.address1"/></div>
-														<div class="tboxV"><s:property value="address1"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.address1"/></div>
+														<div><s:property value="address1"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.address2"/></div>
-														<div class="tboxV"><s:property value="address2"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.address2"/></div>
+														<div><s:property value="address2"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.city"/></div>
-														<div class="tboxV"><s:property value="othercity"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.city"/></div>
+														<div><s:property value="othercity"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.country"/></div>
-														<div class="tboxV"><s:property value="nationalityNa"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.country"/></div>
+														<div><s:property value="nationalityNa"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.pobox"/></div>
-														<div class="tboxV"><s:property value="pobox"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.pobox"/></div>
+														<div><s:property value="pobox"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.telephone"/></div>
-														<div class="tboxV"><s:property value="telephone"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.telephone"/></div>
+														<div><s:property value="telephone"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.fax"/></div>
-														<div class="tboxV"><s:property value="fax"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.fax"/></div>
+														<div><s:property value="fax"/></div>
 													</div>
 													
-													<%--<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.images" /></div>
-														<div class="tboxV">
+													<%--<div class="information-grid-item">
+														<div><s:text name="broker.images" /></div>
+														<div>
 															<s:if test='broImgName!=null'>
 																<img src='<%=request.getContextPath()%><s:property value="broImgName"/>' border="0" width="150" height="60"/><br>
 															</s:if>
@@ -143,38 +161,38 @@
 										<div class="panel panel-primary">
 											<div class="panel-heading"> <s:text name="broker.contactpersonInfo"/> </div>
 											<div class="panel-body">
-												<div class="row">
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.name"/></div>
-														<div class="tboxV"><s:property value="firstname"/><s:property value="lastname"/></div>
+												<div class="information-grid">
+													<div class="information-grid-item">
+														<div><s:text name="broker.name"/></div>
+														<div><s:property value="firstname"/><s:property value="lastname"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.gender"/></div>
-														<div class="tboxV"><s:property value='%{gender=="M"?"Male":(gender=="F"?"Female":"")}'/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.gender"/></div>
+														<div><s:property value='%{gender=="M"?"Male":(gender=="F"?"Female":"")}'/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.dob"/></div>
-														<div class="tboxV"><s:property value="dob"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.dob"/></div>
+														<div><s:property value="dob"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.occupation"/></div>
-														<div class="tboxV"><s:property value="occupation"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.occupation"/></div>
+														<div><s:property value="occupation"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.mobile"/></div>
-														<div class="tboxV"><s:property value="mobile"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.mobile"/></div>
+														<div><s:property value="mobile"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.email"/></div>
-														<div class="tboxV"><s:property value="bemail"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.email"/></div>
+														<div><s:property value="bemail"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.nationality"/></div>
-														<div class="tboxV"><s:property value="nationalityNa"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.nationality"/></div>
+														<div><s:property value="nationalityNa"/></div>
 													</div>
-													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-														<div class="textV"><s:text name="broker.loginId"></s:text> </div>
-														<div class="tboxV"><s:property value="login_Id"/></div>
+													<div class="information-grid-item">
+														<div><s:text name="broker.loginId"></s:text> </div>
+														<div><s:property value="login_Id"/></div>
 													</div>
 												</div>
 											</div>
@@ -247,7 +265,7 @@ function fnCall(from){
 	else if(from=='referal')
 		document.info.action = "getOCListReferal.action";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else if(from=='statistics')
 		document.info.action = "statisticsRE.action";
 	else if (from=='beBack')

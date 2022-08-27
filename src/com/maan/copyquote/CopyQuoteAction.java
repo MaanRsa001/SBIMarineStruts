@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import com.maan.copyquote.service.CopyQuoteService;
+import com.maan.report.service.ReportService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -32,6 +33,14 @@ public class CopyQuoteAction extends ActionSupport
 	private String openCoverSearchValue;
 	private String msg;
 	
+	public String getLoginId() {
+		return loginId;
+	}
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+
 	public String getMsg() {
 		return msg;
 	}
@@ -188,6 +197,10 @@ public class CopyQuoteAction extends ActionSupport
 		display="init";
 		return SUCCESS;
 	}
+	@org.apache.struts2.json.annotations.JSON(serialize = false)
+	public List<Object> getUserSelection() {
+		return new ReportService().getUserList((String)session.get("user"), productId,StringUtils.defaultIfEmpty(issuer, ""), "", branchCode,"",openCoverNo);
+	}
 	public String search()
 	{
 		validateField();
@@ -195,7 +208,7 @@ public class CopyQuoteAction extends ActionSupport
 			if("31".equalsIgnoreCase(productId) ||"32".equalsIgnoreCase(productId) ||"33".equalsIgnoreCase(productId) ||"65".equalsIgnoreCase(productId) ||"30".equalsIgnoreCase(productId)){
 				searchResult=service.getTravelCopyQuoteSearch(searchType, searchValue,loginID,productId);	
 			} else {
-				searchResult=service.getCopyQuoteSearch(searchType, searchValue,openCoverNo,productId,issuer,loginID,branchCode);
+				searchResult=service.getCopyQuoteSearch(searchType, searchValue,openCoverNo,productId,issuer,loginId,branchCode);
 			}
 			display="search";
 		}else{

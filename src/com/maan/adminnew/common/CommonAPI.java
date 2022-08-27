@@ -366,4 +366,74 @@ public class CommonAPI  extends ApiConfig{
 		return list;
 	}
 
+	public List<Map<String, Object>> getAttachedBranchList(String selregions) {
+		JSONArray jsonArr = new JSONArray();
+		try {
+			link = getValueFromWebservice("maan.admin.adminmgt.attachedbranch");
+			JSONObject req = new JSONObject();
+			String[] region = selregions.split(",");
+			JSONArray productArr = new JSONArray();
+
+			for (int i = 0; i < region.length; i++) {
+				JSONObject obj = new JSONObject();
+				obj.put("RegionCode", region[i]);
+				productArr.add(obj);
+			}
+			req.put("RegionCodeInfo", productArr);
+			token = session.get("TOKEN_SPRING") == null ? "" : session.get("TOKEN_SPRING").toString();
+			response = callAPI(link, token , req.toString());
+			JSONParser parser = new JSONParser();
+			jsonArr =(JSONArray)parser.parse(response);
+			 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jsonArr;
+	}
+
+	public List<Map<String, Object>> getAttancedRegion(String agencyCode) {
+		JSONArray jsonArr = new JSONArray();
+		try {
+			link = getValueFromWebservice("maan.admin.adminmgt.attachedregion");
+			JSONObject req = new JSONObject();
+
+			req.put("AgencyCode", agencyCode);
+			token = session.get("TOKEN_SPRING") == null ? "" : session.get("TOKEN_SPRING").toString();
+			response = callAPI(link, token , req.toString());
+			JSONParser parser = new JSONParser();
+			jsonArr =(JSONArray)parser.parse(response);
+			 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jsonArr;
+	}
+
+	public List<Map<String, Object>> getUserAttachedBranchList(String agencyCode, String selregions) {
+		JSONArray jsonArr = new JSONArray();
+		try {
+			link = getValueFromWebservice("maan.admin.adminmgt.userattachedbranch");
+			JSONObject req = new JSONObject();
+
+			req.put("AgencyCode", agencyCode);
+			String[] region = selregions.split(",");
+			JSONArray productArr = new JSONArray();
+
+			for (int i = 0; i < region.length; i++) {
+				JSONObject obj = new JSONObject();
+				obj.put("RegionCode", region[i]);
+				productArr.add(obj);
+			}
+			req.put("RegionCodeInfo", productArr);
+			token = session.get("TOKEN_SPRING") == null ? "" : session.get("TOKEN_SPRING").toString();
+			response = callAPI(link, token , req.toString());
+			JSONParser parser = new JSONParser();
+			jsonArr =(JSONArray)parser.parse(response);
+			 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jsonArr;
+	}
+
 }

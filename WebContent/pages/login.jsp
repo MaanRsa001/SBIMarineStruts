@@ -16,6 +16,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;600;700;900&display=swap" rel="stylesheet">
 </head>
 <style>
+html{
+background-color: #a9c0df;
+}
 .marginTop_15px{
 	margin-top: 10px;
 	
@@ -33,9 +36,7 @@
    }
    body{
         font-family: 'Titillium Web', sans-serif !important;
-		background: url("images/newMarine8.jpg") no-repeat fixed;
-		background-size: cover;
-		background-position:center top;
+		background-color: #a9c0df;
    }
    body,h1{
     font-family: Arial, sans-serif;  
@@ -165,11 +166,15 @@ img {vertical-align: middle;}
           font-size:20px
      
          }
-         .slideshow-container{
-         background: url("images/newMarine8.jpg") no-repeat fixed;
-		 background-size: cover;
-		 background-position:center top;
+         .slideshow-container{    
+		 
 		 height:410px;
+		 
+         }
+         .slideshow-container img{
+	         object-fit: fill;
+		    width: 100%;
+		    height: 100%;
          }
 	   nav{
 	    width: 82%;
@@ -262,7 +267,7 @@ img {vertical-align: middle;}
                 <div class="col-md-7">
              
 		           <div class="slideshow-container">
-			
+			           <img src="images/home-banner.jpg" alt="dubai">
 				        <%-- <div class="mySlides">
 				          <div class="numbertext">1 / 3</div>
 				          <img src="<%=request.getContextPath()%>/images1/cargo.jpg" style="width:100%;height: 400px;">
@@ -287,12 +292,14 @@ img {vertical-align: middle;}
 		    
             <div class="col-md-5 pt-1">
               <div class="row">
-                   <div class="col-md-6 col-6 col-sm-6 text-center">
-                   <button class="btn btn-light" onclick="getTab('Broker'); return false;">BROKER LOGIN</button> 
-                   </div>
+                   <!-- <div class="col-md-6 col-6 col-sm-6 text-center">
+                   <button class="btn btn-light" onclick="getTab('Broker'); return false;">
+                   Broker / Customer Login
+                   </button> 
+                   </div> 
                    <div class="col-md-6 col-6 co-sm-6 text-center">
-                   <button class="btn btn-light" onclick="getTab('admin'); return false;" >ISSUER LOGIN</button>
-                   </div>
+                   <button class="btn btn-light" onclick="getTab('admin'); return false;" >Login</button>
+                   </div>-->
               </div>
               <div class="row">
 					<div class="col-md-12" style="color: red;">
@@ -582,7 +589,7 @@ img {vertical-align: middle;}
 </s:form>
 </body>
 <script>
-getTab('Broker');
+getTab('admin');
     function getTab(loginType){
         if(loginType=='Broker'){
             document.getElementById("broker").style.display = "block";

@@ -107,7 +107,7 @@ jQuery(function ($) {
 								<tr>
 									<td><font style="float: left;"><s:property value="%{#stat.index+1}" /></font></td>
 									<td><font style="float: left;"><s:property value="%{#var.ProposalNo}" /></font></td>
-									<td><font style="float: left;"><s:property value="%{#var.CompanyName}" /></font></td>
+									<td><font style="float: left;"><s:property value="%{#var.companyName}" /></font></td>
 									<td><font style="float: left;"><s:property value="%{#var.PolicyStartDate}" /></font></td>
 									<td><font style="float: left;"><s:property value="%{#var.PolicyEndDate}" /></font></td>
 									<td><b><a href="#" onclick="viewPolicys('<s:property value="%{#var.ProposalNo}" />');">Edit</a></b></td>

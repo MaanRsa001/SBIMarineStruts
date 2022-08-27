@@ -723,6 +723,8 @@ public class BrokerManagementDAO extends MyJdbcTemplate
 				ba.setBroLinkLoc(result.get("SubBranch")==null?"":result.get("SubBranch").toString());
 				ba.setRegionCode(result.get("RegionCode")==null?"":result.get("RegionCode").toString());
 				ba.setBranchCodeS(result.get("BranchCode")==null?"":result.get("BranchCode").toString());
+				ba.setAttachedregion(result.get("AttachedRegion")==null?new String[1]:result.get("AttachedRegion").toString().trim().split(","));
+				ba.setBranchId(result.get("AttachedBranch")==null?"":result.get("AttachedBranch").toString());
 				
 			}
 		}catch(Exception e) {
@@ -740,5 +742,9 @@ public class BrokerManagementDAO extends MyJdbcTemplate
 
 	public void setPassword(BrokerMgmBean bean) {
 		api.setPassword(bean);
+	}
+
+	public List<Object> getPolicyRegisterList(String login_Id, String branch) {
+		return api.getPolicyRegisterList( login_Id,  branch);
 	}
 }

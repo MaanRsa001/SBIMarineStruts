@@ -62,6 +62,9 @@ public class AdminMgtAction extends ActionSupport implements ModelDriven<AdminMg
 	public List<Map<String,Object>> getBranchList(){
 		return cservice.getBranchList(bean.getRegionCode());
 	}
+	public List<Map<String,Object>> getAttachedBranchList(){
+		return cservice.getAttachedBranchList(bean.getSelregions());
+	}
 	public String home(){
 		session.put("product_id",bean.getProduct());
 		//session.put("MenuList", cservice.getMenuList( (String)session.get("MENU_ID"), belongingBranch,bean.getProduct()));

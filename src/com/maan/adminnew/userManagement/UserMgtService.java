@@ -18,8 +18,8 @@ public class UserMgtService
     public List<Object> getUserListAjax(String agencyCode, String searchBy, String searchValue, String mode1){
     	  return dao.getUserListAjax(agencyCode, searchBy, searchValue, mode1);
     }
-    public List <Object> getOCCertificate(String agencyCode){
-    	return dao.getOCCertificate(agencyCode);
+    public List <Object> getOCCertificate(String agencyCode, String uagencyCode){
+    	return dao.getOCCertificate(agencyCode,uagencyCode);
     }
     /*public List <Object> getProducts(final UserMgtBean ba){
     	return dao.getProducts(ba);

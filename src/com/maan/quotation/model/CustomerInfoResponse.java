@@ -11,7 +11,7 @@ public class CustomerInfoResponse {
 	private List<customerInfoResp> customerInformation;
 	@SerializedName("AdditionalData") 
 	private DefaultValue defaultValue;
-	@SerializedName("Errors") 
+	@SerializedName("ErrorMessage") 
 	private List<Errors> errors;
 	public List<customerInfoResp> getCustomerInformation() {
 		return customerInformation;

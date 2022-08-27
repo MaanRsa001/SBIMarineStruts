@@ -138,7 +138,7 @@ public class ApiForWarranty extends ApiConfig implements Callable<Object>{
 				json = (JSONObject) parser.parse(responseStr);
 				
 				jo1 = (JSONObject) json.get("Result");
-				bean.setErrors((JSONArray) jo1.get("Errors"));
+				bean.setErrors((JSONArray) jo1.get("ErrorMessage"));
 				bean.setProposalNo(jo1.get("ProposalNo")==null?"":jo1.get("ProposalNo").toString()); 
 				
 			}

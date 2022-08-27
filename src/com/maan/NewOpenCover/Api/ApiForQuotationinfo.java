@@ -107,13 +107,13 @@ public class ApiForQuotationinfo extends ApiConfig implements Callable<Object>{
 			hp.put("MarginPercent", bean.getMarginPercent());
 			hp.put("Warland", bean.getWarLand());
 			hp.put("FacYN", bean.getFacYN());
-			
+			hp.put("PolicyFee", bean.getPolicyFee());
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
 				
 				jo = (JSONObject) json.get("Result");
-				bean.setErrors((JSONArray) jo.get("Errors"));
+				bean.setErrors((JSONArray) jo.get("ErrorMessage"));
 				result = jo.get("Status") == null ? "" : jo.get("Status").toString();
 				bean.setProposalNo(jo.get("ProposalNo") == null ? "" : jo.get("ProposalNo").toString());
 			} 
@@ -176,7 +176,7 @@ public class ApiForQuotationinfo extends ApiConfig implements Callable<Object>{
 				bean.setFacYN(quoteinfo.get("FacYN")==null?"":quoteinfo.get("FacYN").toString());
 				bean.setMissippiCode(quoteinfo.get("MissippiCode")==null?"":quoteinfo.get("MissippiCode").toString());
 				bean.setBrokerId(quoteinfo.get("BrokerId")==null?"":quoteinfo.get("BrokerId").toString());
-				
+				bean.setPolicyFee(quoteinfo.get("PolicyFee")==null?"":quoteinfo.get("PolicyFee").toString());
 			} 
 		}catch (Exception e) {
 			e.printStackTrace();

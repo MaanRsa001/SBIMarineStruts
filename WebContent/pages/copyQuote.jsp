@@ -36,6 +36,19 @@
 										</s:else>										
 									</div>
 								</div>
+								<s:if test='#session.usertype==getText("ISSUER")'> 
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+										<div class="text">
+											<s:label key="report.selectuser" theme="simple"/>
+										</div>
+										<div class="tbox">
+											<s:select list="userSelection" listKey="LOGIN_ID" listValue="USERNAME" name="loginId"  headerKey="" headerValue="Select" value='%{#session.product_id==getText("OPEN_COVER")?#session.userName:loginId}'  cssClass="inputBoxS"/>
+										</div>
+									</div>
+								</s:if>
+								<s:else>
+								<s:hidden name="loginId" value='%{#session.user}'/>
+								</s:else>
 								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 									<div class="text">
 										<s:label key="copyQuote.enterDataForSearch"/>
@@ -44,7 +57,7 @@
 										<s:textfield name="searchValue" cssClass="inputBox" />
 									</div>
 								</div>
-								<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" align="center" style="padding-top: 10px;">
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center" style="padding-top: 10px;">
 									<s:submit type="button" name="Go"  key="copyQuote.go" cssClass="btn btn-sm btn-success" cssStyle="" />
 								</div>
 							</div>
@@ -80,6 +93,8 @@
 									</table>					
 									<s:hidden name="searchType"/>
 									<s:hidden name="searchValue"/>
+									<s:hidden name="loginId"/>
+									
 								</s:if>
 								<s:else>
 									<div align="center" style="font-size: 20px;font-weight: bold;">

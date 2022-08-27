@@ -35,9 +35,9 @@
 							<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 								<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Referral" onclick="fnCall('referal')"/>
 							</div>
-							<div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
+							<!-- <div class="col-xs-6 col-sm-6 col-md-12 col-lg-12">
 								<input type="button" class="btn btn-sm btn-info adminMenuBtn" value="Statistics" onclick="fnCall('statistics')"/>
-							</div>
+							</div> -->
 						</div>
 					</s:if>
 					<s:else>
@@ -182,6 +182,12 @@
 															</div>
 															</div>
 															<div class="row">
+															<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+																<div class="text"><s:text name="admin.user.region.select"/> <font color="red">*</font></div>
+																<div class="tbox">
+																	<s:select name="attachedregion" id="attachedregion" cssClass="inputBoxS" list="regionsList"  listKey="RegionId" listValue="RegionName"  headerKey=""  multiple="true"/>
+																</div>
+															</div>
 															<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 																<div class="text"><s:text name="Attached Branch"/> <font color="red">*</font></div>
 																<div class="tbox">
@@ -349,7 +355,12 @@ $(document).ready(function() {
            }
                 
         
-  });            
+  }); 
+    $('#attachedregion').multiselect({ 
+        includeSelectAllOption: true,
+          enableFiltering:true 
+          
+    	});
 });
 
 function fnCall(from){
@@ -373,7 +384,7 @@ function fnCall(from){
 		document.underwriter.type1.value="exclude";
 		}
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else if(from=='statistics')
 		document.info.action = "statisticsRE.action";
 	else

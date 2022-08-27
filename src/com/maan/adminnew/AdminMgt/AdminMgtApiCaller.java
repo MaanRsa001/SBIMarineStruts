@@ -95,6 +95,7 @@ public class AdminMgtApiCaller extends ApiConfig {
 		JSONArray brokerArr = new JSONArray();
 		JSONArray menuArr = new JSONArray();
 		JSONArray attachedArr = new JSONArray();
+		JSONArray attachedReg = new JSONArray();
 //		List<String>product = bean.getProductID();
 		try {
 			link = getValueFromWebservice("maan.admin.adminmgt.insert");
@@ -142,6 +143,16 @@ public class AdminMgtApiCaller extends ApiConfig {
 			}
 			}
 			req.put("UnderWriterInfo", uwArr);
+			
+			if(bean.getAttachedregion()!=null) {
+				for (int i = 0; i < bean.getAttachedregion().length; i++) {
+					JSONObject obj = new JSONObject();
+					obj.put("RegionCode", bean.getAttachedregion()[i]);
+					attachedReg.add(obj);
+				}
+				}
+			req.put("AttachedRegionInfo", attachedReg);
+			
 			if(attachedBranchCode!=null) {
 			for (int i = 0; i < attachedBranchCode.size(); i++) {
 				JSONObject obj = new JSONObject();
@@ -157,7 +168,7 @@ public class AdminMgtApiCaller extends ApiConfig {
 			JSONObject json = new JSONObject();
 			JSONParser parser = new JSONParser();
 			json = (JSONObject) parser.parse(response);
-			bean.setErrors((JSONArray)json.get("Errors"));
+			bean.setErrors((JSONArray)json.get("ErrorMessage"));
 			//bean.setErrors(error);
 			saveToken(json);
 		} catch (Exception e) {

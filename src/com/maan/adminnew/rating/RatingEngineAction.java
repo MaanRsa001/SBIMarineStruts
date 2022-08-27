@@ -4205,11 +4205,11 @@ public class RatingEngineAction extends ActionSupport implements
 	public String download() {
 		logger.info("download() - Enter");
 		try {
-			if ("exchangeupload".equals(bean.getReqFrom())) {
+			//if ("exchangeupload".equals(bean.getReqFrom())) {
 				inputStream = new FileInputStream(new File(
 						EXCEL_EXCHANGE_MASTER_PATH));
 				uploadFileName = "ExchangeMasterUploadFormat.xls";
-			}
+			//}
 		} catch (Exception e) {
 			addActionError(e.getMessage());
 			e.printStackTrace();
@@ -4223,6 +4223,7 @@ public class RatingEngineAction extends ActionSupport implements
 		if ("exchangeupload".equals(menuType))
 			bean.setTitle("Exchange Master Transaction Details");
 		try {
+			//bean.setReqFrom("exchangeupload");
 			if (StringUtils.isNotBlank(bean.getReqFrom())) {
 				validateTrans();
 				if (getActionErrors().size() <= 0) {
@@ -4238,11 +4239,15 @@ public class RatingEngineAction extends ActionSupport implements
 	}
 
 	public void validateTrans() {
-		if (!Validation.isValidDate(bean.getStartDate())) {
-			addActionError("Please select valid Start Date");
+		if(StringUtils.isBlank(bean.getStartDate())) {
+			addActionError("Please select Start Date");
+		}else if (!Validation.isValidDate(bean.getStartDate())) {
+			//addActionError("Please select valid Start Date");
 		}
-		if (!Validation.isValidDate(bean.getEndDate())) {
-			addActionError("Please select valid End Date");
+		if(StringUtils.isBlank(bean.getEndDate())) {
+			addActionError("Please select End Date");
+		}else if (!Validation.isValidDate(bean.getEndDate())) {
+			//addActionError("Please select valid End Date");
 		} else if (!Validation.checkDateDiff(bean.getStartDate(), bean
 				.getEndDate())) {
 			addActionError("End Date should be greater that Start Date");

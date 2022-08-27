@@ -98,6 +98,7 @@ public class UnderwriterAPICaller extends ApiConfig{
 		try {
 			JSONArray arr = new JSONArray();
 			JSONArray arr1 = new JSONArray();
+			JSONArray attachedReg = new JSONArray();
 			List<String> branch = Arrays.asList(bean.getBranchId().split(","));
 			link = getValueFromWebservice("maan.admin.issuer.update");
 			JSONObject req = new JSONObject();
@@ -120,19 +121,28 @@ public class UnderwriterAPICaller extends ApiConfig{
 				arr.add(obj);
 			}
 			req.put("AttachedBranchInfo", arr);
+			if(bean.getProducts()!=null) {
 			for(int i=0;i<bean.getProducts().size();i++) {
 				JSONObject obj = new JSONObject();
 				obj.put("ProductId", bean.getProducts().get(i));
 				arr1.add(obj);
 			}
+			}
 			req.put("ProductInfo", arr1);
-
+			if(bean.getAttachedregion()!=null) {
+				for (int i = 0; i < bean.getAttachedregion().length; i++) {
+					JSONObject obj = new JSONObject();
+					obj.put("RegionCode", bean.getAttachedregion()[i]);
+					attachedReg.add(obj);
+				}
+				}
+			req.put("AttachedRegionInfo", attachedReg);
 			token=session.get("TOKEN_SPRING")==null?"":session.get("TOKEN_SPRING").toString();
 			response = callAPI(link, token, req.toJSONString());
 			JSONObject json = new JSONObject();
 			JSONParser parser = new JSONParser();
 			json = (JSONObject) parser.parse(response);
-			bean.setErrors((JSONArray)json.get("Errors"));
+			bean.setErrors((JSONArray)json.get("ErrorMessage"));
 			saveToken(json);
 		} catch (Exception e) {
 			e.printStackTrace();

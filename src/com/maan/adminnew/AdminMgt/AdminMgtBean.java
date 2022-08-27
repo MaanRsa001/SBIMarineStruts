@@ -37,6 +37,7 @@ public class AdminMgtBean {
 	private String broker;
 	private String[] productID;
 	private String[] uwgrade; 
+	private String[] attachedregion;
 	private String searchBy;
 	private String searchValue;
 	private String email;
@@ -65,6 +66,7 @@ public class AdminMgtBean {
 	private String clauseId;
 	private String branchId;
 	private String selProducts; 
+	private String selregions;
 	private String menuId[];
 	 
 	private List<Object> optionalCoverList;
@@ -828,6 +830,18 @@ public class AdminMgtBean {
 	}
 	public void setDcBRefRejectCountValues(String dcBRefRejectCountValues) {
 		this.dcBRefRejectCountValues = dcBRefRejectCountValues;
+	}
+	public String[] getAttachedregion() {
+		return attachedregion;
+	}
+	public void setAttachedregion(String[] attachedregion) {
+		this.attachedregion = attachedregion;
+	}
+	public String getSelregions() {
+		return selregions;
+	}
+	public void setSelregions(String selregions) {
+		this.selregions = selregions;
 	}
 	
   

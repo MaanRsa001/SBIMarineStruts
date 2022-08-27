@@ -6,6 +6,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap-multiselect.css" />
 </head>
 <body>
 <div class="row">
@@ -146,6 +147,14 @@
 															</div>
 														</div>
 														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+																<div class="text"><s:text name="admin.user.region.select"/> <font color="red">*</font></div>
+																<div class="tbox">
+																	<s:select name="attachedregion" id="attachedregion" cssClass="inputBoxS" list="regionsList"  listKey="RegionId" listValue="RegionName"  headerKey=""  multiple="true"/>
+																</div>
+														</div>
+														</div>
+														<div class="row">
+														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 															<div class="text"><s:text name="Attached Branch"/> <font color="red">*</font></div>
 															<div class="tbox">
 																<s:textarea name="branchId" id="branchId" cssClass="inputBoxA" rows="2" readonly="true" cssStyle="width: 85%;"/>
@@ -155,6 +164,7 @@
 														<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 															<div class="text"><s:text name="Effective Date"/><font color="red">*</font></div>
 															<div class="tbox"><s:textfield id="effecdate" name="effecdate" cssClass="inputBox datepicker" /></div>
+														</div>
 														</div>
 													</div>
 												</div>
@@ -231,7 +241,7 @@ function fnCall(from){
 	else if(from=='exclude')
 		document.underwriter.action = "excludeIssuerUnderwriterMgm.action?type1=exclude";
 	else if(from=='openCover')
-		document.info.action = "opencoverOC.action";
+		document.info.action = "opencoverBrokerMgm.action";
 	else if(from=='statistics')
 		document.info.action = "statisticsRE.action";
 	<%--alert(from);
@@ -245,7 +255,26 @@ function branchSelection(){
   var URL ='<%=request.getContextPath()%>/branchSelectionUnderwriterMgm.do?branchSelected='+params;
   return callPopup(URL);
 }
-function callPopupbranch(URL) {
+function callPopupbranch(url){	 
+	var checkedItems='';
+	try
+	{
+		var elements=document.getElementById("attachedregion");		 
+		for(i=0; i<elements.length; i++)
+		{
+			obj=elements[i];
+			if(obj.selected)
+				checkedItems+=obj.value+',';
+		}
+	}catch(e){}	 
+	if(checkedItems.length>1)
+		checkedItems=checkedItems.substring(0, checkedItems.length-1);	 
+	if(checkedItems!=null && checkedItems!="")
+		return callPopup(url+'?selregions='+checkedItems);
+	else
+		alert('Please Select Attached Region');	
+}
+function callPopupbranch1(URL) {
 	var regioncode=document.getElementById("regionCode").value;
 	URL=URL+"?regionCode="+regioncode;
  	var bwidth = window.innerWidth;
@@ -285,7 +314,12 @@ $(document).ready(function() {
             }
            }         
           
-    });            
+    });  
+      $('#attachedregion').multiselect({ 
+          includeSelectAllOption: true,
+            enableFiltering:true 
+            
+      	});
 });
 function getBranchList(val,id){
 	postRequest('<%=request.getContextPath()%>/getBrokerAjaxBrokerMgm.action?reqFrom='+id+'&regionCode='+val, id);
