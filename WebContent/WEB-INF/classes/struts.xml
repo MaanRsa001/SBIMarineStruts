@@ -448,7 +448,9 @@
 	                <result name="assignNew" type="tiles">assignNewPwd</result>
 	                <result name="status" type="tiles">brokerStatus</result>
 	                <result name="adminAjax" type="tiles">adminajax</result>
-	                <result name="adminComboAjax" type="tiles">adminComboAjax</result>  
+	                <result name="adminComboAjax" type="tiles">adminComboAjax</result>
+	                <result name="branchSelection">/pages/admin/brokerMgt/branchSelection.jsp</result>
+	                <result name="brokeroc" type="tiles">brokeroc</result>   
 	            </action>
 	          
 	            <action name="*UserMgm"  class="com.maan.adminnew.userManagement.UserMgtAction" method="{1}">
@@ -458,6 +460,8 @@
 	             	<result name="view" type="tiles">viewUser</result>
 	             	<result name="edit" type="tiles">editUser</result>
 	             	<result name="openCover" type="tiles">openCover</result>
+	             	<result name="regionSelection">/pages/admin/userMgt/regionSelection.jsp</result>
+	             	<result name="branchSelection">/pages/admin/userMgt/branchSelection.jsp</result>
 	            </action>
 	            
 	            <action name="*CustomerMgm"  class="com.maan.adminnew.customerManagement.CustomerMgtAction" method="{1}">
