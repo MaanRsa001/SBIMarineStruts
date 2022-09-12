@@ -84,7 +84,8 @@ public class TokenSessionStoreInterceptor
 			  "insertCustomerNewOpenCover","editcustomerOpenCover","documentReportReg","searchListVessel","viewListVessel","pointingShips","shipDetailsReport","LoginbranchSelection",
 			  "getListAjaxRating","pointingVessel","checkCodeVerify","getOCCertificateUserMgm","openCoverJasperAreport","dashboardInfoAreport","openCoverdetailJasperAreport",
 			  "uploadDocument","submitDocument","downloadDocument","deleteDocument","documentpdfReport","viewdocPortfolio","uploadOpenUpload","listOpenUpload","errorOpenUpload","redirectOpenUpload","downloadOpenUpload","integrationAreport",
-			  "documentUploadAreport","Loginsubmit","branchSelectionBrokerMgm","getUserAjaxUserMgm","regionSelectionUserMgm","branchSelectionUserMgm","opencoverBrokerMgm","statisticsBrokerMgm","clausespdfReport"};
+			  "documentUploadAreport","Loginsubmit","branchSelectionBrokerMgm","getUserAjaxUserMgm","regionSelectionUserMgm","branchSelectionUserMgm","opencoverBrokerMgm","statisticsBrokerMgm","clausespdfReport","cityListQuotation"
+			 , "surveyagentListQuotation"};
 	  for(String str: checkStr) {
 		  if(str.equals(invocation.getProxy().getActionName())) {
 			  return false;

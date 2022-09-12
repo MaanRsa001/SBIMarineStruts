@@ -1932,6 +1932,21 @@ public class PremiumAction extends ActionSupport {
 						qim.put("NET_PREMIUM", pd.getNetPremium());
 						qim.put("TOTAL_WAR_PREMIUM", pd.getTotalWarPremium());
 						qim.put("DISCOUNT_PREMIUM", pd.getDiscountPremium());
+						
+						
+						qim.put("GSTFLAG", pd.getGstflag());
+						qim.put("CGST", pd.getCgst());
+						qim.put("SGST", pd.getSgst());
+						qim.put("IGST", pd.getIgst());
+						qim.put("UTGST", pd.getUtgst());
+						qim.put("CGST_RATE", pd.getCgstRate());
+						qim.put("SGST_RATE", pd.getSgstRate());
+						qim.put("IGST_RATE", pd.getIgstRate());
+						qim.put("UTGST_RATE", pd.getUtgstRate());
+						qim.put("STAMP_DUTY", pd.getStampduty());
+						
+						qim.put("TOTAL_INSURED", pd.getTotalInsuredValue());
+						qim.put("EQUIVALENT", pd.getEquivalentInsuredValue());
 					}
 					
 					double totalInsued = 0;
@@ -1961,8 +1976,8 @@ public class PremiumAction extends ActionSupport {
 						setInsuredGoodsInfo(igil);
 					}
 					
-					qim.put("TOTAL_INSURED", qm.getTotalInsuredValue());
-					qim.put("EQUIVALENT", qm.getEquivalentInsuredValue());
+					/*qim.put("TOTAL_INSURED", qm.getTotalInsuredValue());
+					qim.put("EQUIVALENT", qm.getEquivalentInsuredValue());*/
 					qil.add(qim);
 					setQuotationInfo(qil);
 					setPolicyInformation(qil);

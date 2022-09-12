@@ -23,7 +23,7 @@ public class SessionInterceptor  implements Interceptor {
       
    public String intercept(ActionInvocation actionInvocation) throws Exception {
 		final ActionContext context = actionInvocation.getInvocationContext();
-        logger.info("AlRajhi session interceptor Before Action Invoke => "+context);
+        logger.info("SBI session interceptor Before Action Invoke => "+context);
 		try{
 	   	    HttpServletResponse response = (HttpServletResponse) context.get(StrutsStatics.HTTP_RESPONSE);
 	        HttpServletRequest request = (HttpServletRequest)context.get(StrutsStatics.HTTP_REQUEST);
@@ -51,7 +51,7 @@ public class SessionInterceptor  implements Interceptor {
            result = actionInvocation.invoke();
        }
 
-       logger.info("AlRajhi session interceptor after Action Invoke => "+context);
+       logger.info("SBI session interceptor after Action Invoke => "+context);
        return result;
    }
 

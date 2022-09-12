@@ -5,8 +5,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
-		<title> ::: AlRajhi - OpenCover Selection ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+		<title> ::: SBI - OpenCover Selection ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
         <link href="<%=request.getContextPath()%>/css/claim.css" rel="stylesheet" type="text/css">
        	<link href="<%=request.getContextPath()%>/css/displaytag.css" rel="stylesheet" type="text/css">
        	<link href="css/styles.css" rel="stylesheet" type="text/css" />

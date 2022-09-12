@@ -257,7 +257,7 @@ img {vertical-align: middle;}
           Marine Cargo Insurance
         </h1> 
         <p class="sub-heading">
-           Ensure your marine cargo is covered against direct physical loss or damage with AlRajhi Cooperative Insurance Company
+           Ensure your marine cargo is covered against direct physical loss or damage with SBI Cooperative Insurance Company
         </p>
     </div>  
       
@@ -372,7 +372,7 @@ img {vertical-align: middle;}
    <div class="noCards">
     <div class="mt-5 main-container">
         <h1 class="main-heading">
-           Marine Cargo Insurance: What Can AlRajhi Cooperative Insurance Company Provide?
+           Marine Cargo Insurance: What Can SBI Cooperative Insurance Company Provide?
         </h1> 
     </div>    
       

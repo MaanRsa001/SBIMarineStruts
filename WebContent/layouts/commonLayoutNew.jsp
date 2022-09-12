@@ -12,7 +12,7 @@
 	<meta name="author" content="">	
 	<title><tiles:insertAttribute name="title" /></title>
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+	<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -60,7 +60,7 @@
 	<script type="text/javascript" src="<%=request.getContextPath()%>/bootstrap/js/jquery-1.9.1.min.js"></script>
 </head>
 <body>
-<div class="theme-AlRajhi">
+<div class="theme-SBI">
 	<!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">

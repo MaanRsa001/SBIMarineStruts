@@ -47,6 +47,10 @@ document.onkeypress = stopRKey;
 <body>
 <s:set var="disable" value='%{(quoteStatus=="RA")||(endTypeId!=null && endTypeId.length() > 0) || "Y".equals(finalizeYN)}'/>
 <s:set var="disable2" value='%{(endTypeId!=null && endTypeId.length() > 0)}'/>
+<s:set var="endtTypeVal" value='%{endtType}'/>
+<s:set var="ecurrencyList" value='%{currencyList}'/>
+<s:set var="ewarOption" value='%{warOption}'/>
+
 <%--<div id="loading" style="width:100%">
    <img id="loading-image" src="<%=request.getContextPath()%>/images/ajax-loader-bar.gif"/>
 </div>
@@ -60,7 +64,7 @@ document.onkeypress = stopRKey;
 </div>
 <div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-		<s:if test='%{endtType!=null && endtType.length() > 0}'>			
+		<s:if test='%{#endtTypeVal!=null && #endtTypeVal.length() > 0}'>			
 			<div class="panel panel-primary">
 				<div class="panel-body" style="padding: 0;">
 					<s:set value="policyEndtInfo" var="policyEndtInfo"></s:set>
@@ -96,7 +100,7 @@ document.onkeypress = stopRKey;
 					 			<s:text name="quotation.endtTypeDesc" />
 					 		</div>
 					 		<div class="tboxV">
-					 			:&nbsp;<span style="color:blue;"><s:property value="endtType" /></span>									 		
+					 			:&nbsp;<span style="color:blue;"><s:property value="#endtTypeVal" /></span>									 		
 					 		</div>
 						</div>
 					</div>
@@ -213,7 +217,7 @@ document.onkeypress = stopRKey;
                                <s:textfield name="customerName" id="customerName" cssClass="inputBox tooltipContent" data-content="Custome Name"   maxlength="500" disabled="#disable" onchange="setCustomerId();"/>
                                <s:hidden name="customerId" id="customerId" />
 					       <span class="input-group-addon">
-                             <a onclick="customerSelectionAction()" style="cursor: pointer"  disabled="#disable"><span class="glyphicon glyphicon-list"></a>
+                             <a onclick="customerSelectionAction()" style="cursor: pointer"  disabled="#disable"><span class="glyphicon glyphicon-list"></span></a>
 					      </span>
 					    </div>			 		
 			 		</div>
@@ -343,6 +347,15 @@ document.onkeypress = stopRKey;
 				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="sezYn" id="sezYn"  value='%{(sezYn==null || "".equals(sezYn))?"NO":sezYn}' disabled="#disable" onclick="editCustomerInfo();"/>
 				 		</div>	
 			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="quotation.hypo" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="hypothecation" id="hypothecation" cssClass="inputBox tooltipContent" data-content="Hypothecation Details" disabled="#disable" maxlength="16"/>
+				 		</div>	
+			 		</div>
+			 		
 			 	</div>
 				<div class="row" id="editCustomerDIV">
 					<s:if test='%{productId==openCover1 && customerId.equals(#session.customer_id) && !(#disable)}'>
@@ -421,12 +434,13 @@ document.onkeypress = stopRKey;
 				 	</div>
 				 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				 		<div class="text">
-				 			<s:text name="quotation.originWarehouse" />
+				 			<s:text name="quotation.originaddress" />
 				 		</div>
 				 		<div class="tbox">
-				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="originWarehouse" id="originWarehouse"  value='%{originWarehouse==null?"NO":originWarehouse}' disabled="#disable"/>
+				 			<s:textfield name="orginateaddress" id="orginateaddress" cssClass="inputBox tooltipContent" data-content="Orginating Address" disabled="#disable" maxlength="12"/>
 				 		</div>	
 				 	</div>
+				 	
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -434,7 +448,7 @@ document.onkeypress = stopRKey;
 				 			<s:text name="quotation.destCountry" /><font color="red">*</font>
 				 		</div>
 				 		<div class="tbox">
-				 			<s:select name="destCountry" id="destCountry" list="destList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="Destination City" disabled="#disable"  onchange="getList('?quoteStatus=%{quoteStatus}&destCountry='+this.value,'agentList');emptyCity('dest');" value="%{destCountry==null?'1':destCountry}"/>
+				 			<s:select name="destCountry" id="destCountry" list="destList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="Destination City" disabled="#disable"  onchange="getList('?quoteStatus=%{quoteStatus}&destCountry='+this.value,'agentList');getList('?quoteStatus=%{quoteStatus}&destCountry='+this.value,'surveyagentList');emptyCity('dest');" value="%{destCountry==null?'1':destCountry}"/>
 				 		</div>	
 				 	</div>
 				 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -452,15 +466,47 @@ document.onkeypress = stopRKey;
 				 	</div>
 				 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				 		<div class="text">
+				 			<s:text name="quotation.destinaddress" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="destinateaddress" id="destinateaddress" cssClass="inputBox tooltipContent" data-content="Destinating Address" disabled="#disable" maxlength="12"/>
+				 		</div>	
+				 	</div>
+				 	
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				 		<div class="text">
+				 			<s:text name="quotation.originWarehouse" />
+				 		</div>
+				 		<div class="tbox">
+				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="originWarehouse" id="originWarehouse"  value='%{originWarehouse==null?"NO":originWarehouse}' disabled="#disable"/>
+				 		</div>	
+				 	</div>
+					
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				 		<div class="text">
 				 			<s:text name="quotation.destWarehouse" />
 				 		</div>
 				 		<div class="tbox">
 				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="destWarehouse"  value='%{destWarehouse==null?"NO":destWarehouse}' disabled="#disable"/>
 				 		</div>	
 				 	</div>
+				 	 
+				 	<s:if test='#ewarOption=="Y"'>
+				 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				 		<div class="text">
+				 			<div id="warSrccId" class="tCol"><s:text name="quotation.warSrcc" /> </div>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="warSrcc"  value='%{warSrcc==null?"YES":warSrcc}' disabled="#disable"/>
+				 		</div>	
+				 	</div>
+				 	</s:if>
 				</div>
-				<div class="row">
-					<s:if test='!((specialTerm!=null && !"".equals(specialTerm)) || ("admin".equalsIgnoreCase(#session.usertype)||"RSAIssuer".equalsIgnoreCase(#session.usertype)))'> 
+			 	<div class="row">
+			 		
+			 		<s:if test='!((specialTerm!=null && !"".equals(specialTerm)) || ("admin".equalsIgnoreCase(#session.usertype)||"RSAIssuer".equalsIgnoreCase(#session.usertype)))'> 
 					 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 					 		<div class="text">
 					 			<s:text name="quotation.via"/>
@@ -485,25 +531,15 @@ document.onkeypress = stopRKey;
 				 			<s:text name="quotation.currency" /><font color="red">*</font>
 				 		</div>
 				 		<div class="tbox">
-				 			<s:select name="currency" id="currency" list="currencyList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent tooltipContent" data-content="Currency List" cssStyle="width:80%;float:left;" disabled="#disable"  onchange="exchageRate(this,'currency')"/>
+				 			<s:select name="currency" id="currency" list="#ecurrencyList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent tooltipContent" data-content="Currency List" cssStyle="width:80%;float:left;" disabled="#disable"  onchange="exchageRate(this,'currency')"/>
 	                           <s:textfield id="exchageValue" name="exchageValue" cssStyle="width:20%;float:left;" cssClass="inputBox tooltipContent" data-content="Exchange Value" size="5"  disabled="#disable"/>
-							<s:iterator value="currencyList" var="currencyDetail">
+							<s:iterator value="#ecurrencyList" var="currencyDetail">
 								<s:hidden name="%{#currencyDetail.CODE}" id="%{#currencyDetail.CODE}" value="%{#currencyDetail.CODEVALUE}"/>
 							</s:iterator>
 				 		</div>	
 				 	</div>
-				 	<s:if test='warOption=="Y"'>
-				 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-				 		<div class="text">
-				 			<div id="warSrccId" class="tCol"><s:text name="quotation.warSrcc" /> </div>
-				 		</div>
-				 		<div class="tbox">
-				 			<s:radio list="#{'YES':'Yes','NO':'No'}" name="warSrcc"  value='%{warSrcc==null?"YES":warSrcc}' disabled="#disable"/>
-				 		</div>	
-				 	</div>
-				 	</s:if>
-				</div>
-			 	<div class="row">
+			 		
+			 		
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				 		<div class="text">
 				 			<s:text name="quotation.policyStartDate" /><font color="red">*</font>
@@ -713,8 +749,8 @@ document.onkeypress = stopRKey;
 					 			<s:text name="quotation.currencyOfExposure" /><font color="red">*</font>
 					 		</div>
 					 		<div class="tbox">
-					 			<s:select name="exposureCurrency" id="exposureCurrency" list="currencyList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="Exposure Currency" cssStyle="width:80%;float:left;" onchange="exchageRate(this,'exposureCurrency')" disabled='%{#disable2==false?(partialShipment==null || partialShipment=="N"):#disable2}'/><s:textfield id="exposureValue" name="exposureValue" cssStyle="width:20%;float:left;" cssClass="inputBox tooltipContent" data-content="" size="5" readonly="true" disabled='%{#disable2==false?(partialShipment==null || partialShipment=="N"):#disable2}' maxlength="20"/>
-		                           <s:iterator value="currencyList" var="currencyDetail">
+					 			<s:select name="exposureCurrency" id="exposureCurrency" list="#ecurrencyList" headerKey="" headerValue="---Select---" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content="Exposure Currency" cssStyle="width:80%;float:left;" onchange="exchageRate(this,'exposureCurrency')" disabled='%{#disable2==false?(partialShipment==null || partialShipment=="N"):#disable2}'/><s:textfield id="exposureValue" name="exposureValue" cssStyle="width:20%;float:left;" cssClass="inputBox tooltipContent" data-content="" size="5" readonly="true" disabled='%{#disable2==false?(partialShipment==null || partialShipment=="N"):#disable2}' maxlength="20"/>
+		                           <s:iterator value="#ecurrencyList" var="currencyDetail">
 		                           <s:hidden name="%{#currencyDetail.CODE}" id="%{#currencyDetail.CODE}" value="%{#currencyDetail.CODEVALUE}"/>
 		                           </s:iterator>
 					 		</div>	
@@ -799,7 +835,7 @@ document.onkeypress = stopRKey;
 					 	</s:if> --%>
 				</div>
 				<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 				 		<div class="text">
 				 			<s:text name="quotation.vesselName" />
 				 		</div>
@@ -813,6 +849,25 @@ document.onkeypress = stopRKey;
 			                	</button>
 			                </span>
 						  </div>
+				 	</div>
+				 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				 		<div class="text">
+				 			<s:text name="quotation.surveyagent" />
+				 		</div>
+				 		<div class="input-group">
+				 			
+				 			
+				 			<s:if test='surveyagentid!=null && "0".equals(surveyagentid) && !("admin".equalsIgnoreCase(#session.usertype) || "RSAIssuer".equalsIgnoreCase(#session.usertype)) && "RA".equalsIgnoreCase(quoteStatus)'>
+					 			<div id="surveyagentList">
+		                     			<s:select name="surveyagentid" id="surveyagentid" list="surveyagentList"  listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content=""  onchange="disableOthers(this);" disabled="true" />
+		                     	</div>
+		                     		</s:if>
+		                     		<s:else>
+		                     		<div id="surveyagentList">
+		                     			<s:select name="surveyagentid" id="surveyagentid" list="surveyagentList"  listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" data-content=""  onchange="disableOthers(this);" disabled="#disable2" />
+		                     			</div>
+		                     		</s:else>
+				 		</div>
 				 	</div>
 				 </div>
 			 	<%-- <div class="row">
@@ -1381,7 +1436,7 @@ function disableWarehouse(obj){
 }
 toggleWarSrcc(document.getElementById("modeOfTransport"))
 function toggleWarSrcc(obj) {
-	<s:if test='warOption=="Y"'>
+	<s:if test='#ewarOption=="Y"'>
 	var modeOfTrans=obj.value;
 	if(modeOfTrans=='3') {		 
 	    document.getElementById("warSrccId").innerHTML='<s:text name="quotation.Srcc"/>'
@@ -1395,7 +1450,7 @@ disableOthers(document.getElementById("settlingAgent"));
 function disableOthers(obj) {
 	var value=obj.value;	
 	if(value=='<s:text name="quotation.others.value"/>') {	
-	    //document.getElementById("agentOthers").value="AlRajhi COOPERATIVE INSURANCE COMPANY";	
+	    //document.getElementById("agentOthers").value="SBI COOPERATIVE INSURANCE COMPANY";	
 		document.getElementById("agentOthers").readOnly=false;
 	} else {	
 		document.getElementById("agentOthers").value="";

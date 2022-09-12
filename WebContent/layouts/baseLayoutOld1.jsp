@@ -4,7 +4,7 @@
 <html>
     <head>
      	<title><tiles:insertAttribute name="title" /></title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
         <link href="css/easyui.css" rel="stylesheet" type="text/css">
         <link href="css/icon.css" rel="stylesheet" type="text/css">
         <link href="css/demo.css" rel="stylesheet" type="text/css">

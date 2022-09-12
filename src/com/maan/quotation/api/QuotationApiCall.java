@@ -448,7 +448,7 @@ public class QuotationApiCall extends ApiConfig {
 			String jsonResponse = callAPI("warsrcResponse", ApiUrl.getWarsrcResponse(), getApiToken(), jsonRequest);
 			Object obj = parser.parse(jsonResponse);
 			JSONObject jo = (JSONObject) obj;
-			qs = jo.get("WarSrccYn") == null ? "" : jo.get("WarSrccYn").toString();
+			qs = jo.get("Result") == null ? "" : jo.get("Result").toString();  //jo.get("WarSrccYn") == null ? "" : jo.get("WarSrccYn").toString();
 		}catch(Exception e) {
 			logger.info("Exception @ QuotationApiCall.getOpenCustomerInfo(): "+e);
 			e.printStackTrace();

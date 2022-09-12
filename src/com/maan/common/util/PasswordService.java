@@ -3,10 +3,8 @@ package com.maan.common.util;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import sun.misc.BASE64Encoder;
-import sun.misc.CharacterEncoder;
-
-import com.maan.common.util.SystemUnavailableException;
+import java.util.Base64;
+ 
 
 public final class PasswordService
 {
@@ -14,25 +12,25 @@ public final class PasswordService
 
   public PasswordService(){}
 
-  public synchronized String encrypt(String plaintext) throws SystemUnavailableException
+  public synchronized String encrypt(String plaintext) throws Exception
   {
     MessageDigest md = null;
     try {
       md = MessageDigest.getInstance("SHA"); //step 2
     }
     catch(NoSuchAlgorithmException e) {
-      throw new SystemUnavailableException(e.getMessage());
+      e.printStackTrace();
     }
 
     try {
       md.update(plaintext.getBytes("UTF-8")); //step 3
     }
     catch(UnsupportedEncodingException e) {
-      throw new SystemUnavailableException(e.getMessage());
+     e.printStackTrace();
     }
 
     byte raw[] = md.digest(); //step 4
-    String hash = (new BASE64Encoder()).encode(raw); //step 5
+    String hash = Base64.getEncoder().encodeToString(raw); //step 5
     return hash; //step 6
   }
   
@@ -56,6 +54,6 @@ public final class PasswordService
         else {
             System.out.println("Please give a password argument");
         }
-    } catch(SystemUnavailableException e) {System.out.println(e.getMessage());}
+    } catch(Exception e) {System.out.println(e.getMessage());}
   }
 }

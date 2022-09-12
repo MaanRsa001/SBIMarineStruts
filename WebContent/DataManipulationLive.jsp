@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"s"+"://"+request.getServerName()+":"+requ
 	-->
 	
 	<!--
-	Copy the content and apply  DataManipulation.jsp in AlRajhi Live
+	Copy the content and apply  DataManipulation.jsp in SBI Live
 	--> 
 
   </head>

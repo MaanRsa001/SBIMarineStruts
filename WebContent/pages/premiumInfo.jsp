@@ -560,6 +560,70 @@ label{
 			                                </td>   
 			                      	    </tr>
 		                      	    </s:if>
+		                      	    <s:if test="%{#quotation.STAMP_DUTY>0}">
+		                      	     <tr>
+					     				   <td width="25%" align="right">&nbsp;</td>
+			                                <td width="25%"></td>  
+			                                <td width="25%" align="right">
+				                                <%--<s:label key="servicetax.percentage" />--%>
+				                              	  Stamp Duty                             
+			                                <td width="25%" align="right">
+			                                <s:textfield name="stampduty" id="stampduty" value="%{#quotation.STAMP_DUTY}" cssClass="inputBox"  readonly='true'  cssStyle="text-align:right;"/>
+			                                </td>   
+			                      	    </tr>
+		                      	    </s:if>
+		                      	    
+		                      	    <s:if test='GSTFLAG=="Y"'>
+		                      	     <s:if test="%{#quotation.CGST>0}">
+		                      	     <tr>
+					     				   <td width="25%" align="right">&nbsp;</td>
+			                                <td width="25%">GST</td>  
+			                                <td width="25%" align="right">
+				                                <%--<s:label key="servicetax.percentage" />--%>
+				                              	  CGST<s:property value="CGST_RATE"/>%                            
+			                                <td width="25%" align="right">
+			                                <s:textfield name="cgst" id="cgst" value="%{#quotation.CGST}" cssClass="inputBox"  readonly='true'  cssStyle="text-align:right;"/>
+			                                </td>   
+			                      	    </tr>
+		                      	    </s:if>
+		                      	     <s:if test="%{#quotation.SGST>0}">
+		                      	    <tr>
+					     				   <td width="25%" align="right">&nbsp;</td>
+			                                <td width="25%"></td>  
+			                                <td width="25%" align="right">
+				                                <%--<s:label key="servicetax.percentage" />--%>
+				                              	  SGST<s:property value="SGST_RATE"/>%                            
+			                                <td width="25%" align="right">
+			                                <s:textfield name="sgst" id="sgst" value="%{#quotation.SGST}" cssClass="inputBox"  readonly='true'  cssStyle="text-align:right;"/>
+			                                </td>   
+			                      	    </tr>
+			                      	    </s:if>
+			                      	     <s:if test="%{#quotation.IGST>0}">
+			                      	    <tr>
+					     				   <td width="25%" align="right">&nbsp;</td>
+			                                <td width="25%"></td>  
+			                                <td width="25%" align="right">
+				                                <%--<s:label key="servicetax.percentage" />--%>
+				                              	  IGST<s:property value="IGST_RATE"/>%                            
+			                                <td width="25%" align="right">
+			                                <s:textfield name="igst" id="igst" value="%{#quotation.IGST}" cssClass="inputBox"  readonly='true'  cssStyle="text-align:right;"/>
+			                                </td>   
+			                      	    </tr>
+			                      	    </s:if>
+			                      	    <s:if test="%{#quotation.UTGST>0}">
+		                      	    <tr>
+		                      	    
+					     				   <td width="25%" align="right">&nbsp;</td>
+			                                <td width="25%"></td>  
+			                                <td width="25%" align="right">
+				                                <%--<s:label key="servicetax.percentage" />--%>
+				                              	  UTGST <s:property value="UTGST_RATE"/>%                            
+			                                <td width="25%" align="right">
+			                                <s:textfield name="utgst" id="utgst" value="%{#quotation.UTGST}" cssClass="inputBox"  readonly='true'  cssStyle="text-align:right;"/>
+			                                </td>   
+			                      	    </tr>
+		                      	    </s:if>
+			                      	    </s:if>
 									<tr>
 										<td></td>
 										<td></td>

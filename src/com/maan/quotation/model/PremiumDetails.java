@@ -1,11 +1,24 @@
 package com.maan.quotation.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
 public class PremiumDetails {
 	
 
-    @SerializedName("AdditionalPremium") 
+    public double getTotalInsuredValue() {
+		return totalInsuredValue;
+	}
+	public void setTotalInsuredValue(double totalInsuredValue) {
+		this.totalInsuredValue = totalInsuredValue;
+	}
+	public double getEquivalentInsuredValue() {
+		return equivalentInsuredValue;
+	}
+	public void setEquivalentInsuredValue(double equivalentInsuredValue) {
+		this.equivalentInsuredValue = equivalentInsuredValue;
+	}
+	@SerializedName("AdditionalPremium") 
     private String additionalPremium;
     @SerializedName("DiscountPremium") 
     private double discountPremium;
@@ -46,6 +59,117 @@ public class PremiumDetails {
     @SerializedName("VatTax") 
     private double vatTax;
     
+    @SerializedName("IMPORT_PREMIUM")
+	private Double importPremium;
+	@SerializedName("TOTAL_IMPORT_DUTY")
+	private Double totalImportDuty;
+	  
+	@SerializedName("GSTFLAG")
+	private String gstflag;
+	@SerializedName("STAMP_DUTY")
+	private Double stampduty;
+	@SerializedName("GSTTYPE")
+	private Double gsttype;
+	@SerializedName("CGST")
+	private Double cgst;
+	@SerializedName("SGST")
+	private Double sgst;
+	@SerializedName("IGST")
+	private Double igst;
+	@SerializedName("UTGST")
+	private Double utgst;
+	@SerializedName("CGST_RATE")
+	private Double cgstRate;
+	@SerializedName("SGST_RATE")
+	private Double sgstRate;
+	@SerializedName("IGST_RATE")
+	private Double igstRate;
+	@SerializedName("UTGST_RATE")
+	private Double utgstRate;
+    
+	@SerializedName("TotalInsuredValue") 
+	private double totalInsuredValue;
+	@SerializedName("EquivalentInsuredValue") 
+    private double equivalentInsuredValue;
+	
+	public Double getImportPremium() {
+		return importPremium;
+	}
+	public void setImportPremium(Double importPremium) {
+		this.importPremium = importPremium;
+	}
+	public Double getTotalImportDuty() {
+		return totalImportDuty;
+	}
+	public void setTotalImportDuty(Double totalImportDuty) {
+		this.totalImportDuty = totalImportDuty;
+	}
+	public String getGstflag() {
+		return gstflag;
+	}
+	public void setGstflag(String gstflag) {
+		this.gstflag = gstflag;
+	}
+	public Double getStampduty() {
+		return stampduty;
+	}
+	public void setStampduty(Double stampduty) {
+		this.stampduty = stampduty;
+	}
+	public Double getGsttype() {
+		return gsttype;
+	}
+	public void setGsttype(Double gsttype) {
+		this.gsttype = gsttype;
+	}
+	public Double getCgst() {
+		return cgst;
+	}
+	public void setCgst(Double cgst) {
+		this.cgst = cgst;
+	}
+	public Double getSgst() {
+		return sgst;
+	}
+	public void setSgst(Double sgst) {
+		this.sgst = sgst;
+	}
+	public Double getIgst() {
+		return igst;
+	}
+	public void setIgst(Double igst) {
+		this.igst = igst;
+	}
+	public Double getUtgst() {
+		return utgst;
+	}
+	public void setUtgst(Double utgst) {
+		this.utgst = utgst;
+	}
+	public Double getCgstRate() {
+		return cgstRate;
+	}
+	public void setCgstRate(Double cgstRate) {
+		this.cgstRate = cgstRate;
+	}
+	public Double getSgstRate() {
+		return sgstRate;
+	}
+	public void setSgstRate(Double sgstRate) {
+		this.sgstRate = sgstRate;
+	}
+	public Double getIgstRate() {
+		return igstRate;
+	}
+	public void setIgstRate(Double igstRate) {
+		this.igstRate = igstRate;
+	}
+	public Double getUtgstRate() {
+		return utgstRate;
+	}
+	public void setUtgstRate(Double utgstRate) {
+		this.utgstRate = utgstRate;
+	}
 	/**
 	 * @return the additionalPremium
 	 */

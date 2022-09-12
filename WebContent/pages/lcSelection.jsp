@@ -13,8 +13,8 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-		<title> ::: AlRajhi - LC Selection ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" /> 
+		<title> ::: SBI - LC Selection ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" /> 
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />	
 		<script type="text/javascript" src="js/common.js"></script>					
     </head>

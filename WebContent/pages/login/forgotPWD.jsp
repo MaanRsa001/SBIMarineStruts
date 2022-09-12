@@ -10,8 +10,8 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="Maan Sarovar, Sea Trans, Marine Insurance">
 	<meta name="author" content="">
-	<title> ::: AlRajhi - Forgot Password ::: </title>
-	<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+	<title> ::: SBI - Forgot Password ::: </title>
+	<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 	<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/demo.css" />
 	<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/font-awesome.min.css" />
 	<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap-multiselect.css" />
@@ -50,7 +50,7 @@
 <!--[!(IE)]><!-->    <body class="notIE modern"> <!--<![endif]-->
 <div id="page" class="content">
 	<div class="ielogo" style="text-align: center;">
-		<img id="AlRajhiLogo" src="images/logonew.png" alt="logo" >
+		<img id="SBILogo" src="images/logonew.png" alt="logo" >
 	</div>	
 	<div class="logonBg">
 		<div class="row">
@@ -121,7 +121,7 @@
 	</div>
 	<br class="clear"/>
 	<div id="footer" align="right">
-		<div class="div-footer">AlRajhi Cooperative Insurance Company</div>
+		<div class="div-footer">SBI Cooperative Insurance Company</div>
 		<%-- <div class="div-footer">&copy; Owned by <a href="http://www.maansarovar.com/" target="_blank">Maan Sarovar Tech Solutions Pvt. Ltd.</a></div>--%>    	   
 		<br class="clear">
 	</div>

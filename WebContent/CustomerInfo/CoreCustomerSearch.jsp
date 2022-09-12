@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%@ page isELIgnored ="false" %>
 <html>
 <head>
-<title> ::: AlRajhi Insurance - Options Selection ::: </title>
+<title> ::: SBI Insurance - Options Selection ::: </title>
 <link rel="shortcut icon" href="<%=request.getContextPath()%>/images/logonew.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="<%=path%>/css/style.css" rel="stylesheet" type="text/css">

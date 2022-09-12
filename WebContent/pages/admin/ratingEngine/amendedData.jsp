@@ -21,7 +21,7 @@ tradeData=com.getAmendedComDetails(cid,branchCode);
 
 <html>
 <head>
-<title>AlRajhi</title>
+<title>SBI</title>
 </head>
 <link href="<%=request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css" />
 <body>

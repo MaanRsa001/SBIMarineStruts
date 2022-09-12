@@ -8,8 +8,8 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="Maan Sarovar, Sea Trans, Marine Insurance">	
 		<meta name="author" content="">
-		<title>::: AlRajhi - Menu Selection :::</title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+		<title>::: SBI - Menu Selection :::</title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 		<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/demo.css" />
 		<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/font-awesome.min.css" />
 		<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/bootstrap-multiselect.css" />

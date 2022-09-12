@@ -6,8 +6,8 @@
 
 <html>
     <head>
-    	<title> ::: AlRajhi - E-Way ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+    	<title> ::: SBI - E-Way ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
      	<sj:head jqueryui="true" jquerytheme="start" />
         <link href="css/easyui.css" rel="stylesheet" type="text/css">
         <link href="css/icon.css" rel="stylesheet" type="text/css">

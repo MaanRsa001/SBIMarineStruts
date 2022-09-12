@@ -7,13 +7,13 @@
 	</s:url>
     <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>   
         <s:if test='%{(#session.user!=null && !"".equals(#session.user)) && #session.user1 != getText("admin")}'>
-			<a class="navbar-brand" href="<%=request.getContextPath()%>/Loginb2bProduct.action"><img alt="AlRajhi Logo" src="<%=request.getContextPath()%>/images/logonew.png"> </a>
+			<a class="navbar-brand" href="<%=request.getContextPath()%>/Loginb2bProduct.action"><img alt="SBI Logo" src="<%=request.getContextPath()%>/images/logonew.png"> </a>
 		</s:if>
 		<s:elseif test='%{#session.user1 == getText("admin")}'>
-			<a class="navbar-brand" href="#" onclick="tookAct('HomeUser.action');" style="cursor:pointer"><img alt="AlRajhi Logo" src="<%=request.getContextPath()%>/images/logonew.png"> </a>
+			<a class="navbar-brand" href="#" onclick="tookAct('HomeUser.action');" style="cursor:pointer"><img alt="SBI Logo" src="<%=request.getContextPath()%>/images/logonew.png"> </a>
 		</s:elseif>
 		<s:else>
-			<a class="navbar-brand" href="<%=request.getContextPath()%>/Loginb2cProduct.action" style="z-index: 5; "><img alt="AlRajhi Logo" src="<%=request.getContextPath()%>/images/logonew.png"> </a>
+			<a class="navbar-brand" href="<%=request.getContextPath()%>/Loginb2cProduct.action" style="z-index: 5; "><img alt="SBI Logo" src="<%=request.getContextPath()%>/images/logonew.png"> </a>
 		</s:else>         
 </div>
 <div class="collapse navbar-collapse" id="navbar-collapse">

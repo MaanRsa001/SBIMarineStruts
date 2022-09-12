@@ -2,7 +2,7 @@
 <%@taglib prefix="s" uri="/struts-tags"%>
 <html>
 <head>
-	<title>AlRajhi - Access Denied</title>
+	<title>SBI - Access Denied</title>
 	<link href="<%=request.getContextPath()%>/cssbootstrap/bootstrap.min.css" rel="STYLESHEET" type="text/css">
 	<style type="text/css">
 	.bringCenter {
@@ -18,7 +18,7 @@
 	<div class="tablerow">
 		<div class="panel panel-danger bringCenter">
 			<div class="panel-heading">
-				AlRajhi
+				SBI
 			</div>
 			<div class="panel-body">
 				<img alt="Error" src="<%=request.getContextPath()%>/images/error.gif"/>

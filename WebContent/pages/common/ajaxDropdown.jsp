@@ -552,4 +552,6 @@
 <s:elseif test="#request.ELEMENT_NAME=='branchselection'">
 	 <s:select name="branch" id="branch"  class="form-control" list="branchList"  listKey="BranchCode" listValue="BranchName" headerKey="" headerValue="--Select--"/>
 </s:elseif>
-
+<s:elseif  test="#request.ELEMENT_NAME=='surveyagent'">
+	<s:select  name="surveyagentid" id="surveyagentid" list="surveyagentList" headerKey="" headerValue="-Select-" listKey="CODE" listValue="CODEDESC" cssClass="inputBoxS tooltipContent" theme="simple"  onchange="disableOthers(this);"/>
+</s:elseif>

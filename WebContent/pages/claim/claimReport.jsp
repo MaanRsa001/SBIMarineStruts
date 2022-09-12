@@ -8,9 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
-	<meta name="keywords" content="Maan Sarovar, AlRajhi, Marine Insurance">	
+	<meta name="keywords" content="Maan Sarovar, SBI, Marine Insurance">	
 	<meta name="author" content="">
-	<title> ::: AlRajhi Insurance - Login ::: </title>
+	<title> ::: SBI Insurance - Login ::: </title>
 	<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/logonew.png" />
 	<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/demo.css" />
 	<link type="text/css" rel="stylesheet" href="<%=request.getContextPath()%>/bootstrap/css/font-awesome.min.css" />
@@ -70,7 +70,7 @@
 					<div class="col-xs-12">
 						<br/>
 						<a href="#">
-							<img src="<%=request.getContextPath()%>/images/logonew.png" alt="Welcome to AlRajhi Insurance" >
+							<img src="<%=request.getContextPath()%>/images/logonew.png" alt="Welcome to SBI Insurance" >
 						</a>
 					</div>
 				</div>
@@ -200,7 +200,7 @@
 										<td width="50%" align="right">
 											
 											
-											All Rights are Reserved for AlRajhi Insurance 
+											All Rights are Reserved for SBI Insurance 
 										</td>
 									</tr>
 								</tbody></table>									

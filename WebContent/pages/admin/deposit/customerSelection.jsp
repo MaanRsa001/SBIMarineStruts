@@ -6,8 +6,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
-		<title> ::: AlRajhi - Customer Selection ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+		<title> ::: SBI - Customer Selection ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 		<sj:head jqueryui="true" jquerytheme="start" />
 		<link href="css/styles.css" rel="stylesheet" type="text/css" />
 		<link href="css/tcal.css" rel="stylesheet" type="text/css" />

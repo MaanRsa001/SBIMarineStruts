@@ -8,7 +8,7 @@
 %>
 <html>
 <head>
-    <title>AlRajhi</title>
+    <title>SBI</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 	<link href="<%=path%>/css/style.css" rel="stylesheet" type="text/css">
 	<link href="<%=request.getContextPath()%>/cssbootstrap/bootstrap.min.css" rel="STYLESHEET" type="text/css">

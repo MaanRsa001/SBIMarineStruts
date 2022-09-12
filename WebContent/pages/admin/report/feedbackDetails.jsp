@@ -149,7 +149,7 @@
 												</tr>
 												<tr ><td colspan="4"><br/></td></tr>
 												<tr>
-													<th colspan="2">Experience with purchasing online policy from AlRajhi</th>
+													<th colspan="2">Experience with purchasing online policy from SBI</th>
 													<td colspan="2"><s:radio list="#{'E':'Excellent','A':'Average','P':'Poor'}" name="feedQuestion1" id="feedQuestion1" disabled="true" value="#list.FEDBCK_RATING" /></td>
 												</tr>
 												<tr ><td colspan="4"><br/></td></tr>

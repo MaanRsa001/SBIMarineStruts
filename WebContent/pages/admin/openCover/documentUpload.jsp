@@ -4,9 +4,9 @@
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>::: AlRajhi - Documents :::
-		<title> ::: AlRajhi - Documents ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+	<head>::: SBI - Documents :::
+		<title> ::: SBI - Documents ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 		<sj:head jqueryui="true" jquerytheme="start" />
 		<link href="<%=request.getContextPath()%>/css/styles.css" rel="stylesheet" type="text/css" />
 		<link href="<%=request.getContextPath()%>/css/easyui.css" rel="stylesheet" type="text/css">

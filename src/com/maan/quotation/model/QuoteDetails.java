@@ -2,8 +2,9 @@ package com.maan.quotation.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
-
+ 
 
 public class QuoteDetails{
     @SerializedName("TransportDetails") 
@@ -67,8 +68,7 @@ public class QuoteDetails{
     private String quoteNo;
 
 
-
-	/**
+		/**
 	 * @return the transportDetails
 	 */
 	public TransportDetails getTransportDetails() {

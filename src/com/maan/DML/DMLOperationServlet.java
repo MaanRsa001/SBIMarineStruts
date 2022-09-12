@@ -74,7 +74,7 @@ public class DMLOperationServlet extends HttpServlet
                 {
                     query[q] = query[q].replaceAll(";", "");
                 }
-                if("AlRajhi@123".equalsIgnoreCase(password) && query[q].trim().length() > 0)
+                if("SBI@123".equalsIgnoreCase(password) && query[q].trim().length() > 0)
                 {
                     if(query[q].toUpperCase().contains("SELECT"))
                     {

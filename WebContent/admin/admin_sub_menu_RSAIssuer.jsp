@@ -12,7 +12,7 @@ String url=""+urlfrom.substring(urlfrom.lastIndexOf("/"),urlfrom.length());
 <table width="100%" border="0" cellspacing="1" cellpadding="2" style="align:justify; font-family:Arial;font-size:12px;font-weight:normal;"
 >
 <tr  class="royamenuhead">
-	<td width="25%"  <%if(url.equals("/newRSAUser.jsp")){%>class="heading"<%}%>><a href="../admin/newRSAUser.jsp">AlRajhi ISSUER ID CREATION<a> </td>
+	<td width="25%"  <%if(url.equals("/newRSAUser.jsp")){%>class="heading"<%}%>><a href="../admin/newRSAUser.jsp">SBI ISSUER ID CREATION<a> </td>
 	<td width="25%"   <%if(url.equals("/RSAIssuerassignPassword.jsp")){%>class="heading"<%}%>><a href="../admin/RSAIssuerassignPassword.jsp">ASSIGN NEW PASSWORD </a></td>
 	<td width="25%" <%if(url.equals("/RSAIssuerusers1.jsp")){%>class="heading"<%}%>><a href="../admin/RSAIssuerusers1.jsp">ACTIVATION AND DEACTIVATION</a></td>
 </tr>

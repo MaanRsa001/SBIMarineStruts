@@ -18,7 +18,7 @@ public class CustomerDetails{
     private String address2;
     @SerializedName("CityCode") 
     private String cityCode;
-    @SerializedName("CityName") 
+    @SerializedName("City") 
     private String cityName;
     @SerializedName("PoBox") 
     private String poBox;

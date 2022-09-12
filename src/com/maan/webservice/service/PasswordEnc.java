@@ -3,8 +3,9 @@ package com.maan.webservice.service;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
-import sun.misc.BASE64Encoder;
+ 
 
 public class PasswordEnc {
    
@@ -55,7 +56,7 @@ public class PasswordEnc {
       }
 
       byte raw[] = md.digest(); //step 4
-      String hash = (new BASE64Encoder()).encode(raw); //step 5
+      String hash = Base64.getEncoder().encodeToString(raw); //step 5
       return hash; //step 6
     }
 }

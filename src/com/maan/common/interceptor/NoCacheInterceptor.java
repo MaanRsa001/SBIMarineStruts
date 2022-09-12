@@ -21,7 +21,7 @@ public class NoCacheInterceptor implements Interceptor {
         HttpServletRequest request = (HttpServletRequest)context.get(StrutsStatics.HTTP_REQUEST);
         HttpServletResponse response = (HttpServletResponse) context.get(StrutsStatics.HTTP_RESPONSE);
         HttpSession ses = request.getSession(false);
-        logger.info("AlRajhi NoCache interceptor Before Action Invoke => "+ses);
+        logger.info("SBI NoCache interceptor Before Action Invoke => "+ses);
         String sessionid = "";
         String result = null;
         if(ses!=null){
@@ -38,7 +38,7 @@ public class NoCacheInterceptor implements Interceptor {
             //response.setHeader("Content-Security-Policy", "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';");
         }
         result = (result==null?actionInvocation.invoke():result);
-       logger.info("AlRajhi NoCache interceptor after Action Invoke => "+ses);
+       logger.info("SBI NoCache interceptor after Action Invoke => "+ses);
         return result;
     }
 

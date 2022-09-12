@@ -7,7 +7,7 @@
 <div class="footer_body" style="background: #194d8b;">
 	<div class="row">
 		<div class="col-md-6" align="center" style="line-height: 50px;">
-			COPYRIGHTS &nbsp; &copy; &nbsp; AlRajhi Cooperative Insurance Company 
+			COPYRIGHTS &nbsp; &copy; &nbsp; SBI Cooperative Insurance Company 
 		</div>
 		
 	</div>	

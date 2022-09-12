@@ -7,8 +7,8 @@
 	String cpath = request.getContextPath();
 	String cargoPath = "";
 	cpath = cpath.replaceAll("/","");
-	String cargoName = "Alrajhi Insurance";
-	if(cpath.equalsIgnoreCase("E-Cargo-Alrajhi Insurance"))
+	String cargoName = "SBI Insurance";
+	if(cpath.equalsIgnoreCase("E-Cargo-SBI Insurance"))
 		cargoPath = "971 4 302 9800/334 4474";
 	else if(cpath.equalsIgnoreCase("TE-Cargo-Global"))
 		cargoPath = "971 4 302 9800/334 4474";	
@@ -25,7 +25,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title> ::: Alrajhi Insurance - E-Way ::: </title>
+<title> ::: SBI Insurance - E-Way ::: </title>
 <link rel="shortcut icon" href="<%=request.getContextPath()%>/images/Awnic_HeaderLogo.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="style.css" rel="stylesheet" type="text/css">

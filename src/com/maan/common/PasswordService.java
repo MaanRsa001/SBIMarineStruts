@@ -2,11 +2,10 @@ package com.maan.common;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 import org.apache.logging.log4j.Logger;
-
-import sun.misc.BASE64Encoder;
-
+import com.maan.common.LogUtil; 
 public final class PasswordService {
 	final static Logger logger = LogUtil.getLogger(PasswordService.class);
     private static PasswordService instance;
@@ -29,7 +28,7 @@ public final class PasswordService {
         }
 
         byte raw[] = md.digest(); //step 4
-        String hash = (new BASE64Encoder()).encode(raw); //step 5
+        String hash = Base64.getEncoder().encodeToString(raw); //step 5
         return hash; //step 6
     }
 

@@ -7,7 +7,7 @@
 <div class="footer_body" style="background: #0A5676;">
 	<div class="row">
 		<div class="col-md-6" align="center" style="line-height: 50px; color: #FFFFFF;">
-			COPYRIGHTS &nbsp; &copy; &nbsp; AlRajhi Cooperative Insurance Company
+			COPYRIGHTS &nbsp; &copy; &nbsp; SBI Cooperative Insurance Company
 		</div>
 		<div class="col-md-6" align="right">	
 		<%--<s:if test='%{#session.user==null || "".equals(#session.user) ||(#session.LoginType=="B2C" && #session.user1!=getText("admin")) }'>

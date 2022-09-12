@@ -43,7 +43,7 @@ public class jcrypt {
         try {
             PasswordService password = new PasswordService();
             encryptedString = password.encrypt(original); 
-        } catch(SystemUnavailableException e) {System.out.println(e.getMessage());}
+        } catch(Exception e) {System.out.println(e.getMessage());}
         return encryptedString;
         
     }

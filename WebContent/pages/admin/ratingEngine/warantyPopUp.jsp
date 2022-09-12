@@ -13,7 +13,7 @@
 
 <html>
 <head>
-<title align="center">AlRajhi</title>
+<title align="center">SBI</title>
 <h2 align="center" height="25" class = "DKblueBG"><font size="4"><font></h2>
 </head>
 <link href="<%=request.getContextPath() %>/css/style.css" rel="stylesheet" type="text/css" />

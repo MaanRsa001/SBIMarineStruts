@@ -37,7 +37,66 @@ public class TransportDetails{
     private String destinationWarehouseYn;
     @SerializedName("Via") 
     private String via;
+    
+    
+
+/*
+ * 
+ * new fields
+ * 	
+	 ORIGINATING_LOCATION_ADDRESS, 	
+	  DESTINATION_LOCATION_ADDRESS ,
+	  SURVEY_AGENT_ID, 
+	  SURVEY_AGENT
+*/
+	 
+    @SerializedName("OrgLocationAddress")
+	private String orgLocationAddress;
+	@SerializedName("DestLocationAddress")
+	private String destLocationAddress;
+	@SerializedName("SurveyAgentCode")
+	private String surveyAgentCode;
+	@SerializedName("SurveyAgent")
+	private String surveyAgent;
+	@SerializedName("HypothecationDetails")
+	private String hypothecation;
+	
+    
+	public String getOrgLocationAddress() {
+		return orgLocationAddress;
+	}
+	public void setOrgLocationAddress(String orgLocationAddress) {
+		this.orgLocationAddress = orgLocationAddress;
+	}
+	public String getDestLocationAddress() {
+		return destLocationAddress;
+	}
+	public void setDestLocationAddress(String destLocationAddress) {
+		this.destLocationAddress = destLocationAddress;
+	}
+	public String getSurveyAgentCode() {
+		return surveyAgentCode;
+	}
+	public void setSurveyAgentCode(String surveyAgentCode) {
+		this.surveyAgentCode = surveyAgentCode;
+	}
+	public String getSurveyAgent() {
+		return surveyAgent;
+	}
+	public void setSurveyAgent(String surveyAgent) {
+		this.surveyAgent = surveyAgent;
+	}
+	public String getHypothecation() {
+		return hypothecation;
+	}
+	public void setHypothecation(String hypothecation) {
+		this.hypothecation = hypothecation;
+	}
 	/**
+	 * 
+	 * 
+	 * 
+	 * 
 	 * @return the modeOfTansportCode
 	 */
 	public String getModeOfTansportCode() {
@@ -241,4 +300,9 @@ public class TransportDetails{
 	public void setVia(String via) {
 		this.via = via;
 	}
+	
+	
+
+	
+
 }

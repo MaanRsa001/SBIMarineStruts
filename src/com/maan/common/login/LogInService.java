@@ -121,7 +121,7 @@ public class LogInService {
 	    		String pwd = details.get("SMTP_PWD");
 	    		String port=details.get("SMTP_PORT");
 	    		String SMTP_MAIL_FROM = details.get("MAIL_FROM");
-	    		String subject = "AlRajhi-Password Reset";
+	    		String subject = "SBI-Password Reset";
 	    		String toAddress = details.get("MAIL_TO");
 	    		String ccAddress = details.get("MAIL_CC");
 	    		if(toAddress!=null && !"".equals(toAddress)){
@@ -156,7 +156,7 @@ public class LogInService {
 		    		mailDatas.append("</table></body></html>");
 		    		String message = mailDatas.toString();
 		    		/*final mailController smtpMailSender = new mailController();
-					smtpMailSender.postMail(toAddresses,ccAddresses,subject, message, "AlRajhi","","01");*/
+					smtpMailSender.postMail(toAddresses,ccAddresses,subject, message, "SBI","","01");*/
 		    		sendResponseMail(SMTP_HOST_NAME,port, user, pwd, SMTP_MAIL_FROM, subject, message, toAddresses, ccAddresses);
 	    		}
 	    	}
@@ -170,7 +170,7 @@ public class LogInService {
     public String getMailSignature(){
     	StringBuffer msg = new StringBuffer();
     	msg.append("<br /><table width='100%'><tr><td><span style='font-size: 14px;'>");
-    	msg.append("Best Regards,<br /><br />AlRajhi Admin Team");
+    	msg.append("Best Regards,<br /><br />SBI Admin Team");
     	//msg.append("</td></tr><tr><td><img src=\"C:\\Documents and Settings\\Administrator\\Desktop\\HEAD1.GIF\" />");
     	//msg.append("<img src=\"C:\\Documents and Settings\\Administrator\\Desktop\\HEAD2.GIF\" />");
     	msg.append("</td></tr>");    	
@@ -194,7 +194,7 @@ public class LogInService {
    		  final Session session = Session.getInstance(props, auth);
    		  session.setDebug(debug);
    		  final Message msg = new MimeMessage(session);
-			InternetAddress addressFrom = new InternetAddress(SMTP_MAIL_FROM, "AlRajhi");
+			InternetAddress addressFrom = new InternetAddress(SMTP_MAIL_FROM, "SBI");
 			msg.setFrom(addressFrom);
 			if(toAddress != null && toAddress.length>0){
 				InternetAddress[] addressTo = new InternetAddress[toAddress.length];			

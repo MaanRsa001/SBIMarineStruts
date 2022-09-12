@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title> ::: AlRajhi - LC Detail List ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+		<title> ::: SBI - LC Detail List ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 		<script language="JavaScript">javascript:window.history.forward(1);</script>
         <link href="<%=request.getContextPath()%>/css/displaytag.css" rel="stylesheet" type="text/css" />
 		<link href="<%=request.getContextPath()%>/css/styles.css" rel="stylesheet" type="text/css" />

@@ -11,14 +11,12 @@
 
 package com.maan.common.password;
 
-import com.maan.common.password.SystemUnavailableException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import sun.misc.BASE64Encoder;
-import sun.misc.BASE64Decoder;
 import java.sql.Connection;
+import java.util.Base64;
 
 
 
@@ -126,7 +124,7 @@ public class passwordEnc {
 			throw new SystemUnavailableException(e.getMessage());
 		}
 		try{
-			byte raw1[] =  new BASE64Decoder().decodeBuffer(plaintext);
+			byte raw1[] =  Base64.getDecoder().decode(plaintext);
 			BigInteger test = new BigInteger(1,raw1);
 			System.out.println("royal test new decryption from encrtpt method..."+test);
 		}
@@ -153,7 +151,7 @@ public class passwordEnc {
 		}
 
 		byte raw[] = md.digest(); //step 4
-		String hash = (new BASE64Encoder()).encode(raw); //step 5
+		String hash = Base64.getEncoder().encodeToString(raw); //step 5
 
 		return hash;    //step 6
 

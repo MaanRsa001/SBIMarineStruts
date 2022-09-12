@@ -13,7 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.soap.SOAPException;
+ 
 
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
@@ -215,7 +215,22 @@ public class QuotationAction extends ActionSupport{
 	private List<Map<String, Object>> policyInformation;
 	private List<Object>vesselList;
 	
-	
+	private String orginateaddress;
+	private String destinateaddress;
+	private String surveyagentid;
+	private String hypothecation;
+	public String getOrginateaddress() {
+		return orginateaddress;
+	}
+	public void setOrginateaddress(String orginateaddress) {
+		this.orginateaddress = orginateaddress;
+	}
+	public String getDestinateaddress() {
+		return destinateaddress;
+	}
+	public void setDestinateaddress(String destinateaddress) {
+		this.destinateaddress = destinateaddress;
+	}
 	public String getCustomerType() {
 		return customerType;
 	}
@@ -1036,6 +1051,10 @@ public class QuotationAction extends ActionSupport{
 	
 		return service.dropDownList("settlingagent", getParams());
 	}
+	public List<Map<String, Object>> getSurveyagentList(){
+		return service.dropDownList("surveyagent", getParams());
+				
+	}
 	public List<Object> getCommodityList()
 	{
 		return this.commodityList;
@@ -1134,6 +1153,15 @@ public class QuotationAction extends ActionSupport{
 				setEmail(cdo.getEmailId()==null?"":cdo.getEmailId());
 				setCustVatRegNo(cdo.getVatRegNo()==null?"":cdo.getVatRegNo());
 				
+				setState(cdo.getState()==null?"":cdo.getState());
+				setCity(cdo.getCityName()==null?"":cdo.getCityName());
+				
+				setCustomerType(cdo.getCustomertype()==null?"":cdo.getCustomertype());
+			    setGstIdentityNo(cdo.getGstIdentityNo()==null?"":cdo.getGstIdentityNo());
+				setAadharNo(cdo.getAadharNo()==null?"":cdo.getAadharNo());
+				setEiaNumber(cdo.getEiaNumber()==null?"":cdo.getEiaNumber());
+			   setIanocode(cdo.getIanocode()==null?"":cdo.getIanocode());
+				
 				QuoteDetails qdo = qmo.getQuoteDetails();
 				setQuoteNo(qdo.getQuoteNo()==null?"":qdo.getQuoteNo());
 				
@@ -1155,7 +1183,10 @@ public class QuotationAction extends ActionSupport{
 				setCurrency(qdo.getCurrencyCode()==null?"":qdo.getCurrencyCode());
 				setExchageValue(qdo.getCurrencyValue()==null?"":qdo.getCurrencyValue());
 				setWarSrcc(qdo.getWarAndSrccYn()==null?"YES":qdo.getWarAndSrccYn());
-				
+				setHypothecation(tdo.getHypothecation()==null?"":tdo.getHypothecation());
+				setSurveyagentid(tdo.getSurveyAgentCode()==null?"":tdo.getSurveyAgentCode());
+				setDestinateaddress(tdo.getDestLocationAddress()==null?"":tdo.getDestLocationAddress());
+				setOrginateaddress(tdo.getOrgLocationAddress()==null?"":tdo.getOrgLocationAddress());
 				List<CommodityDetail> ctlo = qdo.getCommodityDetails();
 				if(ctlo!= null && ctlo.size()>0) {
 					List<String> commodityIdList = new ArrayList<String>();
@@ -1532,6 +1563,11 @@ public class QuotationAction extends ActionSupport{
 			td.setVia(via==null?"":via);
 			qd.setTransportDetails(td);
 			
+			td.setHypothecation(hypothecation);
+			td.setOrgLocationAddress(orginateaddress);
+			td.setDestLocationAddress(destinateaddress);
+			td.setSurveyAgentCode(surveyagentid);
+			
 			if(commodityId!=null && commodityId.size()>0) {
 				List<CommodityDetail> cdtl = new ArrayList<CommodityDetail>();
 				for(int i=0;i<commodityId.size();i++) {
@@ -1640,6 +1676,11 @@ public class QuotationAction extends ActionSupport{
 	public String agentList()
 	{
 		request.setAttribute(FIELD, "agent"); 
+		return DROPDOWN;
+	}
+	
+	public String surveyagentList() {
+		request.setAttribute(FIELD, "surveyagent");
 		return DROPDOWN;
 	}
 	public String percentList()
@@ -2529,6 +2570,18 @@ public class QuotationAction extends ActionSupport{
 	 */
 	public boolean isFinancial() {
 		return new PremiumService().isFinancial(applicationNo);
+	}
+	public String getSurveyagentid() {
+		return surveyagentid;
+	}
+	public void setSurveyagentid(String surveyagentid) {
+		this.surveyagentid = surveyagentid;
+	}
+	public String getHypothecation() {
+		return hypothecation;
+	}
+	public void setHypothecation(String hypothecation) {
+		this.hypothecation = hypothecation;
 	}
 	
 	

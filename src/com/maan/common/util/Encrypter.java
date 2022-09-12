@@ -1,12 +1,9 @@
 package com.maan.common.util;
 
+import java.util.Base64;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-
-
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 public class Encrypter {
 	private static final String ALGO = "AES";
@@ -17,7 +14,7 @@ public class Encrypter {
 		Cipher c = Cipher.getInstance(ALGO);
 		c.init(Cipher.ENCRYPT_MODE, keySpec);
 		byte[] encVal = c.doFinal(Data.getBytes());
-		String encryptedValue = new BASE64Encoder().encode(encVal);
+		String encryptedValue = Base64.getEncoder().encodeToString(encVal);
 		return encryptedValue;
 	}
 
@@ -25,7 +22,7 @@ public class Encrypter {
 		SecretKeySpec keySpec = new SecretKeySpec(AES_KEY.getBytes(UNICODE_FORMAT), ALGO);
 		Cipher c = Cipher.getInstance(ALGO);
 		c.init(Cipher.DECRYPT_MODE, keySpec);
-		byte[] decordedValue = new BASE64Decoder().decodeBuffer(encryptedData);
+		byte[] decordedValue = Base64.getDecoder().decode(encryptedData);
 		byte[] decValue = c.doFinal(decordedValue);
 		String decryptedValue = new String(decValue);
 		return decryptedValue;

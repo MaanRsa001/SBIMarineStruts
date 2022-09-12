@@ -3,7 +3,7 @@
 <%@ page import="java.util.*,java.io.*,java.text.*" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
-<title>AlRajhi</title>
+<title>SBI</title>
 </head>
 <link href="<%=request.getContextPath()%>/css/styles.css" rel="stylesheet" type="text/css" />
 <table border="0"  cellspacing="0" cellpadding="0" width="100%">

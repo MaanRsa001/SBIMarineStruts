@@ -3,8 +3,8 @@
 <%@ taglib uri="/WEB-INF/displaytag.tld" prefix="display"%>
 <html> 
 	<head>
-		<title> ::: AlRajhi - Others Info ::: </title>
-		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/AlRajhi_icon_header.jpg" />
+		<title> ::: SBI - Others Info ::: </title>
+		<link rel="shortcut icon" href="<%=request.getContextPath()%>/images/SBI_icon_header.jpg" />
 		<script type="text/javascript" src="js/common.js"></script>
 		<link href="<%=request.getContextPath()%>/css/displaytag.css" rel="stylesheet" type="text/css">
 	</head>
