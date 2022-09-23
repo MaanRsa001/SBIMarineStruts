@@ -87,6 +87,14 @@ document.onkeypress = stopRKey;
 			 		</div>
 			 	</div>
 			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="label.underwriter" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+                               <s:select name="underWriterId" id="underWriterId" list="underWriterList" headerKey="" headerValue="---Select---"  listKey="Code" listValue="CodeDescription" cssClass="bg-hover inputBoxS tooltipContent select2" data-content="uw" />
+				 		</div>	
+			 		</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text">
 				 			<s:text name="label.executive" /><font color="red">*</font>
@@ -108,14 +116,6 @@ document.onkeypress = stopRKey;
 				 		     </span>
 				 		</div>
 			 		</div>
-			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-						<div class="text">
-				 			<s:text name="label.debitto" /><font color="red">*</font>
-				 		</div>
-				 		<div class="tbox">
-				 			<s:radio list="#{'Broker':'Broker','Customer':'Customer'}" name="debitType" id="debitType" value="%{debitType==null || debitType==''?'Customer':debitType}" />
-				 		</div>
-			 		</div>
 			 	</div>
 				<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -132,6 +132,14 @@ document.onkeypress = stopRKey;
 				 		</div>
 				 		<div class="tbox">
 				 			<s:textfield name="opencoverenddate" id="opencoverenddate" cssClass="inputBox datepicker tooltipContent" data-content="Open Cover End Date" />
+				 		</div>
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.debitto" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:radio list="#{'Broker':'Broker','Customer':'Customer'}" name="debitType" id="debitType" value="%{debitType==null || debitType==''?'Customer':debitType}" />
 				 		</div>
 			 		</div>
 			 	</div>
@@ -175,6 +183,32 @@ document.onkeypress = stopRKey;
 								</s:iterator>
 				 		</div>	
 				 	</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="label.cobrokingYn" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+                               <s:radio list="#{'Y':'Yes','N':'NO'}" name="cobrokingYn" id="cobrokingYn" value="%{cobrokingYn==null || cobrokingYn==''?'N':cobrokingYn}" onclick="setNoOfCoBroker(this.value);"/>
+				 		</div>	
+			 		</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.noofCobroking" />
+				 		</div>
+				 		<div class="tbox">
+				 			 <s:textfield name="noofCobroking" id="noofCobroking" cssClass="inputBox tooltipContent" data-content=""  value="%{(noofCobroking==null || noofCobroking=='')?'0':noofCobroking}" />
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="cobrokerleader">
+						<div class="text">
+				 			<s:text name="label.cobrokinghunYN" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:radio list="#{'Y':'Yes','N':'NO'}" name="cobrokinghunYN" id="cobrokinghunYN" value="%{cobrokinghunYN==null || cobrokinghunYN==''?'N':cobrokinghunYN}" />
+				 		</div>
+			 		</div>
 			 	</div>
 			 	<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -256,6 +290,110 @@ document.onkeypress = stopRKey;
 				 			<s:textfield name="crossMiniPremium" id="crossMiniPremium" cssClass="inputBox tooltipContent" data-content="Land Minimum Premium" disabled="#disable" maxlength="6" onchange="checkNumbers(this);" />
 				 		</div>
 			 		</div> --%>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="label.policyType" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+                               <s:radio list="#{'11':'Open Cover','3':'One Off'}" name="policyType" id="policyType" value="%{policyType==null || policyType==''?'11':policyType}" onclick="globalBusiness(this.value)"/>
+				 		</div>	
+			 		</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.importYn" />
+				 		</div>
+				 		<div class="tbox">
+				 			 <s:radio list="#{'Y':'Yes','N':'NO'}" name="importYn" id="importYn" value="%{importYn==null || importYn==''?'N':importYn}" />
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.serviceTaxYN" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:radio list="#{'Y':'Yes','N':'NO'}" name="serviceTaxYN" id="serviceTaxYN" value="%{serviceTaxYN==null || serviceTaxYN==''?'N':serviceTaxYN}" />
+				 		</div>
+			 		</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="label.rateModifyYN" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+                               <s:radio list="#{'Y':'Yes','N':'NO'}" name="rateModifyYN" id="rateModifyYN" value="%{rateModifyYN==null || rateModifyYN==''?'N':rateModifyYN}" />
+				 		</div>	
+			 		</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.ratingType" />
+				 		</div>
+				 		<div class="tbox">
+				 			  <s:radio list="ratingTypeList"  name="ratingType" id="ratingType" listKey="Code" listValue="CodeDescription" value="%{ratingType==null || ratingType==''?'N':ratingType}" onclick="enableExposure(this.value);" />
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.exposureVlaue" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="exposureValue" id="exposureValue" cssClass="inputBox tooltipContent" data-content="exposureVlaue" disabled="#disable" maxlength="6" onchange="checkNumbers(this);" />
+				 		</div>
+			 		</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="label.loaddiscountYN" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+                               <s:radio list="#{'Y':'Yes','N':'NO'}" name="loaddiscountYN" id="loaddiscountYN" value="%{loaddiscountYN==null || loaddiscountYN==''?'N':loaddiscountYN}" />
+				 		</div>	
+			 		</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.loadingPercent" />
+				 		</div>
+				 		<div class="tbox">
+				 			  <s:textfield name="loadingPercent" id="loadingPercent" cssClass="inputBox tooltipContent" data-content="exposureVlaue" disabled="#disable" maxlength="6" onchange="checkNumbers(this);" />
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.discountPercent" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="discountPercent" id="discountPercent" cssClass="inputBox tooltipContent" data-content="exposureVlaue" disabled="#disable" maxlength="6" onchange="checkNumbers(this);" />
+				 		</div>
+			 		</div>
+			 	</div>
+			 	<div class="row">
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			 			<div class="text">
+				 			<s:text name="label.consolidateGstYN" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+                               <s:radio list="#{'Y':'Yes','N':'NO'}" name="consolidateGstYN" id="consolidateGstYN" value="%{consolidateGstYN==null || consolidateGstYN==''?'N':consolidateGstYN}" />
+				 		</div>	
+			 		</div>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.globalPolicy" />
+				 		</div>
+				 		<div class="tbox">
+				 			   <s:radio list="#{'Y':'Yes','N':'NO'}" name="globalPolicy" id="globalPolicy" value="%{globalPolicy==null || globalPolicy==''?'N':globalPolicy}" />
+				 		</div>	
+			 		</div>
+			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.globalBusiness" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:select name="globalBusiness" id="globalBusiness" list="GlobalCompanyList" headerKey="" headerValue="---Select---"  listKey="Code" listValue="CodeDescription"  cssClass="bg-hover inputBoxS tooltipContent select2" data-content="Broker" />
+				 		</div>
+			 		</div>
 			 	</div>
 			 	<div class="row">
 			 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -341,12 +479,14 @@ document.onkeypress = stopRKey;
 			 		<s:hidden name="warLand" id="warLand" value="%{warLand==null || warLand==''?'N':warLand}"/>
 			 		<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
 						<div class="text">
-				 			<s:text name="Fac YN" /><font color="red">*</font>
+				 			<s:text name="label.inwardfacYN" /><font color="red">*</font>
 				 		</div>
 				 		<div class="tbox">
-				 			<s:radio list="#{'Y':'Yes','N':'No'}" name="facYN" id="facYN" value="%{facYN==null || facYN==''?'N':facYN}" />
+				 			<s:radio list="#{'Y':'Yes','N':'No'}" name="inwardfacYN" id="inwardfacYN" value="%{inwardfacYN==null || inwardfacYN==''?'N':inwardfacYN}" />
 				 		</div>
 			 		</div>
+			 		<s:hidden name="facYN" id="facYN" value="%{facYN==null || facYN==''?'N':facYN}" ></s:hidden>
+			 		
 			 		<%-- <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 						<div class="text">
 				 			<s:text name="label.vatpercent" /><font color="red">*</font>
@@ -387,6 +527,14 @@ document.onkeypress = stopRKey;
 							<s:textfield name="marginPercent" id="marginPercent" cssClass="inputBox tooltipContent" data-content="Margin Percent" disabled="#disable" maxlength="6" onchange="checkNumbers(this);" />
 						</div>
 					</div> --%>
+					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+						<div class="text">
+				 			<s:text name="label.facshare" /><font color="red">*</font>
+				 		</div>
+				 		<div class="tbox">
+				 			<s:textfield name="facshare" id="facshare" cssClass="inputBox tooltipContent" data-content="No. of Back days allowed" disabled="#disable" maxlength="10" onchange="checkNumbers(this);" />
+				 		</div>
+			 		</div>
 					<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
 							<div class="text">
 								<s:text name="Policy Fee" /><font color="red">*</font>
@@ -701,6 +849,66 @@ function getOpenCoverType(obj){
 		document.getElementById('haulierTypeA').disabled = true;
 		document.getElementById('haulierTypeV').disabled = true;
 		document.getElementById('haulierTypeN').checked = true;
+	}
+}
+setNoOfCoBroker('<s:property value="cobrokingYn"/>');
+function setNoOfCoBroker(val) {
+	if(val == 'Y') {
+		document.quotation.noofCobroking.disabled=false;
+		 $("#cobrokerleader").show();
+		
+	} else {
+		document.quotation.noofCobroking.value='0';
+		document.quotation.noofCobroking.disabled=true;
+		$("#cobrokerleader").hide();
+	}	 
+}
+globalBusiness('<s:property value="policyType"/>');
+function globalBusiness(val) {
+	if(val == "3") {
+		document.getElementById('globalPolicyY').checked = false;
+		document.getElementById('globalPolicyN').checked = true;
+		document.quotation.globalPolicyY.disabled = true;
+		document.quotation.globalPolicyN.disabled = true;
+		
+		//document.getElementById('salesTurnOverY').checked = false;
+		//document.getElementById('salesTurnOverN').checked = true;
+		//document.form1.salesTurnOverY.disabled = true;
+		//document.form1.salesTurnOverN.disabled = true;
+		globalType("N");
+	}
+	else {
+		document.quotation.globalPolicyY.disabled = false;
+		document.quotation.globalPolicyY.disabled = false;
+		//document.form1.salesTurnOverY.disabled = false;
+		//document.form1.salesTurnOverN.disabled = false;
+		if(document.quotation.globalPolicyY.checked==true) {
+			globalType("Y");
+		}
+		else {
+			globalType("N");
+		}
+	}
+}
+function globalType(val) {
+	if(val == "Y") {
+		document.quotation.globalBusiness.disabled = false;
+		document.quotation.facshare.disabled = false;
+	}
+	else {
+		document.quotation.globalBusiness.value = "";
+		//document.form1.facShare.value = "";
+		document.quotation.globalBusiness.disabled = true;
+		//document.form1.facShare.disabled = true;
+	}
+}
+enableExposure('<s:property value="ratingType"/>');
+function enableExposure(val) {
+	if("EXPE"==val) {
+    	document.quotation.exposureValue.disabled=false;
+  	} else {
+    	document.quotation.exposureValue.value="0";
+		document.quotation.exposureValue.disabled=true;
 	}
 }
 </script>	

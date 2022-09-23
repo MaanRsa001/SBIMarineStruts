@@ -108,6 +108,28 @@ public class ApiForQuotationinfo extends ApiConfig implements Callable<Object>{
 			hp.put("Warland", bean.getWarLand());
 			hp.put("FacYN", bean.getFacYN());
 			hp.put("PolicyFee", bean.getPolicyFee());
+			
+			hp.put("UnderWriterId", bean.getUnderWriterId());
+			hp.put("CoBrokerYN", bean.getCobrokingYn());
+			hp.put("NoOfCobroker", bean.getNoofCobroking());
+			hp.put("CobrokerHunYN", bean.getCobrokinghunYN());
+			hp.put("PolicyType", bean.getPolicyType());
+			hp.put("RateModifyYN", bean.getRateModifyYN());
+			hp.put("Ratingtype", bean.getRatingType());
+			hp.put("ExposureValue", bean.getExposureValue());
+			hp.put("ImportYN", bean.getImportYn());
+			hp.put("LoadDiscountYN", bean.getLoaddiscountYN());
+			hp.put("LoadingPercent", bean.getLoadingPercent());
+			hp.put("DiscountPercent", bean.getDiscountPercent());
+			hp.put("ServiceTaxYN", bean.getServiceTaxYN());
+			hp.put("ConsolidateYN", bean.getConsolidateGstYN());
+			hp.put("GlobalStatus", bean.getGlobalPolicy());
+			hp.put("GlobalType", bean.getGlobalBusiness());
+			hp.put("FacShare", bean.getFacshare());
+			hp.put("InwardFacYn", bean.getInwardfacYN());
+			
+			
+			
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {
 				json = (JSONObject) parser.parse(responseStr);
@@ -177,6 +199,27 @@ public class ApiForQuotationinfo extends ApiConfig implements Callable<Object>{
 				bean.setMissippiCode(quoteinfo.get("MissippiCode")==null?"":quoteinfo.get("MissippiCode").toString());
 				bean.setBrokerId(quoteinfo.get("BrokerId")==null?"":quoteinfo.get("BrokerId").toString());
 				bean.setPolicyFee(quoteinfo.get("PolicyFee")==null?"":quoteinfo.get("PolicyFee").toString());
+				 
+				bean.setUnderWriterId(quoteinfo.get("UnderWriterId")==null?"":quoteinfo.get("UnderWriterId").toString());
+				bean.setCobrokingYn(quoteinfo.get("CoBrokerYN")==null?"":quoteinfo.get("CoBrokerYN").toString());
+				bean.setNoofCobroking(quoteinfo.get("NoOfCobroker")==null?"":quoteinfo.get("NoOfCobroker").toString());
+				bean.setCobrokinghunYN(quoteinfo.get("CobrokerHunYN")==null?"":quoteinfo.get("CobrokerHunYN").toString());
+				bean.setPolicyType(quoteinfo.get("PolicyType")==null?"":quoteinfo.get("PolicyType").toString());
+				bean.setRateModifyYN(quoteinfo.get("RateModifyYN")==null?"":quoteinfo.get("RateModifyYN").toString());
+				bean.setRatingType(quoteinfo.get("Ratingtype")==null?"":quoteinfo.get("Ratingtype").toString());
+				bean.setExposureValue(quoteinfo.get("ExposureValue")==null?"":quoteinfo.get("ExposureValue").toString());
+				bean.setImportYn(quoteinfo.get("ImportYN")==null?"":quoteinfo.get("ImportYN").toString());
+				bean.setLoaddiscountYN(quoteinfo.get("LoadDiscountYN")==null?"":quoteinfo.get("LoadDiscountYN").toString());
+				bean.setLoadingPercent(quoteinfo.get("LoadingPercent")==null?"":quoteinfo.get("LoadingPercent").toString());
+				bean.setDiscountPercent(quoteinfo.get("DiscountPercent")==null?"":quoteinfo.get("DiscountPercent").toString());
+				bean.setServiceTaxYN(quoteinfo.get("ServiceTaxYN")==null?"":quoteinfo.get("ServiceTaxYN").toString());
+				bean.setConsolidateGstYN(quoteinfo.get("ConsolidateYN")==null?"":quoteinfo.get("ConsolidateYN").toString());
+				bean.setGlobalPolicy(quoteinfo.get("GlobalStatus")==null?"":quoteinfo.get("GlobalStatus").toString());
+				bean.setGlobalBusiness(quoteinfo.get("GlobalType")==null?"":quoteinfo.get("GlobalType").toString());
+				bean.setFacshare(quoteinfo.get("FacShare")==null?"":quoteinfo.get("FacShare").toString());
+				bean.setInwardfacYN(quoteinfo.get("InwardFacYn")==null?"":quoteinfo.get("InwardFacYn").toString());
+				
+				
 			} 
 		}catch (Exception e) {
 			e.printStackTrace();

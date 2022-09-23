@@ -72,6 +72,12 @@ public class ApiForDropDown extends ApiConfig implements Callable<Object>{
 			
 			}else if("haulierlist".equalsIgnoreCase(requestfor)) {
 				hp.put("BranchCode", bean.getBelongingBranch());
+			}else if("uwlist".equalsIgnoreCase(requestfor)) {
+				hp.put("BranchCode", bean.getBranchCode());
+			}else if("ratingtypelist".equalsIgnoreCase(requestfor)) {
+				hp.put("BranchCode", bean.getBelongingBranch());
+			}else if("globalcompanylist".equalsIgnoreCase(requestfor)) {
+				hp.put("BranchCode", bean.getBelongingBranch());
 			}
 			String responseStr=callAPIPost(link, authorization, hp.toString().replaceAll("\"\"", "null"));
 			if(responseStr!=null && responseStr.length()>0) {

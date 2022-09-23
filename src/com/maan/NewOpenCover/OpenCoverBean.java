@@ -249,6 +249,25 @@ public class OpenCoverBean {
 	private List<String>endLimit;
 	private List<String>premiumVec;
 	private List<HashMap<String,Object>> errors=new ArrayList<HashMap<String,Object>>();
+	private String cobrokingYn;
+	private String noofCobroking;
+	private String cobrokinghunYN;
+	private String policyType;
+	private String importYn;
+	private String serviceTaxYN;
+	private String rateModifyYN;
+	private String ratingType;
+	private String exposureValue;
+	private String loaddiscountYN;
+	private String loadingPercent;
+	private String discountPercent;
+	private String consolidateGstYN;
+	private String globalPolicy;
+	private String globalBusiness;
+	private String facshare;
+	private String inwardfacYN;
+	private String underWriterId;
+	
 	public String getSpringtoken() {
 		return springtoken;
 	}
@@ -1664,6 +1683,114 @@ public class OpenCoverBean {
 	}
 	public void setOptedTolerance(List<Object> optedTolerance) {
 		this.optedTolerance = optedTolerance;
+	}
+	public String getCobrokingYn() {
+		return cobrokingYn;
+	}
+	public void setCobrokingYn(String cobrokingYn) {
+		this.cobrokingYn = cobrokingYn;
+	}
+	public String getNoofCobroking() {
+		return noofCobroking;
+	}
+	public void setNoofCobroking(String noofCobroking) {
+		this.noofCobroking = noofCobroking;
+	}
+	public String getCobrokinghunYN() {
+		return cobrokinghunYN;
+	}
+	public void setCobrokinghunYN(String cobrokinghunYN) {
+		this.cobrokinghunYN = cobrokinghunYN;
+	}
+	public String getPolicyType() {
+		return policyType;
+	}
+	public void setPolicyType(String policyType) {
+		this.policyType = policyType;
+	}
+	public String getImportYn() {
+		return importYn;
+	}
+	public void setImportYn(String importYn) {
+		this.importYn = importYn;
+	}
+	public String getServiceTaxYN() {
+		return serviceTaxYN;
+	}
+	public void setServiceTaxYN(String serviceTaxYN) {
+		this.serviceTaxYN = serviceTaxYN;
+	}
+	public String getRateModifyYN() {
+		return rateModifyYN;
+	}
+	public void setRateModifyYN(String rateModifyYN) {
+		this.rateModifyYN = rateModifyYN;
+	}
+	public String getRatingType() {
+		return ratingType;
+	}
+	public void setRatingType(String ratingType) {
+		this.ratingType = ratingType;
+	}
+	public String getExposureValue() {
+		return exposureValue;
+	}
+	public void setExposureValue(String exposureValue) {
+		this.exposureValue = exposureValue;
+	}
+	public String getLoadingPercent() {
+		return loadingPercent;
+	}
+	public void setLoadingPercent(String loadingPercent) {
+		this.loadingPercent = loadingPercent;
+	}
+	public String getDiscountPercent() {
+		return discountPercent;
+	}
+	public void setDiscountPercent(String discountPercent) {
+		this.discountPercent = discountPercent;
+	}
+	public String getConsolidateGstYN() {
+		return consolidateGstYN;
+	}
+	public void setConsolidateGstYN(String consolidateGstYN) {
+		this.consolidateGstYN = consolidateGstYN;
+	}
+	public String getGlobalPolicy() {
+		return globalPolicy;
+	}
+	public void setGlobalPolicy(String globalPolicy) {
+		this.globalPolicy = globalPolicy;
+	}
+	public String getGlobalBusiness() {
+		return globalBusiness;
+	}
+	public void setGlobalBusiness(String globalBusiness) {
+		this.globalBusiness = globalBusiness;
+	}
+	public String getFacshare() {
+		return facshare;
+	}
+	public void setFacshare(String facshare) {
+		this.facshare = facshare;
+	}
+	public String getInwardfacYN() {
+		return inwardfacYN;
+	}
+	public void setInwardfacYN(String inwardfacYN) {
+		this.inwardfacYN = inwardfacYN;
+	}
+	public String getUnderWriterId() {
+		return underWriterId;
+	}
+	public void setUnderWriterId(String underWriterId) {
+		this.underWriterId = underWriterId;
+	}
+	public String getLoaddiscountYN() {
+		return loaddiscountYN;
+	}
+	public void setLoaddiscountYN(String loaddiscountYN) {
+		this.loaddiscountYN = loaddiscountYN;
 	}
 	
 	

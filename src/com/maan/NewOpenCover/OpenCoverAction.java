@@ -60,6 +60,15 @@ public class OpenCoverAction extends ActionSupport implements ModelDriven<OpenCo
 	public List<Object>getExecutiverList(){
 		return service.getDropDownList(bean,"executivelist");
 	}
+	public List<Object>getUnderWriterList(){
+		return service.getDropDownList(bean,"uwlist");
+	}
+	public List<Object>getRatingTypeList(){
+		return service.getDropDownList(bean,"ratingtypelist");
+	}
+	public List<Object>getGlobalCompanyList(){
+		return service.getDropDownList(bean,"globalcompanylist");
+	}
 	public List<Object>getModewarRateList(){
 		return service.getModewarRateList(bean);
 	}
