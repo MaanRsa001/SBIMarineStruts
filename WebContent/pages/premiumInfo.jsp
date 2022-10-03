@@ -264,6 +264,7 @@ label{
 								<th><s:text name="premiumInfo.excessdesc" /></th>
 								<th><s:text name="premiumInfo.description" /></th>
 								<th><s:text name="premiumInfo.insuredValue" /></th>
+								<th><s:text name="commodity.dutyinsuredValue" /></th>
 								<s:if test='"N".equals(warShowYN)'>
 								<th><s:text name="premiumInfo.ratePercentage" /></th>
 								</s:if>
@@ -285,7 +286,10 @@ label{
 									</s:else>
 								</s:if>
 								</s:else>
+								<th><s:text name="premiumInfo.importrate" /></th>
+								<th><s:text name="premiuminfo.ricode" /></th>
 								<th><s:text name="premiumInfo.fragile" /></th>
+								
 							</tr>
 							</thead>
 							<tbody>
@@ -328,6 +332,7 @@ label{
 								</s:else>
 								<td><s:property value="DESCRIPTION" default=" " /></td>
 								<td align="right"><s:property value="getText(#format,{SUM_INSURED})" default=" " /></td>
+								<td align="right"><s:property value="%{DUTY_SI}" default=" " /></td>
 								<s:if test='"N".equals(warShowYN)'>
 								<td><s:textfield cssClass="inputBox" name="commodityRate" value="%{getText('{0,number,#,##0.0000}',{MARINE_WAR_RATE})}" cssStyle="width:80px" onkeyup="checkNumbers(this)" disabled="#endtDisable" readonly="true"/><s:hidden name="commodityId" value="%{#commodityList.COMMODITY_ID}"/></td>
 								<s:hidden name="commodityWarRate" value="0"></s:hidden>
@@ -341,6 +346,9 @@ label{
 										<td>
 											<s:textfield cssClass="inputBox" name="commodityWarRate" value="%{commodityWarRate[#stat.index]}" cssStyle="width:80px" onkeyup="checkNumbers(this)" disabled="#endtDisable"/>
 										</td>
+										<td>
+											<s:textfield cssClass="inputBox" name="commodityImportRate" value="%{commodityImportRate[#stat.index]}" cssStyle="width:80px" onkeyup="checkNumbers(this)" disabled="#endtDisable"/>
+										</td>
 									</s:if>
 									<s:else>
 										<td>
@@ -349,8 +357,12 @@ label{
 										<td>
 											<s:textfield cssClass="inputBox" name="commodityWarRate" value="%{getText('{0,number,#,##0.0000}',{WARRATE})}" cssStyle="width:80px" onkeyup="checkNumbers(this)" disabled="#endtDisable" />
 										</td>
+										<td>
+											<s:textfield cssClass="inputBox" name="commodityImportRate" value="%{getText('{0,number,#,##0.0000}',{IMPORT_RATE})}" cssStyle="width:80px" onkeyup="checkNumbers(this)" disabled="#endtDisable" />
+										</td>
 									</s:else>
 								</s:if>
+								<td align="right"><s:property value="%{RAG}" default=" " /></td>
 								<s:elseif test='status=="N"'>
 									<s:if test='"admin".equalsIgnoreCase(#session.usertype) || "RSAIssuer".equalsIgnoreCase(#session.usertype)'>
 										<td><s:textfield cssClass="inputBox" name="commodityRate" value="%{getText('{0,number,#,##0.0000}',{RATE})}" cssStyle="width:80px" onkeyup="checkNumbers(this)" disabled="#endtDisable" readonly="true"/><s:hidden name="commodityId" value="%{#commodityList.COMMODITY_ID}"/></td>
@@ -482,10 +494,21 @@ label{
 										<s:else>
 										<td align="right"> <s:property value="getText(#format,{TOTAL_WAR_PREMIUM})"/> </td>
 										</s:else>
+										<%-- <td align="right"><s:property value="getText(#format,{WAR_PREMIUM})" default="0.0" /> </td>
+										<td align="right"> <s:property value="getText(#format,{TOTAL_PREMIUM})"/> </td>--%>
+										<td align="right">&nbsp;</td>
+									</tr>
+									</s:else>
+									<!-- Import Premium -->
+									<tr>
+										<td align="right"><s:text name="premiumInfo.add" /></td>
+										<td>  <s:text name="premiumInfo.importpremium" /> 
+										</td>
+										<td align="right"> <s:property value="getText(#format,{IMPORT_PREMIUM})"/> </td>
 										<%-- <td align="right"><s:property value="getText(#format,{WAR_PREMIUM})" default="0.0" /> </td> --%>
 										<td align="right"> <s:property value="getText(#format,{TOTAL_PREMIUM})"/> </td>
 									</tr>
-									</s:else>
+									
 									<tr>
 										<td></td>
 										<td></td>

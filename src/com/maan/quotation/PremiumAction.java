@@ -108,6 +108,7 @@ public class PremiumAction extends ActionSupport {
 	private List<String> commodityId;
 	private List<String> commodityRate;
 	private List<String> commodityWarRate;
+	private List<String> commodityImportRate;
 	private List<Object> warehouseRate;
 	private List<String> policyExcess;
 	private List<String> policyExcessPercent;
@@ -1921,6 +1922,7 @@ public class PremiumAction extends ActionSupport {
 						qim.put("TOTAL_PREMIUM", pd.getTotalPremium());
 						qim.put("MARINE_PREMIUM", pd.getMarinePremium());
 						qim.put("WAR_PREMIUM", pd.getWarPremium());
+						qim.put("WAR_PREMIUM", pd.getWarPremium());
 						qim.put("EXCESS_SIGN", pd.getExcessSign()==null?"+":pd.getExcessSign());
 						qim.put("ADDITIONAL_PREMIUM", pd.getAdditionalPremium());
 						qim.put("GOVT_TAX", pd.getGovernmentTax());
@@ -1944,6 +1946,7 @@ public class PremiumAction extends ActionSupport {
 						qim.put("IGST_RATE", pd.getIgstRate());
 						qim.put("UTGST_RATE", pd.getUtgstRate());
 						qim.put("STAMP_DUTY", pd.getStampduty());
+						qim.put("IMPORT_PREMIUM", pd.getImportPremium());
 						
 						qim.put("TOTAL_INSURED", pd.getTotalInsuredValue());
 						qim.put("EQUIVALENT", pd.getEquivalentInsuredValue());
@@ -1969,6 +1972,10 @@ public class PremiumAction extends ActionSupport {
 								igim.put("RATE", cdlm.getRate());
 								igim.put("WARRATE", cdlm.getWarRate());
 								igim.put("FRAGILE", cdlm.getFragile());
+								
+								igim.put("DUTY_SI", cdlm.getImportDutySumInsured()==null?"0":cdlm.getImportDutySumInsured());
+								igim.put("RAG", cdlm.getRag());
+								igim.put("IMPORT_RATE", pd.getTotalImportDuty());
 								totalInsued = totalInsued+cdlm.getInsuredValue();
 								igil.add(igim);
 							}
@@ -2551,6 +2558,14 @@ public class PremiumAction extends ActionSupport {
 			logger.info("Exception @ PremiumAction.mapPremiumResponseOutputs(): "+e);
 			e.printStackTrace();
 		}
+	}
+
+	public List<String> getCommodityImportRate() {
+		return commodityImportRate;
+	}
+
+	public void setCommodityImportRate(List<String> commodityImportRate) {
+		this.commodityImportRate = commodityImportRate;
 	}
 	
 }

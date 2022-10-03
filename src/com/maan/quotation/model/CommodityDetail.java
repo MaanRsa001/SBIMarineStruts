@@ -1,5 +1,6 @@
 package com.maan.quotation.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.annotations.SerializedName;
 
 public class CommodityDetail{
@@ -41,7 +42,34 @@ public class CommodityDetail{
     private double warRate;
     @SerializedName("WarlandRate") 
     private double warlandRate;
+    @SerializedName("ImportDutySumInsured")
+	private String importDutySumInsured;
     
+    @SerializedName("ImportDutyRate")
+	private String importDutyRate;
+    @SerializedName("ImportDutyPremium")
+	private String importDutyPremium;
+    @SerializedName("Rag")
+	private String rag;
+    
+	public String getImportDutyRate() {
+		return importDutyRate;
+	}
+	public void setImportDutyRate(String importDutyRate) {
+		this.importDutyRate = importDutyRate;
+	}
+	public String getImportDutyPremium() {
+		return importDutyPremium;
+	}
+	public void setImportDutyPremium(String importDutyPremium) {
+		this.importDutyPremium = importDutyPremium;
+	}
+	public String getRag() {
+		return rag;
+	}
+	public void setRag(String rag) {
+		this.rag = rag;
+	}
 	/**
 	 * @return the insuredValue
 	 */
@@ -257,5 +285,11 @@ public class CommodityDetail{
 	 */
 	public void setWarlandRate(double warlandRate) {
 		this.warlandRate = warlandRate;
+	}
+	public String getImportDutySumInsured() {
+		return importDutySumInsured;
+	}
+	public void setImportDutySumInsured(String importDutySumInsured) {
+		this.importDutySumInsured = importDutySumInsured;
 	}
 }

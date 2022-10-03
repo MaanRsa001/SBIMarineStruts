@@ -596,6 +596,14 @@ document.onkeypress = stopRKey;
 													<s:textfield name="insuredValue[0]" id="insuredValue_0" cssClass="inputBox" maxlength="13" disabled="#disable" onkeyup="this.value=numberComma(this.value);"/>
 												</div>
 									 		</div>
+									 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+												<div class="text">
+													<s:text name="commodity.dutyinsuredValue" /><font color="red">*</font>
+												</div>
+												<div class="tbox">
+													<s:textfield name="dutyValue[0]" id="dutyValue_0" cssClass="inputBox" maxlength="13" disabled="#disable" onkeyup="this.value=numberComma(this.value);"/>
+												</div>
+									 		</div>
 									 	</div>
 									 	<!-- <br/>
 									 	<br/> -->
@@ -616,7 +624,10 @@ document.onkeypress = stopRKey;
 													<s:textfield id="invoiceDate_0" name="invoiceDate[0]"  cssClass="inputBox datepicker tooltipContent"  disabled="%{#disable || #disable2}" readonly="true" />
 												</div>
 									 		</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+											
+									 	</div>
+									 	<div class="row">
+									 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 												<div class="text">
 													<s:text name="Consigned From" />
 												</div>
@@ -624,8 +635,6 @@ document.onkeypress = stopRKey;
 													<s:textfield name="consignedFrom[0]" cssClass="inputBox" disabled="%{#disable2 || #disable}" />
 												</div>
 									 		</div>
-									 	</div>
-									 	<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 												<div class="text">
 													<s:text name="Consigned To" />
@@ -642,7 +651,24 @@ document.onkeypress = stopRKey;
 													<s:textfield name="poNumber[0]" cssClass="inputBox" maxlength="300" onkeyup="checkNumbers(this);" disabled="%{#disable2 || #disable}"  />
 												</div>
 									 		</div>
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+											
+									 	</div>
+									 	<div class="row">
+								 		<s:if test='%{"3".equals(#session.product_id) && ("admin".equalsIgnoreCase(#session.usertype) || "RSAIssuer".equalsIgnoreCase(#session.usertype))}'>
+								 			
+												<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+													<div class="text"><s:label key="commodity.excessdesc" /></div>
+													<div class="tbox">
+														<s:textarea name="excessDesc[0]" onkeyup="textLimit(this,450)" disabled='%{"11".equals(#session.product_id)?"true":#disable}' cssClass="inputBoxA" cols="34" rows="3" cssStyle="width: 100%;" />
+													</div>
+										 		</div>
+									 		
+									 	</s:if>
+									 	<s:else>
+									 		<s:hidden name="excessDesc[0]" />
+									 	</s:else>
+									 	
+									 	<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 												<div class="text">
 													<s:label key="commodity.fragile" />
 												</div>
@@ -650,20 +676,7 @@ document.onkeypress = stopRKey;
 													<s:radio name="fragile[0]" list="#{true:'Yes',false:'No'}" value="%{fragile==null?false:fragile[0]}" disabled="#disable" />
 												</div>
 									 		</div>
-									 	</div>
-								 		<s:if test='%{"3".equals(#session.product_id) && ("admin".equalsIgnoreCase(#session.usertype) || "RSAIssuer".equalsIgnoreCase(#session.usertype))}'>
-								 			<div class="row">
-												<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-													<div class="text"><s:label key="commodity.excessdesc" /></div>
-													<div class="tbox">
-														<s:textarea name="excessDesc[0]" onkeyup="textLimit(this,450)" disabled='%{"11".equals(#session.product_id)?"true":#disable}' cssClass="inputBoxA" cols="34" rows="3" cssStyle="width: 100%;" />
-													</div>
-										 		</div>
 									 		</div>
-									 	</s:if>
-									 	<s:else>
-									 		<s:hidden name="excessDesc[0]" />
-									 	</s:else>
 							        </div>
 							        <div class="modal-footer">
 							         <button type="button" name="close" class="btn btn-danger btn-oval" data-dismiss="modal">Close</button>

@@ -2,9 +2,7 @@ package com.maan.quotation;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.rmi.RemoteException;
-import java.text.DecimalFormat;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,24 +10,21 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
- 
 
 import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.NumberUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 
 import com.maan.common.ConvertService;
-import com.maan.common.DBConstants;
 import com.maan.common.LogUtil;
-import com.maan.common.Token;
 import com.maan.common.Validation;
 import com.maan.common.util.EscapeUtils;
 import com.maan.quotation.model.CommodityDetail;
 import com.maan.quotation.model.CustomerDetails;
-import com.maan.quotation.model.DefaultValue;
 import com.maan.quotation.model.Errors;
 import com.maan.quotation.model.LcBankDetails;
 import com.maan.quotation.model.PremiumDetails;
@@ -136,6 +131,9 @@ public class QuotationAction extends ActionSupport{
 	private List<String> commodityId;
 	private List<String> commodityDesc;
 	private List<String> insuredValue;
+	private List<String> dutyValue;
+	
+
 	private List<String> supplierName;
 	private List<String> commodityPackDesc;
 	private List<String> invoiceNo;
@@ -257,6 +255,12 @@ public class QuotationAction extends ActionSupport{
 	}
 	public String getIanocode() {
 		return ianocode;
+	}
+	public List<String> getDutyValue() {
+		return dutyValue;
+	}
+	public void setDutyValue(List<String> dutyValue) {
+		this.dutyValue = dutyValue;
 	}
 	public void setIanocode(String ianocode) {
 		this.ianocode = ianocode;
@@ -1199,6 +1203,7 @@ public class QuotationAction extends ActionSupport{
 					List<String> poNumberList = new ArrayList<String>();
 					Map<Integer, Boolean> fragileList = new HashMap<Integer, Boolean>();
 					List<String> excessDescList = new ArrayList<String>();
+					List<String> dutyvalues = new ArrayList<String>();
 					int w=0;
 					double totalSiTemp = 0;
 					for(CommodityDetail cto : ctlo) {
@@ -1206,7 +1211,7 @@ public class QuotationAction extends ActionSupport{
 							commodityIdList.add(w, cto.getGoodsCategoryCode()==null?"":cto.getGoodsCategoryCode());
 							commodityDescList.add(w, cto.getGoodsCategoryDescription()==null?"":cto.getGoodsCategoryDescription());
 							totalSiTemp += cto.getInsuredValue();
-							insuredValueList.add(w, String.valueOf(cto.getInsuredValue()));
+							insuredValueList.add(w, new BigDecimal(cto.getInsuredValue()).toPlainString());
 							invoiceNoList.add(w, cto.getInvoiceNo()==null?"":cto.getInvoiceNo());
 							invoiceDateList.add(w, ConvertService.dateFormatConversion(cto.getInvoiceDate()==null?"":cto.getInvoiceDate(), dateFormatFrom, dateFormatTo));
 							consignedFromList.add(w, cto.getConsignedFrom()==null?"":cto.getConsignedFrom());
@@ -1214,6 +1219,7 @@ public class QuotationAction extends ActionSupport{
 							poNumberList.add(w, cto.getPoDescription()==null?"":cto.getPoDescription());
 							fragileList.put(w, (cto.getFragile()!=null && "on".equalsIgnoreCase(cto.getFragile()))?true:false);
 							excessDescList.add(w, cto.getPolicyExcessDescription()==null?"":cto.getPolicyExcessDescription());
+							dutyvalues.add(w,cto.getImportDutySumInsured());
 							w++;
 						}
 					}
@@ -1229,7 +1235,8 @@ public class QuotationAction extends ActionSupport{
 					setExcessDesc(excessDescList);
 					setCommodity(StringUtils.join(commodityDescList,","));
 					setTotalCommodity(String.valueOf(w));
-					setTotalSI(String.valueOf(totalSiTemp));
+					setTotalSI(new BigDecimal(totalSiTemp).toPlainString());
+					setDutyValue(dutyvalues);
 				}
 				
 				setSaleTerm(qdo.getIncoTerms()==null?"":qdo.getIncoTerms());
@@ -1583,6 +1590,7 @@ public class QuotationAction extends ActionSupport{
 					cdt.setPoDescription(poNumber.get(i)==null?"":poNumber.get(i));
 					cdt.setFragile(fragile.get(i)==null?"off":("true".equalsIgnoreCase(fragile.get(i).toString())?"on":"off"));
 					cdt.setPolicyExcessDescription(excessDesc.get(i)==null?"":excessDesc.get(i));
+					cdt.setImportDutySumInsured((dutyValue.get(i)==null || (StringUtils.isBlank(dutyValue.get(i))))?"0":dutyValue.get(i).replace(",", ""));
 					cdtl.add(i, cdt);
 				}
 				qd.setCommodityDetails(cdtl);
