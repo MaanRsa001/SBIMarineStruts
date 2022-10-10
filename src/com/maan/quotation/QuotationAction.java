@@ -1204,6 +1204,7 @@ public class QuotationAction extends ActionSupport{
 					Map<Integer, Boolean> fragileList = new HashMap<Integer, Boolean>();
 					List<String> excessDescList = new ArrayList<String>();
 					List<String> dutyvalues = new ArrayList<String>();
+					List<String> identificationnos = new ArrayList<String>();
 					int w=0;
 					double totalSiTemp = 0;
 					for(CommodityDetail cto : ctlo) {
@@ -1220,6 +1221,7 @@ public class QuotationAction extends ActionSupport{
 							fragileList.put(w, (cto.getFragile()!=null && "on".equalsIgnoreCase(cto.getFragile()))?true:false);
 							excessDescList.add(w, cto.getPolicyExcessDescription()==null?"":cto.getPolicyExcessDescription());
 							dutyvalues.add(w,cto.getImportDutySumInsured());
+							identificationnos.add(w,cto.getIdentificationnos()==null?"":cto.getIdentificationnos());
 							w++;
 						}
 					}
@@ -2591,6 +2593,15 @@ public class QuotationAction extends ActionSupport{
 	public void setHypothecation(String hypothecation) {
 		this.hypothecation = hypothecation;
 	}
+	
+	public List<String> getIdentificationno() {
+		return identificationno;
+	}
+	public void setIdentificationno(List<String> identificationno) {
+		this.identificationno = identificationno;
+	}
+
+	private List<String> identificationno;
 	
 	
 }

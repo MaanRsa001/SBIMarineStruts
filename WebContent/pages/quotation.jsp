@@ -596,6 +596,11 @@ document.onkeypress = stopRKey;
 													<s:textfield name="insuredValue[0]" id="insuredValue_0" cssClass="inputBox" maxlength="13" disabled="#disable" onkeyup="this.value=numberComma(this.value);"/>
 												</div>
 									 		</div>
+									 		
+									 	</div>
+									 	<!-- <br/>
+									 	<br/> -->
+									 	<div class="row">
 									 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 												<div class="text">
 													<s:text name="commodity.dutyinsuredValue" /><font color="red">*</font>
@@ -604,10 +609,6 @@ document.onkeypress = stopRKey;
 													<s:textfield name="dutyValue[0]" id="dutyValue_0" cssClass="inputBox" maxlength="13" disabled="#disable" onkeyup="this.value=numberComma(this.value);"/>
 												</div>
 									 		</div>
-									 	</div>
-									 	<!-- <br/>
-									 	<br/> -->
-									 	<div class="row">
 									 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 												<div class="text">
 													<s:text name="commodity.invoiceNo" />
@@ -676,6 +677,15 @@ document.onkeypress = stopRKey;
 													<s:radio name="fragile[0]" list="#{true:'Yes',false:'No'}" value="%{fragile==null?false:fragile[0]}" disabled="#disable" />
 												</div>
 									 		</div>
+									 		<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+												<div class="text">
+													<s:label key="quotation.identificationno" />
+												</div>
+												<div class="tbox">
+													<s:textfield name="identificationno[0]" cssClass="inputBox" maxlength="300" onkeyup="checkNumbers(this);" disabled="%{#disable2 || #disable}"  />
+ 												</div>
+									 		</div>
+									 		
 									 		</div>
 							        </div>
 							        <div class="modal-footer">

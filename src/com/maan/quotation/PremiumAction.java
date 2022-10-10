@@ -1784,6 +1784,7 @@ public class PremiumAction extends ActionSupport {
 					cd.setPolicyExcess(Double.valueOf(StringUtils.isBlank(policyExcess.get(i))?"0":policyExcess.get(i)));
 					cd.setPolicyExcessDescription(StringUtils.isBlank(excessDesc.get(i))?"":excessDesc.get(i));
 					cd.setPolicyExcessPercentage(Double.valueOf(StringUtils.isBlank(policyExcessPercent.get(i))?"0":policyExcessPercent.get(i)));
+					cd.setImportDutyRate(StringUtils.isBlank(commodityImportRate.get(i))?"0":commodityImportRate.get(i));
 					commodityDetails.add(cd);
 				}
 			}

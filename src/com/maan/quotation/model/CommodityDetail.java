@@ -51,6 +51,8 @@ public class CommodityDetail{
 	private String importDutyPremium;
     @SerializedName("Rag")
 	private String rag;
+    @SerializedName("IdentificationNo")
+    private String identificationnos;
     
 	public String getImportDutyRate() {
 		return importDutyRate;
@@ -291,5 +293,11 @@ public class CommodityDetail{
 	}
 	public void setImportDutySumInsured(String importDutySumInsured) {
 		this.importDutySumInsured = importDutySumInsured;
+	}
+	public String getIdentificationnos() {
+		return identificationnos;
+	}
+	public void setIdentificationnos(String identificationnos) {
+		this.identificationnos = identificationnos;
 	}
 }
